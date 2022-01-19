@@ -1,0 +1,520 @@
+<resources>
+    <string name="app_name">Gtera E-Commerce</string>
+    <string name="app_logo">Gtera E-Commerce</string>
+
+    <!-- navigation icons text -->
+    <string name="str_navigation_home">Home</string>
+    <string name="str_navigation_cars">Cars</string>
+    <string name="str_navigation_search">Search</string>
+    <string name="str_navigation_profile">Profile</string>
+
+
+    <!-- Home Screen -->
+    <string name="str_home_calculate_it_your_self">Calculate it yourself</string>
+    <string name="str_home_choose_your_budget">Choose your Budget</string>
+
+    <string name="str_home_ads">ADS</string>
+
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="need_login">You need to login</string>
+    <string name="require_login">You must login first to access this action.</string>
+    <string name="require_login_pos_btn">Sign In</string>
+    <string name="require_login_neg_btn">Cancel</string>
+
+    <string name="str_error">Error</string>
+    <string name="str_ok">OK</string>
+    <string name="version" translatable="false">v</string>
+    <string name="yes">Yes</string>
+    <string name="confirmation">Confirmation</string>
+    <string name="try_again">Try Again</string>
+    <string name="mobile">Mobile :</string>
+    <string name="check_connection">Please Check Internet Connection and try again</string>
+    <string name="something_went_wrong">Something went wrong, please try again later.</string>
+    <string name="no">No</string>
+    <string name="log_out_success">Logged out successfully.</string>
+    <string name="log_in_success">Logged in successfully.</string>
+    <string name="error_title">Error Title</string>
+    <string name="error_message">Error Message</string>
+    <string name="powered_by" translatable="false">Powered by <b>Retailak</b></string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="share_content">Share Content</string>
+    <string name="banner_success">Success</string>
+    <string name="banner_error">Error</string>
+    <string name="dummy_pass" translatable="false">123456</string>
+    <string name="oops">Oops!</string>
+    <string name="empty_default_txt">No Results Found \n PLease Try Again Later</string>
+    <string name="str_my_car_empty_txt">You did\'t add any Car</string>
+    <string name="banner_icon">banner icon</string>
+    <string name="str_home_categories_new_cars">New Cars</string>
+    <string name="str_home_categories_used_cars">Used Cars</string>
+    <string name="str_home_news_header">Latest News</string>
+    <string name="str_home_categories_header">Categories</string>
+    <string name="str_home_top_deals_header">Top Deals</string>
+    <string name="str_home_offers_header">Offers</string>
+    <string name="str_egp">%s EGP</string>
+    <string name="str_percentage">%s %%</string>
+    <string name="str_discount_off">%s OFF</string>
+    <string name="str_item">ITEM</string>
+    <string name="str_advance_of">advance of %s</string>
+    <string name="str_home_offers_per_month">/Per Month</string>
+
+    <string name="forgot_password">Forgot password?</string>
+    <string name="dont_have_account">Don\'t have an account?</string>
+    <string name="signup">Sign up</string>
+    <string name="sign_with">Or Sign in with</string>
+    <string name="sign_with_facebook">Sign in with Facebook</string>
+    <string name="sign_with_google">Sign in with google</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_up">Sign up</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="or_signin_with">or sign in with</string>
+
+    <string name="field_is_required">%s is required.</string>
+    <string name="password_too_short">Password must contain at least 6 characters.</string>
+    <string name="enter_valid_email">Enter a valid email address</string>
+    <string name="user_name_length_short">Name must contain at least 3 characters</string>
+    <string name="start_special_characters">Name can not contain special character.</string>
+    <string name="user_name">Name</string>
+    <string name="looks_great">Looks Great!</string>
+
+    <!-- Profile -->
+    <string name="str_profile_account_welcome">Welcome !</string>
+    <string name="str_profile_account_detials">Account details</string>
+    <string name="str_profile_change_password">Change Password</string>
+    <string name="str_profile_notification">Notification</string>
+    <string name="str_profile_messages">Messages</string>
+    <string name="str_profile_compare">Compare</string>
+    <string name="str_profile_favorite">Favorite</string>
+    <string name="str_profile_get_in_toutch">Get in touch</string>
+    <string name="str_profile_faq">FAQ</string>
+    <string name="str_profile_logout">Logout</string>
+    <string name="str_profile_language">Language</string>
+    <string name="str_profile_sign_in">Sign In</string>
+    <string name="str_profile_title">Profile</string>
+    <string name="str_profile_log_out_confirmation_message">Oh no! You\'re leaving ... \n Are you sure?</string>
+
+    <string name="str_brands_screen">Brands</string>
+    <string name="str_brands_title">Brands</string>
+    <string name="find_the_brand">Find the Brand</string>
+    <string name="str_change_password_header">Change Password</string>
+    <string name="str_found">Found</string>
+    <string name="str_reset_password">Reset Password</string>
+    <string name="str_forget_password_description">Enter your email address and we will send you a reset instruction.</string>
+    <string name="str_reset_email_sent">Reset email sent</string>
+    <string name="str_sign_in">Sign In</string>
+    <string name="str_mail_sent_to">We have sent a instruction email to</string>
+    <string name="str_old_password">Old Password</string>
+    <string name="str_enter_password">Enter Password</string>
+    <string name="str_new_password">New Password</string>
+    <string name="str_confirm_password">Confirm Password</string>
+    <string name="str_save">Save</string>
+    <string name="str_updated_successfully">Updated Successfully.</string>
+    <string name="str_registered_successfully">Registered Successfully.</string>
+    <string name="str_current_password">Current Password</string>
+    <string name="str_password_too_short">Password must contain at least 6 characters.</string>
+    <string name="str_passwords_dont_match">Password and confirm password do not match.</string>
+    <string name="str_photos">Photos</string>
+    <string name="str_start_from">Start from %s</string>
+    <string name="str_Liter">%s L.</string>
+    <string name="str_KM">%s KM.</string>
+    <string name="str_km">KM</string>
+    <string name="str_doors">%s Doors.</string>
+    <string name="str_seats">%s Seats</string>
+    <string name="str_Order_now">Order Now</string>
+
+
+    <!-- car sorting  options -->
+    <string name="str_car_sorting">Sort</string>
+    <string name="str_car_sorting_latest">Latest</string>
+    <string name="str_car_high_prices">High Prices</string>
+    <string name="str_car_low_prices">low Prices</string>
+    <string name="str_car_popularity">Popularity</string>
+
+    <!-- home lising headers -->
+    <string name="str_home_listing_news_title">News</string>
+    <string name="str_home_listing_top_deals_title">Top Deals</string>
+    <string name="str_home_listing_offers_title">Offers</string>
+
+    <!-- Search view -->
+
+    <string name="str_search_error_msg">Please search with more than 2 characters</string>\
+    <string name="str_home_search_placeholder">Search for an item</string>
+    <string name="str_search_length_error">Please, type more that 2 character</string>
+
+
+    <!-- news -->
+    <string name="str_similar_news">Similar News</string>
+
+    <!-- Choose Your Budget -->
+    <string name="str_choose_your_budget">Choose Your Budget</string>
+    <string name="str_from">From %s </string>
+    <string name="str_to">to %s</string>
+
+    <!-- News -->
+    <string name="str_latest_news">Latest News</string>
+
+    <!-- Car Compare -->
+    <string name="str_car_added_to_compare_successfully">Car added to compare successfully</string>
+    <string name="str_car_compare_empty_header">You did\'t Add any car</string>
+    <string name="str_car_compare_empty_message">Start add your preferred cars to Compare</string>
+    <string name="str_car_compare_Add">Add</string>
+    <string name="str_car_compare_number_validation_message">Please select 2 cars at least to compare</string>
+    <string name="str_car_compare_starting_price">Starting Price</string>
+    <string name="str_car_compare_max_price">Max Price</string>
+    <string name="str_car_compare_num_of_engine_gears">Number of engine gears</string>
+    <string name="str_car_compare_fuel_tank_capacity">Fuel tank capacity</string>
+    <string name="str_car_compare_acceleration">Acceleration</string>
+    <string name="str_car_compare_num_of_seats">Number of Seats</string>
+    <string name="str_car_compare_num_of_doors">Number of doors</string>
+    <string name="str_car_compare_max_torque">Max Torque </string>
+    <string name="str_car_compare_average_fuel_consumbtion">Average fuel consumption </string>
+    <string name="str_car_compare_max_power_by_horse">Max power by horse </string>
+    <string name="str_car_compare_body_type">Body type</string>
+    <string name="str_car_compare_steering_wheel_type">Stearing wheel type</string>
+    <string name="str_car_compare_pull_type">pull Type</string>
+    <string name="str_car_compare_electronic_injection">Electronic injection</string>
+    <string name="str_car_compare_Power">Power</string>
+    <string name="str_car_compare_monthly_payment">Monthly payment</string>
+    <string name="str_car_compare_manufacture_year">Manufacture year</string>
+    <string name="str_yes">Yes</string>
+    <string name="str_no">No</string>
+    <string name="log_removed_from_compare">Removed from compare list successfully.</string>
+
+
+    <!-- Empty View -->
+    <string name="str_empty_view_header">Opps!</string>
+    <string name="str_empty_view_message">SomeThing went wrong, please try again</string>
+
+    <!-- My Car View -->
+    <string name="str_myCar">My Car</string>
+    <string name="str_maintenance">Maintenance</string>
+    <string name="str_my_advertising">My Advertising</string>
+    <string name="str_compare">Compare</string>
+    <string name="str_renewal_insurance">Renewal Insurance</string>
+
+    <!-- Account Details -->
+    <string name="str_account_details_header">Account Details</string>
+    <string name="str_account_details_first_name">First name</string>
+    <string name="str_account_details_last_name">Last name</string>
+    <string name="str_account_details_email">Email</string>
+    <string name="str_account_details_phone_number">Phone Number</string>
+    <string name="str_account_details_birthdate">Birthdate</string>
+    <string name="str_account_details_gender">Gender</string>
+    <string name="str_account_details_governorate">Governorate</string>
+    <string name="str_account_details_city">City</string>
+    <string name="str_account_details_edit">Edit</string>
+    <string name="str_profile_edit_first_name_length_short">First Name must contain at least 3 characters</string>
+    <string name="str_profile_edit_first_name_special_characters">First Name can not contain special character</string>
+    <string name="str_profile_edit_last_name_special_characters">Last Name can not contain special character</string>
+    <string name="str_profile_edit_mobile_special_characters">Phone Number can not contain special character</string>
+    <string name="str_profile_edit_last_name_length_short">Last Name must contain at least 3 characters</string>
+    <string name="str_profile_edit_email_validation">Enter a valid email address</string>
+    <string name="str_profile_edit_phone_validation">Phone number is not valid</string>
+    <string name="str_profile_edit_governorate_validation">Please select governorate</string>
+    <string name="str_profile_edit_city_validation">Please select city</string>
+
+    <!-- Edit Account -->
+    <string name="str_edit_account_male">Male</string>
+    <string name="str_edit_account_female">Female</string>
+    <string name="str_edit_account_first_name_validation">First Name must contain at least 3 characters</string>
+    <string name="str_edit_account_last_name_validation">Last Name must contain at least 3 characters</string>
+    <string name="str_edit_account_email_validation">Enter a valid email address</string>
+    <string name="str_edit_account_phone_number_validation">Phone Number must contain 11 numbers</string>
+
+
+
+    <!-- Search -->
+    <string name="str_tool_bar_search">Search</string>
+    <string name="str_search_brands_all">All</string>
+    <string name="str_search_related_cars">Related cars</string>
+
+
+    <!-- take photo  options -->
+    <string name="str_change_photo">Change photo</string>
+    <string name="str_profile_edit_camera">Take photo</string>
+    <string name="str_profile_edit_gallary">Choose Photo</string>
+
+    <!-- Permission rational messages -->
+    <string name="str_permission_notice">Notice</string>
+    <string name="str_permission_camera_rational_message">Please, Note that we need to take camera permission to take photo</string>
+    <string name="str_permission_external_rational_message">Please, Note that we need to take storage access permission to select photo</string>
+
+    <!-- language screen -->
+    <string name="str_arabic_language_txt">Arabic</string>
+    <string name="str_english_language_txt">English</string>
+    <string name="str_language_title">Language</string>
+
+    <!-- Favorites -->
+    <string name="str_added_to_favorites_successfully">Added to favorites successfully</string>
+    <string name="str_removed_to_favorites_successfully">Removed from favorites successfully</string>
+    <string name="str_empty_favorite_header">Collect the cars You love</string>
+    <string name="str_empty_favorite_message">Start add cars to your favorites</string>
+    <string name="str_empty_favorite_new_cars">New Car</string>
+    <string name="str_empty_favorite_used_cars">Used Car</string>
+
+    <!-- Car insurance -->
+    <string name="str_insurance_empty_list_header">There is no car Insurance yet</string>
+    <string name="str_insurance_empty_list_message">Click on add to renew yor insurance</string>
+    <string name="str_insurance_empty_list_add">Add</string>
+    <string name="str_car_insurance_add_licence_front_photo">Add licence front image</string>
+    <string name="str_car_insurance_add_licence_back_photo">Add licence back image</string>
+    <string name="str_car_insurance_branch">Branch</string>
+    <string name="str_car_insurance_name">Name</string>
+    <string name="str_car_insurance_name_length_short">Name must contain at least 6 characters</string>
+    <string name="str_car_insurance_name_special_characters"> Name can not contain special character</string>
+    <string name="str_car_insurance_chassis_number">Chassis Number</string>
+    <string name="str_car_insurance_chassis_no">Chassis NO: %s</string>
+    <string name="str_car_insurance_price">Price: %s</string>
+    <string name="str_car_insurance_notes">Notes :</string>
+    <string name="str_car_insurance_details_name">Name: %s</string>
+    <string name="str_car_insurance_details_mobile">Mobile: %s </string>
+    <string name="str_car_insurance_details_branch">Branch: %s</string>
+    <string name="str_car_insurance_chassis_number_lengh_short">Chassis number must contain at least 14 characters</string>
+    <string name="str_car_insurance_chassis_number_special_characters"> Chassis Number contain special character or exceeded 20 character</string>
+    <string name="str_car_insurance_branch_validation">Please select branch</string>
+    <string name="str_car_insurance_request">Request Insurance</string>
+    <string name="str_car_insurance_license_front_image_added">Licence front image added</string>
+    <string name="str_car_insurance_license_back_image_added">Licence Back image added</string>
+    <string name="str_car_insurance_request_title">Renewal Insurance</string>
+    <string name="str_car_insurance_request_sent_dialog_title">Your Renewal Request Sent</string>
+    <string name="str_car_insurance_request_sent_dialog_message">thank you for your request, we will review it and confirm with you soon</string>
+    <string name="str_car_insurance_request_endorsement">Endorsement</string>
+    <string name="str_car_insurance_request_endorsement_button_txt">Accept and pay</string>
+    <string name="str_car_insurance_request_endorsement_message">I acknowledge that I am the owner of the previous car with its data, and I know that 2% of the car model will be deducted every year from the total approved spare parts and also 2% depleted (damaged parts) Also, deduction of 10% of the total bill in the case of repair in the power of attorney, if any, in the document, the first five years of the model and 25% of the sixth year of the model until the tenth year of the model.</string>
+    <string name="str_car_insurance_request_confirmed">Confirmed</string>
+    <string name="str_car_insurance_request_pending">Pending</string>
+    <string name="str_car_insurance_request_paid">Paid</string>
+    <string name="str_car_insurance_request_cancelled">Cancelled</string>
+    <string name="str_new_insurance_request">New insurance request</string>
+    <string name="str_insurance_details_header_message">Your insurance request is %s</string>
+    <string name="str_insurance_details_button_pay_txt">Pay</string>
+    <string name="str_insurance_details_button_accept_and_pay_txt">Accept and Pay</string>
+    <string name="str_inurance_list_history">History</string>
+    <string name="str_inurance_request_license_image_validation">Please add front and back photos of your license </string>
+
+
+    <!-- Filter car-->
+    <string name="str_you_must_sign_in_first">Oh no!\n You must sign in first</string>
+    <string name="str_colors">Colors</string>
+    <string name="str_currency">%s EGP</string>
+    <string name="str_price_range">Price Range</string>
+    <string name="str_range_price">/ EGP</string>
+    <string name="str_transmission">Transmission</string>
+    <string name="str_manual">Manual</string>
+    <string name="str_automatic">Automatic</string>
+    <string name="str_filter_title">Filter</string>
+    <string name="str_apply">Apply</string>
+    <string name="str_reset">Reset</string>
+    <string name="str_to_">To</string>
+    <string name="str_from_">From</string>
+    <string name="str_super_automatic">Super Automatic</string>
+    <string name="str_manufacture_year">Manufacture year</string>
+    <string name="str_engine_capacity">Engine Capacity</string>
+    <string name="str_driving_license">Driving License</string>
+    <string name="str_num_of_doors">Number of doors</string>
+    <string name="str_color">Color</string>
+    <string name="str_make_offer">Make Offer</string>
+    <string name="str_send_message">Send message</string>
+    <string name="str_cc">CC</string>
+
+    <!-- Add my Car -->
+    <string name="str_add_my_car">My car</string>
+    <string name="str_add_my_car_header">Add your car</string>
+    <string name="str_add_my_car_select_brand">Select Brand</string>
+    <string name="str_add_my_car_select_model_for">Select Model for %</string>
+    <string name="str_add_my_car_select_manufacture_year">Select Manufacture Year of %</string>
+    <string name="str_add_my_car_other">Other %s</string>
+    <string name="str_add_my_car_brand">Brand</string>
+    <string name="str_add_my_car_model">Model</string>
+    <string name="str_add_my_car_year">Year</string>
+    <string name="str_add_my_car_empty_list_add">Add your cars</string>
+    <string name="str_add_my_car_selector_button_continue_txt">Continue</string>
+    <string name="str_add_my_car_selector_button_back_txt">Back</string>
+    <string name="str_add_my_car_other_write_hint_txt">Write</string>
+    <string name="str_add_my_car_empty_header">No car Here</string>
+    <string name="str_add_my_car_empty_message">Start add your cars</string>
+    <string name="str_add_my_car_add">Add Car</string>
+    <string name="str_add_my_car_add_new">Add New Car</string>
+    <string name="str_add_my_car_price">Price</string>
+    <string name="str_add_my_car_Color">Color</string>
+    <string name="str_add_my_car_description">Description</string>
+    <string name="str_add_my_car_motor_cc">Motor CC</string>
+    <string name="str_add_my_car_motor_power_by_horse">Motor power by horse</string>
+    <string name="str_add_my_car_number_of_engine_gears">Number of Motor gears</string>
+    <string name="str_add_my_car_number_of_casting">Number of Motor casting</string>
+    <string name="str_add_my_car_number_of_doors">Number of doors</string>
+    <string name="str_add_my_car_number_of_seats">Number of seats</string>
+    <string name="str_add_my_car_fuel_tank_capacity">Fuel tank capacity</string>
+    <string name="str_add_my_car_max_torque">Max Torque</string>
+    <string name="str_add_my_car_average_fuel_consumption">Average fuel consumption</string>
+    <string name="str_add_my_car_max_speed">Max speed</string>
+    <string name="str_add_my_car_number_of_airbags">Number of airbags </string>
+    <string name="str_add_my_car_pull_type">Pull Type</string>
+    <string name="str_add_my_car_body_type">Body Type</string>
+    <string name="str_add_my_car_transmission_type">Transmission Type</string>
+    <string name="str_add_my_car_steering_wheel_type">Steering Wheel Type</string>
+    <string name="str_add_my_car_Category">Category</string>
+    <string name="str_my_car_add_picture_of_your_car">Add pictures of your car</string>
+    <string name="str_my_car_add_more_picture">Add more picture</string>
+    <string name="str_my_car_add_photos">Photos %s /10</string>
+    <string name="str_my_car_add_photos_max_size_warning">Please, You can\'t add more than 10 images</string>
+    <string name="str_my_car_add_photos_min_size_warning">Please, add one image for your car at least</string>
+    <string name="str_choose_transmission_type">Choose transmission type</string>
+    <string name="str_choose_body_type">Choose body type</string>
+    <string name="str_choose_pull_type">Choose pull type</string>
+    <string name="str_choose_category_type">Choose car category </string>
+    <string name="str_choose_steering_wheel_type">Choose steering wheel type</string>
+    <string name="str_selector_brand_validation">Please choose Brand</string>
+    <string name="str_selector_brand_write_validation">Please write your Brand</string>
+    <string name="str_selector_model_validation">Please choose Model</string>
+    <string name="str_selector_model_write_validation">Please write your Model</string>
+    <string name="str_selector_year_validation">Please choose Year</string>
+    <string name="str_selector_year_write_validation">Please write Year</string>
+    <string name="str_selector_year_write_validation_error">Please write correct Year of four numbers</string>
+    <string name="str_your_car_added_successfully">Your car added successfully</string>
+
+
+    <string name="str_job_title">Job Title</string>
+    <string name="str_advance_payment">Advance Payment</string>
+    <string name="str_installment_years">installment Years</string>
+    <string name="str_monthly_salary">Monthly Salary</string>
+    <string name="str_calculate_it">Calculate it</string>
+    <string name="str_calculate_it_your_self">Calculate it yourself</string>
+    <string name="str_choose_job">Choose your job</string>
+    <string name="str_choose_installment_years">Choose the number of years of installments</string>
+    <string name="str_please_choose_your_job">Please choose your job</string>
+    <string name="str_please_insert_advance_payment">Please insert advance payment</string>
+    <string name="str_please_insert_monthly_salary">Please insert monthly salary</string>
+    <string name="str_please_insert_installment_years">PLease insert installments years</string>
+    <string name="str_please_brand">please select at least one brand</string>
+    <string name="str_price">Price: </string>
+    <string name="str_monthly_installment">Monthly Installment: </string>
+    <string name="str_insurance">Insurance: </string>
+    <string name="str_adminstrative_expenses">Administrative expenses: </string>
+    <string name="str_totla_amount_required">Total amount required: </string>
+    <string name="str_last_update">Last Update: </string>
+    <string name="str_car_code">Car Code: </string>
+    <string name="str_credit_card">Credit Card</string>
+    <string name="str_total_installments">Total installments /LE</string>
+    <string name="str_card_number">Card number</string>
+    <string name="str_bank_card_name">Bank card name</string>
+    <string name="str_card_limits">Card limits</string>
+    <string name="invalid_card_data">Invalid card data</string>
+    <string name="str_map">Map</string>
+    <string name="str_list">List</string>
+    <string name="str_user_location">User Location</string>
+    <string name="str_empty_maintenance">No Maintenance Here</string>
+    <string name="str_add">Add</string>
+    <string name="str_date">Date</string>
+    <string name="str_service_center">Service Center</string>
+    <string name="search_error_msg">Please search with more than 2 characters</string>
+    <string name="str_total_cost">Total Cost</string>
+    <string name="str_notes">Notes</string>
+    <string name="str_contact_us">Contact us</string>
+    <string name="str_phone">Phone</string>
+    <string name="str_name">Name</string>
+    <string name="str_message">Message</string>
+    <string name="str_email">Email</string>
+    <string name="str_invalid_information">Invalid information</string>
+    <string name="str_reload">Reload</string>
+    <string name="str_per_month">/Per month</string>
+
+    <!-- Notifications -->
+    <string name="str_notificatios">Notifications</string>
+    <string name="str_notificatios_empty_notificatios_header">No Messages Here</string>
+    <string name="str_notificatios_empty_notificatios_body">You didn\'t have any notification yet</string>
+
+    <!-- Messages -->
+    <string name="str_messages">Messages</string>
+    <string name="str_messages_empty_message_header">No Messages Here</string>
+    <string name="str_messages_empty_message_body">There is no messages in your inbox yet</string>
+    <string name="str_messages_today">Today </string>
+    <string name="str_messages_ago">Min Ago </string>
+    <string name="str_type_message">Type a message</string>
+
+    <!-- FAQ -->
+    <string name="str_faq">FAQ</string>
+
+
+    <!-- Facebook -->
+    <string name="facebook_app_id"  translatable="false">210224500177976</string>
+    <string name="fb_login_protocol_scheme"  translatable="false">fb210224500177976</string>
+
+
+
+    <!-- DFP Google ads id's -->
+    <string name="native_home_one_ad_unit_id" translatable="false">/{YOUR_NETWORK_CODE}/codelab</string>
+    <string name="native_home_two_ad_unit_id" translatable="false">/{YOUR_NETWORK_CODE}/codelab</string>
+    <string name="native_used_car_details_ad_unit_id" translatable="false">/{YOUR_NETWORK_CODE}/codelab</string>
+    <string name="native_new_car_details_ad_unit_id" translatable="false">/{YOUR_NETWORK_CODE}/codelab</string>
+    <string name="native_choose_your_budget_ad_unit_id" translatable="false">/{YOUR_NETWORK_CODE}/codelab</string>
+    <string name="native_news_deails_ad_unit_id" translatable="false">/{YOUR_NETWORK_CODE}/codelab</string>
+    <string name="native_template_id" translatable="false">{YOUR_TEMPLATE_ID}</string>
+
+    <!-- Input Dialog -->
+    <string name="str_input_dialog_send">Send</string>
+    <string name="str_input_dialog_message">Message </string>
+    <string name="str_input_dialog_offer">Make Offer </string>
+    <string name="str_input_dialog_send_message">Send Message</string>
+    <string name="str_input_dialog_message_sent_successfully">Message Sent Successfully</string>
+    <string name="str_input_dialog_Offer_sent_successfully">Offer Sent Successfully</string>
+
+    <!-- OrderNow  -->
+    <string name="str_order_requests">Order Request</string>
+    <string name="str_order_requests_empty_header">Order Requests</string>
+    <string name="str_order_requests_empty_body">You didn\' add any order request yet, start add now</string>
+    <string name="str_order_now_upload_power_attorny_photos">Upload Power of Attorney photos</string>
+    <string name="str_order_now_need_license_disclamer">Please create power attorney with the following names:</string>
+    <string name="str_order_now_power_attorny_names">Power Attorney Names:</string>
+    <string name="str_order_now_need_license">Need Car License</string>
+    <string name="str_order_now_with_car_insurance">With car Insurance</string>
+    <string name="str_order_now_cash">Cash</string>
+    <string name="str_order_now_premium">Premium</string>
+    <string name="str_order_now_car_color">Car Color</string>
+    <string name="str_order_now_delivery_place">Delivery Place</string>
+    <string-array  name="str_order_now_delivery_places">
+        <item >Home</item>
+        <item>Work</item>
+        <item >Branch</item>
+    </string-array>
+    <string name="str_order_now_photos_max_size_warning">Please, You can\'t add more than 5 images</string>
+    <string name="str_order_now_branch_validation">Please select branch</string>
+    <string name="str_order_now_advanced_payment_validation">Please Add advanced payment </string>
+    <string name="str_order_now_advanced_payment_amount_validation">Please Add advanced payment equal to or more than 1000 EGP </string>
+    <string name="str_order_now_images_validation">Please add power attorney images</string>
+    <string name="str_order_now_color_validation">Please choose color</string>
+
+
+    <!-- My Add -->
+    <string name="str_advertising_title">My Advertising</string>
+    <string name="str_advertising_empty_header">No Advertising Here</string>
+    <string name="str_advertising_empty_body">You didn\' add any Advertise yet, start add now</string>
+    <string name="str_advertising_address">Address</string>
+    <string name="str_advertising_name">Name</string>
+    <string name="str_advertising_status">Status</string>
+    <string name="str_advertising_status_note">Status Note</string>
+    <string name="str_advertising_price">Price</string>
+    <string name="str_advertising_show_email">Show Email</string>
+    <string name="str_advertising_show_mobile">Show Mobile</string>
+    <string name="str_advertising_viewing_days">Viewing Days</string>
+    <string name="str_advertising_viewing_times">Viewing Times / Every Days</string>
+    <string name="str_first_name">First Name</string>
+    <string name="str_account_details_address">Address</string>
+    <string name="str_download">download</string>
+    <string name="str_open">open</string>
+    <string name="str_downloading">downloading</string>
+    <string name="str_choose_application">choose application</string>
+
+
+    <string name="see_all">see all</string>
+    <string name="str_navigation_products">Products</string>
+    <string name="add_to_order">Add to Basket</string>
+    <string name="added_to_basket_success">Added to basket successfully.</string>
+
+
+</resources>

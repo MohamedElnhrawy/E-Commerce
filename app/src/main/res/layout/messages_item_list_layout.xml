@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.gtera.ui.profile.messages.MessagesListItemViewModel" />
+
+    </data>
+
+    <com.gtera.ui.base.swip.SwipeLayout
+        android:id="@+id/sv_basket_item_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:clickToClose="true"
+        app:show_mode="pull_out">
+
+        <LinearLayout
+            android:id="@+id/swiped_view"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="3dp">
+
+                <ImageView
+                    android:id="@+id/iv_swipe_item_remove"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:scaleType="center"
+                    app:srcCompat="@drawable/ic_delete" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/pale_gray">
+
+
+                <TextView
+                    android:id="@+id/tv_notification_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:gravity="start|center_vertical"
+                    android:textSize="@dimen/_14ssp"
+                    android:textStyle="bold"
+                    android:text="@{viewModel.senderName}"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_date"
+                    app:layout_constraintStart_toEndOf="@+id/iv_sender_image"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Ali Sayed" />
+
+                <ImageView
+                    android:id="@+id/iv_sender_image"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/_4sdp"
+                    imageUrl="@{viewModel.senderImageUrl}"
+                    roundRadius ="@{140}"
+                    placeHolderImage="@{viewModel.placeHolder}"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.18"
+                    tools:srcCompat="@drawable/ic_share" />
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.messageDate}"
+                    android:textSize="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_sender_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textColor="@color/messagesDateColor"
+                    app:layout_constraintTop_toTopOf="@+id/iv_sender_image"
+                    tools:text="today 14:20 pm"/>
+
+                <TextView
+                    android:id="@+id/tv_message_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:textSize="@dimen/_10ssp"
+                    android:text="@{viewModel.messageBody}"
+                    isBold="@{!viewModel.seen}"
+                    android:textColor="@{viewModel.seen?@color/messagesDateColor:@color/black }"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_notification_title"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/tv_notification_title"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_notification_title"
+                    tools:text="Is this still available ?" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.gtera.ui.base.swip.SwipeLayout>
+</layout>

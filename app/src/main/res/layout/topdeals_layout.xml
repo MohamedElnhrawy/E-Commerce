@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	>
+
+	<data>
+
+		<import type="android.view.View" />
+
+		<variable
+			name="viewModel"
+			type="com.gtera.ui.topdeals.TopDealsViewModel" />
+
+	</data>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+
+		<View
+			android:id="@+id/h_seperator"
+			android:layout_width="0dp"
+			android:layout_height="@dimen/_1sdp"
+			android:layout_marginTop="@dimen/_5sdp"
+			android:background="@color/dividerColor"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/iv_filter_icon" />
+
+
+		<View
+			android:id="@+id/v_seperator2"
+			android:layout_width="@dimen/_1sdp"
+			android:layout_height="0dp"
+			android:layout_marginEnd="@dimen/_20sdp"
+			android:background="@color/dividerColor"
+			app:layout_constraintBottom_toBottomOf="@+id/h_seperator"
+			app:layout_constraintEnd_toStartOf="@+id/iv_filter_icon"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<View
+			android:id="@+id/v_seperator3"
+			android:layout_width="@dimen/_1sdp"
+			android:layout_height="0dp"
+			android:layout_marginEnd="@dimen/_20sdp"
+			android:background="@color/dividerColor"
+			app:layout_constraintBottom_toBottomOf="@+id/h_seperator"
+			app:layout_constraintEnd_toStartOf="@+id/iv_grid_icon"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<View
+			android:id="@+id/v_seperator4"
+			android:layout_width="@dimen/_1sdp"
+			android:layout_height="0dp"
+			android:layout_marginEnd="@dimen/_20sdp"
+			android:background="@color/dividerColor"
+			app:layout_constraintBottom_toBottomOf="@+id/h_seperator"
+			app:layout_constraintEnd_toStartOf="@+id/iv_grid_icon"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<View
+			android:id="@+id/v_seperator5"
+			android:layout_width="@dimen/_1sdp"
+			android:layout_height="0dp"
+			android:layout_marginEnd="@dimen/_20sdp"
+			android:background="@color/dividerColor"
+			app:layout_constraintBottom_toBottomOf="@+id/h_seperator"
+			app:layout_constraintEnd_toStartOf="@+id/iv_list_icon"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<ImageView
+			android:onClick="@{() -> viewModel.showSortingDialog()}"
+			android:id="@+id/iv_filter_icon"
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			android:layout_marginTop="@dimen/_10sdp"
+			android:layout_marginEnd="@dimen/_20sdp"
+			app:layout_constraintDimensionRatio="1:1.3"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintWidth_percent="0.06"
+			app:srcCompat="@drawable/ic_sort" />
+
+		<ImageView
+			app:srcCompat="@{viewModel.isList? @drawable/ic_grid_off : @drawable/ic_grid_on }"
+			android:onClick="@{viewModel.gridOrientationClick}"
+			tools:src="@drawable/ic_grid_off"
+			android:id="@+id/iv_grid_icon"
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			android:layout_marginTop="@dimen/_10sdp"
+			android:layout_marginEnd="@dimen/_20sdp"
+			app:layout_constraintDimensionRatio="1:1.3"
+			app:layout_constraintEnd_toStartOf="@+id/v_seperator2"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintWidth_percent="0.06"
+			/>
+
+		<ImageView
+			app:srcCompat="@{viewModel.isList? @drawable/ic_list_on : @drawable/ic_list_off}"
+			android:onClick="@{viewModel.listOrientationClick}"
+			android:id="@+id/iv_list_icon"
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			android:layout_marginTop="@dimen/_10sdp"
+			android:layout_marginEnd="@dimen/_20sdp"
+			app:layout_constraintDimensionRatio="1:1.3"
+			app:layout_constraintEnd_toStartOf="@+id/v_seperator3"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintWidth_percent="0.06"
+			tools:src="@drawable/ic_list_on"
+			 />
+
+		<TextView
+			android:id="@+id/tv_found_count"
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			android:gravity="start|center_vertical"
+			android:padding="@dimen/_10sdp"
+			android:text="@{viewModel.topDealsCount}"
+			tools:text="TextView"
+			android:textColor="@color/warm_grey"
+			app:layout_constraintBottom_toBottomOf="@+id/h_seperator"
+			app:layout_constraintEnd_toStartOf="@+id/v_seperator5"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+
+		<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+			android:id="@+id/swrefDealsList"
+			isRefreshing="@{viewModel.isRefreshing}"
+			refreshListener="@{viewModel.onRefreshListener}"
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/h_seperator">
+
+
+			<androidx.recyclerview.widget.RecyclerView
+				android:id="@+id/rv_related_search"
+				viewOrientation="@{viewModel.isList? viewModel.carsVerticalOrientation : viewModel.carsGridOrientation}"
+				adapter="@{viewModel.topDealsAdapter}"
+				recyclerSwipe="@{swrefDealsList}"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="@dimen/_10sdp"
+				android:orientation="vertical"
+				android:overScrollMode="never"
+				android:paddingStart="@dimen/_10sdp"
+				android:paddingEnd="@dimen/_10sdp"
+				app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+				app:layout_constrainedHeight="true"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintHorizontal_bias="0.0"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/tv_news_name"
+				app:layout_constraintVertical_bias="0"
+				tools:itemCount="3"
+				tools:listitem="@layout/home_top_deal_item_list_vertical_layout" />
+		</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+		<ViewStub
+			android:id="@+id/emptyView"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout="@layout/base_empty_layout"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/h_seperator"  />
+
+		<ViewStub
+			android:id="@+id/loadingView"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout="@layout/base_loading_layout"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/h_seperator" />
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

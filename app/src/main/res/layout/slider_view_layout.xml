@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.gtera.ui.slider.SliderViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:paddingBottom="@dimen/_10sdp">
+
+        <com.zhpan.bannerview.BannerViewPager
+            android:id="@+id/banner_view"
+            changePage="@{viewModel.changePage}"
+            list="@{viewModel.list}"
+            pageChangeListener="@{viewModel.pageChangeListenerAdapter}"
+            pageClickListener="@{viewModel.sliderItemClickListener}"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_180sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            app:bvp_indicator_visibility="gone"
+            app:bvp_page_style="normal"
+            app:bvp_transformer_style="scale_in"
+            app:bvp_round_corner="@dimen/_2sdp"
+            app:layout_constraintEnd_toStartOf="@id/iv_arrow_right"
+            app:layout_constraintStart_toEndOf="@id/iv_arrow_left"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            horizontal_adapter="@{viewModel.dotsAdapter}"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="@id/banner_view"
+            app:layout_constraintEnd_toEndOf="@id/banner_view"
+            app:layout_constraintStart_toStartOf="@+id/banner_view"
+            tools:itemCount="6"
+            tools:listitem="@layout/bottom_indicator_item_layout" />
+
+        <ImageView
+            android:id="@+id/iv_arrow_right"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="center"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_arrow_left"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_arrow_left"
+            app:layout_constraintWidth_percent="0.08"
+            app:srcCompat="@drawable/ic_arrow_right" />
+
+        <ImageView
+            android:id="@+id/iv_arrow_left"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="center"
+            app:layout_constraintBottom_toBottomOf="@id/banner_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/banner_view"
+            app:layout_constraintWidth_percent="0.08"
+            app:srcCompat="@drawable/ic_arrow_left" />
+
+        <TextView
+            android:id="@+id/tv_slider_left_txt"
+            style="@style/AppTheme.TextStyle.Secondary.white"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:ellipsize="marquee"
+            android:gravity="start"
+            android:singleLine="true"
+            android:text="@{viewModel.leftText}"
+            android:textStyle="bold"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="@dimen/_15ssp"
+            android:autoSizeMinTextSize="@dimen/_6sdp"
+            app:layout_constraintWidth_percent="0.4"
+            app:layout_constraintStart_toStartOf="@+id/banner_view"
+            app:layout_constraintTop_toBottomOf="@+id/banner_view"
+            tools:text="KIA STINGER" />
+
+        <TextView
+            android:id="@+id/tv_slider_right_txt"
+            style="@style/AppTheme.TextStyle.Secondary.white"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:gravity="end"
+            android:text="@{viewModel.righttext}"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="@dimen/_15ssp"
+            android:autoSizeMinTextSize="@dimen/_6sdp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/banner_view"
+            app:layout_constraintTop_toTopOf="@id/tv_slider_left_txt"
+            app:layout_constraintWidth_percent="0.4"
+            tools:text="400,000 EGP" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

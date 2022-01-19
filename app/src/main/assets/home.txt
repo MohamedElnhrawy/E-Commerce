@@ -1,0 +1,144 @@
+{ "data":{
+ "welcome":"Hello, ",
+
+  "categories": [
+    {
+          "id": 100,
+          "name": "Apple Accessories",
+      "items": [
+        {
+          "id": 101,
+          "name": "AirPods",
+          "description": "
+Meet AirPods (3rd generation). All-new design featuring spatial audio with dynamic head tracking. Fast, free shipping and free engraving at apple.com.",
+          "favourite": false,
+          "image":
+            "https://as-images.apple.com/is/MME73_AV1?wid=1000&hei=1000&fmt=jpeg&qlt=95&.v=1632861333000"
+          ,
+          "stock_qty": 100,
+          "price": 50
+
+        },
+   {
+
+          "id": 102,
+          "name": "Apple Watch",
+          "description": "Get Apple Watch Series 7, in all-new case finishes. Trade in your eligible Apple Watch and explore financing options. Buy now with free delivery.",
+          "favourite": false,
+          "image":
+            "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ML733_VW_34FR+watch-41-stainless-gold-cell-7s_VW_34FR_WF_CO?wid=1400&hei=1400&trim=1,0&fmt=p-jpg&qlt=95&.v=1630042278000,1631661322000"
+          ,
+              "stock_qty": 100,
+              "price": 100
+
+        },
+   {
+
+          "id": 103,
+          "name": "Magic Mouse",
+          "description": "
+Perform simple gestures on the smooth, seamless Apple Magic Mouse. Wireless and fully rechargeable.",
+          "favourite": false,
+          "image":
+            "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MK2E3?wid=1144&hei=1144&fmt=jpeg&qlt=80&.v=1626468075000"
+          ,
+              "stock_qty": 100,
+              "price": 150
+
+        }
+
+  ]
+},
+{
+          "id": 200,
+          "name": "Back to School",
+      "items": [
+        {
+
+          "id": 201,
+          "name": "Backpack",
+          "description": "Backpack for Men 17 Inch Black Waterproof Oxford USB Large Capacity School Bags Casual Black Backpack for Unisex Laptop Backpack",
+          "favourite": false,
+          "image":
+            "https://m.media-amazon.com/images/I/4195d4BlJ+L._AC_.jpg"
+          ,
+              "stock_qty": 100,
+              "price": 50
+
+        },
+   {
+
+          "id": 202,
+          "name": "pins",
+          "description": "pack of pins for board",
+          "favourite": false,
+          "image":
+            "https://m.media-amazon.com/images/I/41gSIPfiQBL._AC_.jpg"
+          ,
+              "stock_qty": 100,
+              "price": 100
+
+        },
+   {
+
+          "id": 203,
+          "name": "Stabilo Flash Highlighter",
+          "description": "Stabilo Flash Highlighter",
+          "favourite": false,
+          "image":
+            "https://m.media-amazon.com/images/I/71CVe5QF8OL._AC_UL640_FMwebp_QL65_.jpg"
+          ,
+              "stock_qty": 100,
+              "price": 150
+
+        }
+
+  ]
+},
+{
+          "id": 300,
+          "name": "Home Repair",
+      "items": [
+        {
+
+          "id": 301,
+          "name": "Tape aluminum",
+          "description": "Tape aluminum Tool Repair Home Household Heat-resistant Waterproof-15M",
+          "favourite": false,
+          "image":
+            "https://m.media-amazon.com/images/I/51-4u7qzjvL._AC_SL1001_.jpg"
+          ,
+              "stock_qty": 100,
+              "price": 50
+
+        },
+   {
+
+          "id": 302,
+          "name": "repair tool kit",
+          "description": "JM-tecnicoworld® 8144 26 in 1 Electronic Tools Multifunctional repair tool kit Screwdrivers",
+          "favourite": false,
+          "image":
+            "https://m.media-amazon.com/images/I/61jCFa3MZkS._AC_SL1000_.jpg"
+          ,
+              "stock_qty": 100,
+              "price": 100
+
+        },
+   {
+          "id": 303,
+          "name": "inGCO",
+          "description": "inGCO HKSDB0348 32 Pcs Screwdriver Set",
+          "favourite": false,
+          "image":
+            "https://m.media-amazon.com/images/I/61unHUtubQL._AC_SL1500_.jpg"
+          ,
+              "stock_qty": 100,
+              "price": 150
+
+        }
+
+  ]
+}
+]
+}}

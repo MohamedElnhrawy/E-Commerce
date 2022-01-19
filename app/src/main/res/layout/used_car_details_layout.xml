@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.gtera.ui.usedcardetails.UsedCarDetailsViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/pale_grey">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/pale_grey">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ads_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/adsColor"
+                    visibleIf="@{!viewModel.isMyCar}"
+                    android:padding="@dimen/_8sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <TextView
+                        android:id="@+id/tv_ads2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_home_ads"
+                        android:textColor="@color/buttonTextColor"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <com.synnapps.carouselview.CarouselView
+                    android:id="@+id/iv_car_iamges"
+                    imageClickListener="@{viewModel.imageClickListener}"
+                    imageListener="@{viewModel.imageListener}"
+                    pageChangeListener="@{viewModel.onPageChangeListener}"
+                    pageCount="@{viewModel.pageCount}"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:indicatorVisibility="gone"
+                    app:layout_constraintDimensionRatio="2:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ads_view"
+                    app:layout_constraintWidth_percent="1.0"
+                    app:slideInterval="3000"
+                    app:srcCompat="@drawable/ic_logo_toolbar"
+                    app:strokeColor="@color/transparent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_12sdp"
+                    android:background="@drawable/indicator_count_bg"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_car_iamges"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_car_iamges"
+                    app:layout_constraintStart_toStartOf="@+id/iv_car_iamges">
+
+                    <TextView
+                        android:id="@+id/current_index"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="@{viewModel.currentPage.toString()}"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="1" />
+
+                    <TextView
+                        android:id="@+id/tv_div"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="/"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/current_index"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/images_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_4sdp"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="@{viewModel.pageCount.toString()}"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/tv_div"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <ImageView
+                    android:id="@+id/iv_share_icon"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintStart_toStartOf="@id/start"
+                    app:layout_constraintTop_toBottomOf="@+id/ads_view"
+                    app:layout_constraintWidth_percent="0.17"
+                    android:onClick="@{()->viewModel.onShareClicked()}"
+                    app:srcCompat="@drawable/ic_share" />
+
+                <ImageView
+                    android:id="@+id/iv_favorite_icon"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toEndOf="@id/end"
+                    app:layout_constraintTop_toBottomOf="@+id/ads_view"
+                    app:layout_constraintWidth_percent="0.17"
+                    app:srcCompat="@drawable/ic_favorite_off" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/con_car_info"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="@id/end"
+                    app:layout_constraintStart_toStartOf="@id/start"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_car_iamges">
+
+                    <TextView
+                        android:id="@+id/tv_car_title"
+                        android:layout_width="0dp"
+                        android:textSize="@dimen/_14ssp"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center_vertical"
+                        android:text="@{viewModel.carName}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_percent="0.5"
+                        tools:text="news header" />
+
+                    <TextView
+                        android:id="@+id/tv_car_price"
+                        android:layout_width="0dp"
+                        android:textSize="@dimen/_14ssp"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center_vertical"
+                        android:text="@{viewModel.carPrice}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_car_title"
+                        app:layout_constraintWidth_percent="0.5"
+                        tools:text="news header" />
+
+                    <TextView
+                        android:id="@+id/tv_car_add_date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="end|center_vertical"
+                        android:text="@{viewModel.adDate}"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_car_title"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_car_title"
+                        app:layout_constraintWidth_percent="0.5"
+                        tools:text="TextView" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cons_user"
+                    visibleIf="@{!viewModel.isMyCar}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gradient_gray_shadow"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/con_car_info">
+
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:id="@+id/iv_profile"
+                        imageUrl="@{viewModel.carOwner.profilePicture}"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/ic_profile_info_placeholder"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <ImageButton
+                        android:id="@+id/ic_call"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="0dp"
+                        android:background="@drawable/banner_indicator_nornal"
+                        android:onClick="@{() -> viewModel.startCall()}"
+                        android:src="@drawable/ic_phone"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/iv_profile" />
+
+                    <TextView
+                        android:id="@+id/tv_user_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:includeFontPadding="false"
+                        android:text="@{viewModel.carOwner.firstName+' '+viewModel.carOwner.lastName}"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_user_Status"
+                        app:layout_constraintEnd_toStartOf="@+id/ic_call"
+                        app:layout_constraintStart_toEndOf="@+id/iv_profile"
+                        app:layout_constraintTop_toTopOf="@+id/iv_profile"
+                        tools:text="mohamed saad" />
+
+                    <TextView
+                        android:id="@+id/tv_user_Status"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="Always Response"
+                        android:textColor="@color/warm_grey"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_user_name"
+                        app:layout_constraintStart_toStartOf="@+id/tv_user_name"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_user_name"
+                        tools:text="Always Respons" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/dividerColor"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_profile_info"
+                    adapter="@{viewModel.adapter}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:nestedScrollingEnabled="false"
+                    app:layout_constraintEnd_toEndOf="@id/end"
+                    app:layout_constraintStart_toStartOf="@id/start"
+                    app:layout_constraintTop_toBottomOf="@+id/cons_user"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/car_spec_item_layout" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_attributes"
+                    adapter="@{viewModel.attributesCategoriesListAdapter}"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="@id/end"
+                    app:layout_constraintStart_toStartOf="@id/start"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_profile_info"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/car_details_attribute_list_item_layout" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:clickable="@{!viewModel.isLoading()}"
+                    android:background="@drawable/bordered_corners_red"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="@dimen/_13sdp"
+                    android:id="@+id/btn_return_order"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:onClick="@{() -> viewModel.sendMessage()}"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/start"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_attributes"
+                    app:layout_constraintWidth_percent=".42"
+                    android:text="@string/str_send_message" />
+
+
+
+                <com.gtera.ui.base.buttons.LoadingButton
+                    android:onClick="@{() -> viewModel.makeOffer()}"
+                    app:layout_constraintWidth_percent=".42"
+                    android:id="@+id/btn_signup"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:focusable="false"
+                    app:layout_constraintEnd_toEndOf="@id/end"
+                    app:layout_constraintTop_toTopOf="@+id/btn_return_order"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_return_order"
+                    app:text="@string/str_make_offer" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/start"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/_15sdp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/end"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/_15sdp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

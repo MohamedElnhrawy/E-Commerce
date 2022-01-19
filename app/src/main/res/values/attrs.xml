@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomViewNavigator">
+        <attr name="layoutId" format="reference"/>
+    </declare-styleable>
+    <declare-styleable name="NavHostFrame">
+        <attr format="reference" name="navGraph"/>
+    </declare-styleable>
+
+    <declare-styleable name="LoadingButton">
+        <attr name="background" format="reference" />
+        <attr name="altBackground" format="reference" />
+        <attr name="startDrawableIcon" format="reference" />
+        <attr name="text" format="string" />
+    </declare-styleable>
+    <declare-styleable name="EditText">
+        <attr name="editText" format="string" />
+        <attr name="hint" format="string" />
+        <attr name="label" format="string" />
+        <attr name="message" format="string" />
+        <attr name="labelColor" format="color" />
+        <attr name="textColor" format="color" />
+        <attr name="successColor" format="color" />
+        <attr name="errorColor" format="color" />
+        <attr name="hintColor" format="color" />
+        <attr name="numoflines" format="integer" />
+        <attr name="inputType" format="enum">
+            <enum name="none" value="0" />
+            <enum name="text" value="1" />
+            <enum name="textPassword" value="2" />
+            <enum name="number" value="3" />
+            <enum name="numberPassword" value="4" />
+            <enum name="phone" value="5" />
+            <enum name="textEmailAddress" value="6" />
+            <enum name="textMultiLine" value="7" />
+            <enum name="textPersonName" value="8" />
+        </attr>
+        <attr name="clearBorderedBox" format="boolean" />
+        <attr name="isSuccess" format="boolean" />
+        <attr name="passwordToggleEnabled" format="boolean" />
+        <attr name="textSize" format="dimension" />
+        <attr name="labelSize" format="dimension" />
+        <attr name="messageSize" format="dimension" />
+        <attr name="messageIcon" format="reference" />
+    </declare-styleable>
+
+
+    <declare-styleable name="SliderView">
+        <attr name="sliderType" format="enum">
+            <enum name="none" value="0" />
+            <enum name="startIndicator" value="1" />
+            <enum name="scaledPage" value="2" />
+            <enum name="bottomIndicator" value="3" />
+            <enum name="swipeArrow" value="4" />
+            <enum name="largePreviewIcon" value="5" />
+            <enum name="curvyBackground" value="6" />
+            <enum name="sliderPreview" value="7" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="SwipeLayout">
+        <attr name="drag_edge">
+            <flag name="left" value="1" />
+            <flag name="right" value="2" />
+            <flag name="top" value="4" />
+            <flag name="bottom" value="8" />
+        </attr>
+        <attr name="leftEdgeSwipeOffset" format="dimension" />
+        <attr name="rightEdgeSwipeOffset" format="dimension" />
+        <attr name="topEdgeSwipeOffset" format="dimension" />
+        <attr name="bottomEdgeSwipeOffset" format="dimension" />
+        <attr name="show_mode" format="enum">
+            <enum name="lay_down" value="0" />
+            <enum name="pull_out" value="1" />
+        </attr>
+        <attr name="clickToClose" format="boolean" />
+    </declare-styleable>
+
+
+    <declare-styleable name="StateViewPager">
+
+        <!-- Orientation of the pager. -->
+        <attr name="android:orientation" />
+
+        <!-- Titles. -->
+        <attr name="android:entries" />
+
+        <attr name="numOfIcons" format="integer" />
+
+        <attr name="selectedColor" format="color" />
+        <attr name="visitedColor" format="color" />
+        <attr name="unvisitedColor" format="color" />
+
+        <attr name="visitedIntermediateColor" format="color" />
+        <attr name="unvisitedIntermediateColor" format="color" />
+
+        <attr name="selectedTextColor" format="color" />
+        <attr name="visitedTextColor" format="color" />
+        <attr name="unvisitedTextColor" format="color" />
+
+        <attr name="selectedNumberColor" format="color" />
+        <attr name="visitedNumberColor" format="color" />
+        <attr name="unvisitedNumberColor" format="color" />
+
+        <attr name="selectedCheckmarkColor" format="color" />
+        <attr name="visitedCheckmarkColor" format="color" />
+        <attr name="unvisitedCheckmarkColor" format="color" />
+
+        <attr name="selectedBorderColor" format="color" />
+        <attr name="visitedBorderColor" format="color" />
+        <attr name="unvisitedBorderColor" format="color" />
+
+        <attr name="iconWidth" format="dimension" />
+        <attr name="iconHeight" format="dimension" />
+        <attr name="marginBetweenIcons" format="dimension" />
+
+        <attr name="visitedBorderWidth" format="dimension" />
+        <attr name="selectedBorderWidth" format="dimension" />
+        <attr name="unvisitedBorderWidth" format="dimension" />
+
+        <attr name="intermediateWidth" format="dimension" />
+        <attr name="intermediateHeight" format="dimension" />
+
+        <attr name="topMargin" format="dimension" />
+        <attr name="leftMargin" format="dimension" />
+        <attr name="rightMargin" format="dimension" />
+        <attr name="bottomMargin" format="dimension" />
+
+        <attr name="visitedTextSize" format="dimension" />
+        <attr name="selectedTextSize" format="dimension" />
+        <attr name="unvisitedTextSize" format="dimension" />
+
+        <attr name="visitedTextMargin" format="dimension" />
+        <attr name="selectedTextMargin" format="dimension" />
+        <attr name="unvisitedTextMargin" format="dimension" />
+
+        <attr name="visitedGradientFill" format="boolean" />
+        <attr name="unvisitedGradientFill" format="boolean" />
+        <attr name="selectedGradientFill" format="boolean" />
+
+        <attr name="visitedIntermediateGradientFill" format="boolean" />
+        <attr name="unvisitedIntermediateGradientFill" format="boolean" />
+
+        <attr name="selectedWidth" format="dimension" />
+        <attr name="selectedHeight" format="dimension" />
+        <attr name="selectedMargin" format="dimension" />
+
+        <attr name="showVisitedCheckmark" format="boolean" />
+        <attr name="showSelectedCheckmark" format="boolean" />
+        <attr name="showUnvisitedCheckmark" format="boolean" />
+
+        <attr name="showVisitedNumber" format="boolean" />
+        <attr name="showSelectedNumber" format="boolean" />
+        <attr name="showUnvisitedNumber" format="boolean" />
+
+        <attr name="visitedIntermediateStyle" format="string" />
+        <attr name="unvisitedIntermediateStyle" format="string" />
+
+        <attr name="iconsGravity" format="string" />
+
+        <attr name="visitedTextGravity" format="string" />
+        <attr name="selectedTextGravity" format="string" />
+        <attr name="unvisitedTextGravity" format="string" />
+
+        <attr name="visitedTextStyle">
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
+        </attr>
+
+        <attr name="selectedTextStyle">
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
+        </attr>
+
+        <attr name="unvisitedTextStyle">
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
+        </attr>
+
+        <attr name="visitedDrawable" format="integer" />
+        <attr name="unvisitedDrawable" format="integer" />
+        <attr name="selectedDrawable" format="integer" />
+
+        <attr name="visitedIntermediateDrawable" format="integer" />
+        <attr name="unvisitedIntermediateDrawable" format="integer" />
+
+        <attr name="rectangularVisitedIcon" format="boolean" />
+        <attr name="rectangularUnvisitedIcon" format="boolean" />
+        <attr name="rectangularSelectedIcon" format="boolean" />
+
+    </declare-styleable>
+</resources>

@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.gtera.ui.mycars.add.AddMyCarViewModel" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/_10sdp">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_15sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_15sdp" />
+
+        <TextView
+            android:id="@+id/tv_car_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:includeFontPadding="false"
+            android:text="@{viewModel.carName}"
+            app:labelColor="@color/headerBlackColor"
+            android:textSize="@dimen/_18ssp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Hayndi Accent 2018" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_cars_photos_layout"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_120sdp"
+            android:layout_margin="@dimen/_3sdp"
+            visibleIf="@{viewModel.list.size()==0}"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@drawable/ic_doted_rectangle_red"
+            android:onClick="@{() -> viewModel.showAddPhotosDialog()}"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@id/tv_car_name">
+
+            <ImageView
+                android:id="@+id/iv_add"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:scaleType="centerInside"
+                app:layout_constraintBottom_toTopOf="@+id/textView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:srcCompat="@drawable/ic_add_my_car_add_image" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_my_car_add_picture_of_your_car"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_16sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_add" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_attorney_images"
+            gridAdapter="@{viewModel.imagesAdapter}"
+            horizontalGrid="@{true}"
+            spanCount="@{1}"
+            visibleIf="@{viewModel.list.size()>0}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@id/cl_cars_photos_layout"
+            app:spanCount="3"
+            tools:itemCount="3"
+            tools:listitem="@layout/my_car_image_item_layout" />
+
+
+        <TextView
+            android:id="@+id/tv_car_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:includeFontPadding="false"
+            android:text="@{viewModel.carCount}"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@id/rv_attorney_images"
+            tools:text="Photos 1/10" />
+
+        <TextView
+            style="@style/Header.TextView"
+            android:id="@+id/tv_category"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:includeFontPadding="false"
+            android:text="@string/str_add_my_car_Category"
+            android:textSize="@dimen/_15ssp"
+            app:labelColor="@color/editTextHeaderTextColor"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@id/tv_car_count"
+            tools:text="@string/str_add_my_car_Category" />
+
+
+        <Spinner
+            android:id="@+id/category_drop_down"
+            style="@style/SpinnerTheme"
+            onEntrySelected="@{viewModel.categoryiesListener}"
+            spinnerItems="@{viewModel.categoryNames}"
+            spinnerSelectedItem="@{viewModel.categorySelectedIndex}"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/spinner_bg"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/tv_category" />
+
+
+        <TextView
+            android:id="@+id/tv_description_header_txt"
+            style="@style/Header.TextView"
+            android:layout_width="0dp"
+            android:includeFontPadding="false"
+            android:text="@string/str_add_my_car_description"
+            android:layout_height="wrap_content"
+            android:textColor="@color/editTextHeaderTextColor"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/category_drop_down"
+            android:textSize="@dimen/_15ssp"
+            tools:text="Name" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/il_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/rounded_corners_white_with_gray_strock"
+            android:hint="@string/str_add_my_car_description"
+            app:errorEnabled="false"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/tv_description_header_txt">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="top|start"
+                android:hint="@string/str_add_my_car_description"
+                android:includeFontPadding="false"
+                android:minLines="7"
+                android:paddingStart="@dimen/_5sdp"
+                android:text="@={viewModel.descriptionText}"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorTextSecondary"
+                android:textDirection="locale"
+                android:textSize="@dimen/_12sdp"
+                tools:text="dseded"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <CheckBox
+            android:id="@+id/cb_electric_injection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:buttonTint="@color/colorPrimary"
+            android:checked="@{viewModel.isElectricInjection}"
+            android:onClick="@{()-> viewModel.onElectricInjectionChecked()}"
+            android:text="@string/str_car_compare_electronic_injection"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@id/il_description" />
+
+
+        <CheckBox
+            android:id="@+id/cb_power"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:buttonTint="@color/colorPrimary"
+            android:checked="@{viewModel.isPower}"
+            android:onClick="@{()-> viewModel.onPowerChecked()}"
+            android:text="@string/str_car_compare_Power"
+            app:layout_constraintBottom_toBottomOf="@id/cb_electric_injection"
+            app:layout_constraintStart_toEndOf="@id/cb_electric_injection"
+            app:layout_constraintTop_toTopOf="@id/cb_electric_injection" />
+
+        <TextView
+            android:id="@+id/tv_color"
+            style="@style/Header.TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:includeFontPadding="false"
+            android:text="@string/str_add_my_car_Color"
+            android:textSize="@dimen/_15ssp"
+            app:labelColor="@color/editTextHeaderTextColor"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@id/cb_electric_injection"
+            tools:text="@string/str_colors" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_colors_values"
+            gridAdapter="@{viewModel.colorsListAdapter}"
+            horizontalGrid="@{true}"
+            spanCount="@{viewModel.colorsSpanCount}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@id/tv_color"
+            app:spanCount="7"
+            tools:itemCount="12"
+            tools:listitem="@layout/filter_item_color_layout" />
+
+
+        <com.gtera.ui.base.edittext.EditText
+            android:id="@+id/et_motor_power_by_horse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/edit_view_padding"
+            app:editText="@={viewModel.motorPowerByHorseText}"
+            app:hint="@string/str_add_my_car_motor_power_by_horse"
+            app:inputType="text"
+            app:labelColor="@color/editTextHeaderTextColor"
+            app:isSuccess="@{viewModel.motorPowerByHorseTextStatus}"
+            app:label="@string/str_add_my_car_motor_power_by_horse"
+            app:labelSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/rv_colors_values"
+            app:message="@{viewModel.motorPowerByHorseTextError}" />
+
+
+        <com.gtera.ui.base.edittext.EditText
+            android:id="@+id/et_motor_cc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/edit_view_padding"
+            app:editText="@={viewModel.motorCCText}"
+            app:hint="@string/str_add_my_car_motor_cc"
+            app:inputType="text"
+            android:textColor="@color/colorTextSecondary"
+            app:labelColor="@color/editTextHeaderTextColor"
+            app:isSuccess="@{viewModel.motorCCTextStatus}"
+            app:label="@string/str_add_my_car_motor_cc"
+            app:labelSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/et_motor_power_by_horse"
+
+            app:message="@{viewModel.motorCCTextError}" />
+
+
+        <TextView
+            android:id="@+id/tv_transmation_type"
+            android:layout_width="0dp"
+            style="@style/Header.TextView"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:includeFontPadding="false"
+            android:text="@string/str_add_my_car_transmission_type"
+            android:textSize="@dimen/_15ssp"
+            app:labelColor="@color/editTextHeaderTextColor"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@id/et_motor_cc"
+            tools:text="@string/str_add_my_car_transmission_type" />
+
+
+        <Spinner
+            android:id="@+id/transmation_type_drop_down"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            onEntrySelected="@{viewModel.transmissionTypesListener}"
+            spinnerItems="@{viewModel.transmissionTypesNames}"
+            spinnerSelectedItem="@{viewModel.transmissionTypesSelectedIndex}"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/spinner_bg"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/tv_transmation_type"
+           />
+
+
+        <TextView
+            android:id="@+id/tv_pull_type"
+            android:layout_width="0dp"
+            style="@style/Header.TextView"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:includeFontPadding="false"
+            android:text="@string/str_add_my_car_pull_type"
+            android:textSize="@dimen/_15ssp"
+            app:labelColor="@color/editTextHeaderTextColor"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@id/transmation_type_drop_down"
+            tools:text="@string/str_add_my_car_pull_type" />
+
+
+        <Spinner
+            android:id="@+id/pull_type_drop_down"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            onEntrySelected="@{viewModel.pullTypesListener}"
+            spinnerItems="@{viewModel.pullTypesNames}"
+            spinnerSelectedItem="@{viewModel.pullTypesSelectedIndex}"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/spinner_bg"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/tv_pull_type"
+             />
+
+
+        <TextView
+            android:id="@+id/tv_body_type"
+            android:layout_width="0dp"
+            style="@style/Header.TextView"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:includeFontPadding="false"
+            android:text="@string/str_add_my_car_body_type"
+            android:textSize="@dimen/_15ssp"
+            app:labelColor="@color/editTextHeaderTextColor"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@id/pull_type_drop_down"
+            tools:text="@string/str_price_range" />
+
+
+        <Spinner
+            android:id="@+id/body_type_drop_down"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            onEntrySelected="@{viewModel.bodyTypesListener}"
+            spinnerItems="@{viewModel.bodyTypesNames}"
+            spinnerSelectedItem="@{viewModel.bodyTypesSelectedIndex}"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/spinner_bg"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/tv_body_type"
+           />
+
+
+        <TextView
+            android:id="@+id/tv_steering_wheel_type"
+            android:layout_width="0dp"
+            style="@style/Header.TextView"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:includeFontPadding="false"
+            android:text="@string/str_add_my_car_steering_wheel_type"
+            android:textSize="@dimen/_15ssp"
+            app:labelColor="@color/headerBlackColor"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@id/body_type_drop_down"
+
+            tools:text="@string/str_price_range" />
+
+
+        <Spinner
+            android:id="@+id/steering_wheel_type_drop_down"
+            onEntrySelected="@{viewModel.steeringWheelTypesListener}"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            spinnerItems="@{viewModel.steeringWheelTypesNames}"
+            spinnerSelectedItem="@{viewModel.steeringWheelTypesSelectedIndex}"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/spinner_bg"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/tv_steering_wheel_type"
+           />
+
+        <com.gtera.ui.base.edittext.EditText
+            android:id="@+id/et_number_of_casting"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/edit_view_padding"
+            app:editText="@={viewModel.numberOfCastingText}"
+            app:hint="@string/str_add_my_car_number_of_casting"
+            app:inputType="number"
+            android:textColor="@color/colorTextSecondary"
+            app:labelColor="@color/editTextHeaderTextColor"
+            app:isSuccess="@{viewModel.numberOfCastingTextStatus}"
+            app:label="@string/str_add_my_car_number_of_casting"
+            app:labelSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/steering_wheel_type_drop_down"
+            app:message="@{viewModel.numberOfCastingTextError}" />
+
+
+        <com.gtera.ui.base.edittext.EditText
+            android:id="@+id/et_number_of_doors"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/edit_view_padding"
+            app:editText="@={viewModel.numOfDoorsText}"
+            app:hint="@string/str_add_my_car_number_of_doors"
+            app:inputType="number"
+            android:textColor="@color/colorTextSecondary"
+            app:labelColor="@color/editTextHeaderTextColor"
+            app:isSuccess="@{viewModel.numOfDoorsTextStatus}"
+            app:label="@string/str_add_my_car_number_of_doors"
+            app:labelSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/et_number_of_casting"
+            app:message="@{viewModel.numOfDoorsTextError}" />
+
+
+        <com.gtera.ui.base.edittext.EditText
+            android:id="@+id/et_number_of_seats"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/edit_view_padding"
+            app:editText="@={viewModel.numberOfSeatsText}"
+            app:hint="@string/str_add_my_car_number_of_seats"
+            app:inputType="number"
+            android:textColor="@color/colorTextSecondary"
+            app:labelColor="@color/editTextHeaderTextColor"
+            app:isSuccess="@{viewModel.numberOfSeatsTextStatus}"
+            app:label="@string/str_add_my_car_number_of_seats"
+            app:labelSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/et_number_of_doors"
+            app:message="@{viewModel.numberOfSeatsTextError}" />
+
+
+        <com.gtera.ui.base.edittext.EditText
+            android:id="@+id/et_fuel_tank_capacity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/edit_view_padding"
+            app:editText="@={viewModel.fuelTankCapacityText}"
+            app:hint="@string/str_add_my_car_fuel_tank_capacity"
+            app:inputType="number"
+            android:textColor="@color/colorTextSecondary"
+            app:labelColor="@color/editTextHeaderTextColor"
+            app:isSuccess="@{viewModel.fuelTankCapacityTextStatus}"
+            app:label="@string/str_add_my_car_fuel_tank_capacity"
+            app:labelSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/et_number_of_seats"
+            app:message="@{viewModel.fuelTankCapacityTextError}" />
+
+
+        <com.gtera.ui.base.edittext.EditText
+            android:id="@+id/et_max_torque"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/edit_view_padding"
+            app:editText="@={viewModel.maxTorqueText}"
+            app:hint="@string/str_add_my_car_max_torque"
+            app:inputType="number"
+            app:isSuccess="@{viewModel.maxTorqueTextTextStatus}"
+            app:label="@string/str_add_my_car_max_torque"
+            android:textColor="@color/colorTextSecondary"
+            app:labelColor="@color/editTextHeaderTextColor"
+            app:labelSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/et_fuel_tank_capacity"
+            app:message="@{viewModel.maxTorqueTextTextError}" />
+
+
+        <com.gtera.ui.base.edittext.EditText
+            android:id="@+id/et_average_fuel_consumption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/edit_view_padding"
+            app:editText="@={viewModel.averageFuelConsumptionText}"
+            app:hint="@string/str_add_my_car_average_fuel_consumption"
+            app:inputType="number"
+            android:textColor="@color/colorTextSecondary"
+            app:labelColor="@color/editTextHeaderTextColor"
+            app:isSuccess="@{viewModel.averageFuelConsumptionTextStatus}"
+            app:label="@string/str_add_my_car_average_fuel_consumption"
+            app:labelSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/et_max_torque"
+            app:message="@{viewModel.averageFuelConsumptionTextError}" />
+
+        <com.gtera.ui.base.edittext.EditText
+            android:id="@+id/et_max_speed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/edit_view_padding"
+            app:editText="@={viewModel.maxSpeedText}"
+            app:hint="@string/str_add_my_car_max_speed"
+            android:textColor="@color/colorTextSecondary"
+            app:labelColor="@color/editTextHeaderTextColor"
+            app:inputType="number"
+            app:isSuccess="@{viewModel.maxSpeedTextStatus}"
+            app:label="@string/str_add_my_car_max_speed"
+            app:labelSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/et_average_fuel_consumption"
+            app:message="@{viewModel.maxSpeedTextError}" />
+
+        <com.gtera.ui.base.edittext.EditText
+            android:id="@+id/et_num_of_airbags"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/edit_view_padding"
+            app:editText="@={viewModel.numOfAirbagsText}"
+            app:hint="@string/str_add_my_car_number_of_airbags"
+            app:inputType="number"
+            app:isSuccess="@{viewModel.numOfAirbagsStatus}"
+            app:label="@string/str_add_my_car_number_of_airbags"
+            android:textColor="@color/colorTextSecondary"
+            app:labelColor="@color/editTextHeaderTextColor"
+            app:labelSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/et_max_speed"
+            app:message="@{viewModel.numOfAirbagsError}" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_attributes"
+            adapter="@{viewModel.attributesGroupListAdapter}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:nestedScrollingEnabled="false"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_num_of_airbags"
+            tools:itemCount="3"
+            tools:listitem="@layout/car_details_attribute_list_item_layout" />
+
+        <com.gtera.ui.base.buttons.LoadingButton
+            android:id="@+id/btn_save"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:clickable="true"
+            android:focusable="false"
+            app:clickListener="@{()->viewModel.addNewCar()}"
+            app:isLoading="@{viewModel.isLoading}"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/rv_attributes"
+            app:text="@string/str_save" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

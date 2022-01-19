@@ -1,0 +1,3 @@
+package com.gtera.ui.ordernow.acknowledgment
+
+interface AcknowledgmentNavigator

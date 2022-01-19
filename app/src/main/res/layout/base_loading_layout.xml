@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="androidx.lifecycle.LiveData" />
+
+        <variable
+            name="isLoading"
+            type="LiveData&lt;Boolean>" />
+
+        <variable
+            name="shimmerLayout"
+            type="Integer" />
+
+        <variable
+            name="shimmerCount"
+            type="Integer" />
+
+    </data>
+
+
+    <com.mikelau.views.shimmer.ShimmerRecyclerViewX
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:shimmer_demo_angle="20"
+        app:shimmer_demo_child_count="3"
+        shimmerViewCount="@{shimmerCount}"
+        shimmerViewLayout="@{shimmerLayout}"
+        shimmerViewLoad="@{isLoading}"
+        app:shimmer_demo_layout="@layout/shimmer_basket_layout"
+        app:shimmer_demo_layout_manager_type="linear_vertical"
+        app:shimmer_demo_mask_width="0.2" />
+
+</layout>

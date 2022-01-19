@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+<!--        android:onClick="@{clickListener}"-->
+        <Button
+            android:includeFontPadding="false"
+            android:id="@+id/btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_gravity="center"
+            android:drawablePadding="@dimen/_5sdp"
+            android:drawableStart="@{BtnStartDrawableIcon}"
+            android:text='@{isLoading ? "" : btnText}'
+            android:background="@{isEnabled ? backgroundDrawable : altBackgroundDrawable}"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/buttonTextColor"
+            android:textSize="@dimen/_13sdp"
+            android:fontFamily="@font/din_next_medium"
+            app:layout_constrainedHeight="true"
+            tools:background="@drawable/rounded_corners_primary" />
+
+        <ProgressBar
+            app:visibleIf="@{isLoading}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:clickable="false"
+            android:elevation="@dimen/_2sdp"
+            android:focusable="false"
+            android:indeterminateTint="@color/progressBarColor"
+            android:focusableInTouchMode="false"
+            android:padding="@dimen/_2sdp"
+            app:layout_constrainedHeight="true"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="@id/btn"
+            app:layout_constraintEnd_toEndOf="@id/btn"
+            app:layout_constraintStart_toStartOf="@id/btn"
+            app:layout_constraintTop_toTopOf="@id/btn" />
+
+    </FrameLayout>
+
+    <data>
+
+        <variable
+            name="btnText"
+            type="String" />
+
+        <variable
+            name="isLoading"
+            type="boolean" />
+
+        <variable
+            name="isEnabled"
+            type="boolean" />
+
+        <variable
+            name="backgroundDrawable"
+            type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="altBackgroundDrawable"
+            type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="BtnStartDrawableIcon"
+            type="android.graphics.drawable.Drawable" />
+    </data>
+
+</layout>

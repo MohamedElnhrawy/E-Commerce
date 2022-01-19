@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.view.test.EditTestActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true">
+
+        <TextView
+            style="@style/Header.TextView"
+            android:id="@+id/tv_info_header_txt"
+            android:layout_width="0dp"
+            android:textSize="@dimen/_17sdp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/il_name"
+            app:layout_constraintStart_toStartOf="@id/il_name"
+            app:layout_constraintTop_toTopOf="parent"
+            android:includeFontPadding="false"
+            tools:text="Name" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:background="@{isSuccess?@drawable/rounded_corners_wihte_with_green_strock:message.empty? @drawable/rounded_corners_white_with_gray_strock:@drawable/rounded_corners_wihte_with_red_strock}"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:id="@+id/il_name"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_35sdp"
+            app:errorEnabled="false"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_info_header_txt">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:background="@null"
+                android:textSize="@dimen/_12sdp"
+                android:paddingStart="@dimen/_5sdp"
+                tools:text="dseded"
+                android:includeFontPadding="false"
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|start"
+                android:textColor="@color/editTextHeaderTextColor"
+                android:text="@={editText}"
+                android:textAlignment="viewStart"
+                android:textDirection="locale"
+
+                 />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/imageView"
+            visibleIf="@{isSuccess || !message.isEmpty()}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            android:padding="0dp"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_2sdp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_name_msg"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@id/il_name"
+            app:layout_constraintTop_toTopOf="@id/tv_name_msg"
+            app:layout_constraintWidth_percent="0.050"
+            android:src="@{isSuccess? @drawable/ic_success : @drawable/ic_error}"
+            tools:src="@drawable/ic_error"
+            tools:visibility="visible" />
+
+
+        <TextView
+            android:id="@+id/tv_name_msg"
+            visibleIf="@{!message.isEmpty()}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{message}"
+            android:gravity="center_vertical"
+            android:layout_marginStart="@dimen/_7ssp"
+            android:textColor="@{isSuccess? @color/editTextSuccessTextColor : @color/editTextErrorTextColor}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/il_name"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@id/il_name"
+            tools:text="asdasdasdsadsad" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <data>
+
+        <variable
+            name="editText"
+            type="String" />
+
+        <variable
+            name="message"
+            type="String" />
+
+
+        <variable
+            name="isSuccess"
+            type="Boolean" />
+
+        <variable
+            name="headerColor"
+            type="android.graphics.drawable.Drawable" />
+
+    </data>
+</layout>

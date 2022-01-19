@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.gtera.ui.ordernow.details.OrderDetailsViewModel" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_20sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_20sdp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_car_header"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:elevation="0dp"
+            app:cardCornerRadius="@dimen/_3sdp"
+            app:layout_constraintDimensionRatio="1:0.5"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_car_image"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    imageUrl="@{viewModel.carImage}"
+                    android:layout_margin="@dimen/_3sdp"
+                    roundRadius="@{20}"
+                    app:layout_constraintDimensionRatio="1:0.4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_logo_toolbar" />
+
+                <TextView
+                    android:id="@+id/tv_car_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="@{viewModel.carName}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_car_image"
+                    app:layout_constraintWidth_percent="0.5"
+                    tools:text="Kia Carenz" />
+
+                <TextView
+                    android:id="@+id/tv_car_price"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:gravity="end"
+                    android:text="@{viewModel.carPrice}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_car_image"
+                    app:layout_constraintWidth_percent="0.5"
+                    tools:text="200,000 EGP" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/tv_order_disclaimer_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/str_notes"
+            style="@style/Header.TextView"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/cv_car_header"
+            tools:text="Notes :" />
+
+
+
+        <TextView
+            android:id="@+id/tv_order_disclaimer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:text="@{viewModel.order.notes}"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toEndOf="@id/tv_order_disclaimer_label"
+            app:layout_constraintTop_toTopOf="@+id/tv_order_disclaimer_label"
+            tools:text="Kia Carenz Kia Carenz Kia Carenz Kia Carenz Kia Carenz Kia Carenz Kia Carenz Kia Carenz Kia Carenz Kia Carenz Kia Carenz Kia Carenz" />
+
+
+        <TextView
+            android:id="@+id/tv_color_label"
+            style="@style/Header.TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:includeFontPadding="false"
+            android:text="@string/str_add_my_car_Color"
+            android:textSize="@dimen/_15ssp"
+            app:labelColor="@color/editTextHeaderTextColor"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@id/tv_order_disclaimer"
+            tools:text="@string/str_colors" />
+
+
+        <ImageView
+            android:id="@+id/color"
+            tintColor="@{viewModel.order.car.colors.get(0).code}"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:background="@drawable/color_item_bg"
+            android:gravity="center"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:padding="@dimen/_1sdp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_color_label"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toEndOf="@id/tv_color_label"
+            app:layout_constraintTop_toTopOf="@id/tv_color_label"
+            app:srcCompat="@drawable/color_item_bg" />
+
+        <TextView
+            android:id="@+id/tv_color"
+            style="@style/Header.TextView"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:includeFontPadding="false"
+            android:text="@{viewModel.carColorName}"
+            android:textSize="@dimen/_15ssp"
+            app:labelColor="@color/editTextHeaderTextColor"
+            app:layout_constraintEnd_toStartOf="@+id/end"
+            app:layout_constraintStart_toEndOf="@id/color"
+            app:layout_constraintTop_toBottomOf="@id/tv_order_disclaimer"
+            tools:text="@string/str_colors" />
+
+
+        <View
+            android:id="@+id/color_separator"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/dividerColor"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/tv_color" />
+
+
+        <TextView
+            android:id="@+id/tv_delivery_places_label"
+            style="@style/Header.TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/str_order_now_delivery_place"
+            android:textSize="@dimen/_15ssp"
+            app:labelColor="@color/editTextHeaderTextColor"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/color_separator"
+            tools:text="@string/str_order_now_delivery_place" />
+
+        <TextView
+            android:id="@+id/tv_delivery_places"
+            style="@style/Header.TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:text="@{viewModel.carDeliveryPlace}"
+            android:textSize="@dimen/_15ssp"
+            app:labelColor="@color/editTextHeaderTextColor"
+            app:layout_constraintBottom_toBottomOf="@id/tv_delivery_places_label"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toEndOf="@id/tv_delivery_places_label"
+            app:layout_constraintTop_toTopOf="@id/tv_delivery_places_label"
+            tools:text="@string/str_order_now_delivery_place" />
+
+        <View
+            android:id="@+id/delivery_place_separator"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/dividerColor"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/tv_delivery_places" />
+
+
+        <TextView
+            android:id="@+id/tv_branch_label"
+            style="@style/Header.TextView"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            app:layout_goneMarginTop="@dimen/_10sdp"
+            android:text="@string/str_car_insurance_branch"
+            android:textSize="@dimen/_15ssp"
+            app:labelColor="@color/editTextHeaderTextColor"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/delivery_place_separator"
+            tools:text="@string/str_car_insurance_branch" />
+
+        <TextView
+            android:id="@+id/tv_branch"
+            style="@style/Header.TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/str_car_insurance_branch"
+            android:textSize="@dimen/_15ssp"
+            android:includeFontPadding="false"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:labelColor="@color/editTextHeaderTextColor"
+            app:layout_constraintBottom_toBottomOf="@id/tv_branch_label"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toEndOf="@+id/tv_branch_label"
+            app:layout_constraintTop_toTopOf="@+id/tv_branch_label"
+            tools:text="@string/str_car_insurance_branch" />
+
+
+        <View
+            android:id="@+id/branch_separator"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@color/dividerColor"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/tv_branch" />
+
+        <RadioButton
+            android:id="@+id/rb_cash"
+            android:layout_width="23dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:buttonTint="@color/black"
+            android:checked="@={viewModel.isCashOrder}"
+            android:textColor="@{viewModel.isCashOrder? @color/colorPrimary:@color/black}"
+
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintTop_toBottomOf="@+id/branch_separator" />
+
+
+        <TextView
+            android:id="@+id/tv_cash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/rb_cash"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toTopOf="@+id/rb_cash"
+            tools:text="Cash" />
+
+        <View
+            android:id="@+id/h_seperator"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@color/dividerColor"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cash" />
+
+        <CheckBox
+            android:id="@+id/cb_car_license"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:buttonTint="@color/black"
+            android:checked="@={viewModel.hasCarLicense}"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintTop_toBottomOf="@id/h_seperator"
+             />
+
+        <TextView
+            android:id="@+id/tv_car_license"
+            style="@style/Header.TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:text="@string/str_order_now_need_license"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/cb_car_license"
+            app:layout_constraintEnd_toStartOf="@+id/cb_car_license"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toTopOf="@+id/cb_car_license" />
+
+        <TextView
+            android:id="@+id/tv_car_license_disclaimer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/str_order_now_power_attorny_names"
+            app:layout_constraintEnd_toStartOf="@+id/end"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/tv_car_license" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_power_attorney_names"
+            adapter="@{viewModel.powerAttorneyAdapter}"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@id/tv_car_license_disclaimer"
+            tools:itemCount="2"
+            tools:listitem="@layout/attorny_item_layout" />
+
+        <View
+            android:id="@+id/power_attorney_separator"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@color/dividerColor"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/rv_power_attorney_names" />
+
+
+
+
+        <CheckBox
+            android:id="@+id/cb_car_insurance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:checked="@={viewModel.hasCarInsurance}"
+            android:buttonTint="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintTop_toBottomOf="@+id/power_attorney_separator" />
+
+        <TextView
+            android:id="@+id/tv_car_insurance"
+            style="@style/Header.TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/str_order_now_with_car_insurance"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/cb_car_insurance"
+            app:layout_constraintEnd_toStartOf="@+id/cb_car_insurance"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toTopOf="@+id/cb_car_insurance" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_attorney_images"
+            gridAdapter="@{viewModel.imagesAdapter}"
+            horizontalGrid="@{true}"
+            spanCount="@{1}"
+            visibleIf="@{viewModel.imagesList.size()>0}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="@+id/end"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/rv_power_attorny_names"
+            app:spanCount="3"
+            tools:itemCount="3"
+            tools:listitem="@layout/my_car_image_item_layout" />
+
+
+
+
+        <com.gtera.ui.base.buttons.LoadingButton
+            android:id="@+id/btn_order_now"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_30sdp"
+            android:focusable="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:text="@string/str_Order_now" />
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

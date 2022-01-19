@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.gtera.ui.cars_filter.CarsFilterViewModel" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@color/mainApplicationBGColor">-->
+
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_brands_header"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="@dimen/_20sdp"-->
+<!--                android:layout_marginTop="@dimen/_20sdp"-->
+<!--                android:text="@string/str_brands_screen"-->
+<!--                android:textSize="@dimen/_22ssp"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                tools:text="Brands" />-->
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/tv_brands_search"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="@dimen/_10sdp"-->
+<!--                android:layout_marginEnd="@dimen/_10sdp"-->
+<!--                android:background="@drawable/borderd_search_box"-->
+<!--                android:focusable="false"-->
+<!--                android:focusableInTouchMode="true"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:orientation="horizontal"-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/tv_brands_header"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toEndOf="@id/tv_brands_header"-->
+<!--                app:layout_constraintTop_toTopOf="@id/tv_brands_header">-->
+
+<!--                <AutoCompleteTextView-->
+<!--                    android:id="@+id/search_bar"-->
+<!--                    preformSearch="@{viewModel.searchListener}"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:background="@null"-->
+<!--                    android:dropDownWidth="match_parent"-->
+<!--                    android:hint="@string/find_the_brand"-->
+<!--                    android:imeOptions="actionSearch"-->
+<!--                    android:maxLines="1"-->
+<!--                    android:paddingStart="@dimen/dim_search_bar_text_padding_start"-->
+<!--                    android:paddingEnd="@dimen/dim_search_bar_text_padding_end"-->
+<!--                    android:singleLine="true"-->
+<!--                    android:text="@={viewModel.searchTxt}"-->
+<!--                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
+<!--                    android:textColor="@color/primary_text"-->
+<!--                    android:textColorHint="@color/hint_text"-->
+<!--                    android:textDirection="locale"-->
+<!--                    android:textSize="@dimen/dim_search_bar_text_size"-->
+<!--                    android:textStyle="italic"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="@id/iv_search"-->
+<!--                    app:layout_constraintHorizontal_bias="0"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:layout_constraintWidth_percent="0.8" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/iv_search"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:onClick="@{()->viewModel.searchListener.preformSearch(viewModel.searchTxt)}"-->
+<!--                    android:padding="@dimen/dim_search_bar_icon_padding"-->
+<!--                    android:scaleType="centerInside"-->
+<!--                    android:tint="@color/black"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@id/search_bar"-->
+<!--                    app:layout_constraintDimensionRatio="1:1"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/search_bar"-->
+<!--                    app:srcCompat="@drawable/ic_search" />-->
+
+<!--            </LinearLayout>-->
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/rv_brands"-->
+<!--                horizontal_adapter="@{viewModel.brandsAdapter}"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/_10sdp"-->
+<!--                android:orientation="vertical"-->
+<!--                android:overScrollMode="never"-->
+<!--                android:paddingStart="@dimen/_10sdp"-->
+<!--                android:paddingEnd="@dimen/_10sdp"-->
+<!--                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
+<!--                app:layout_constrainedHeight="true"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/tv_brands_header"-->
+<!--                app:layout_constraintVertical_bias="0"-->
+<!--                app:spanCount="3"-->
+<!--                tools:itemCount="2"-->
+<!--                tools:listitem="@layout/brand_item_grid_layout" />-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/cl_colors_filter"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/_10sdp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/rv_brands">-->
+
+<!--                <View-->
+<!--                    android:id="@+id/separator_1"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="@dimen/_1sdp"-->
+<!--                    android:background="@color/dividerColor"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:layout_constraintWidth_percent="0.9" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_colors"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="@dimen/_7sdp"-->
+<!--                    android:includeFontPadding="false"-->
+<!--                    android:text="@string/str_colors"-->
+<!--                    android:textColor="@color/photos_gray"-->
+<!--                    android:textSize="@dimen/_16ssp"-->
+<!--                    app:layout_constraintStart_toStartOf="@id/separator_1"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/separator_1" />-->
+
+<!--                <androidx.recyclerview.widget.RecyclerView-->
+<!--                    gridAdapter="@{viewModel.colorsAdapter}"-->
+<!--                    spanCount="@{7}"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="@dimen/_10sdp"-->
+<!--                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
+<!--                    app:layout_constraintEnd_toEndOf="@id/separator_1"-->
+<!--                    app:layout_constraintStart_toStartOf="@id/separator_1"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/tv_colors"-->
+<!--                    app:spanCount="7"-->
+<!--                    tools:itemCount="12"-->
+<!--                    tools:listitem="@layout/filter_item_color_layout" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/cl_price_filter"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/_10sdp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/cl_colors_filter"-->
+<!--                app:layout_constraintWidth_percent="0.9">-->
+
+<!--                <View-->
+<!--                    android:id="@+id/separator_2"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="@dimen/_1sdp"-->
+<!--                    android:background="@color/dividerColor"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_price"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="@dimen/_7sdp"-->
+<!--                    android:includeFontPadding="false"-->
+<!--                    android:text="@string/str_price_range"-->
+<!--                    android:textColor="@color/photos_gray"-->
+<!--                    android:textSize="@dimen/_17ssp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    app:layout_constraintStart_toStartOf="@id/separator_2"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/separator_2" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_price_currency"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="@dimen/_5sdp"-->
+<!--                    android:includeFontPadding="false"-->
+<!--                    android:text="@string/str_range_price"-->
+<!--                    android:textColor="@color/photos_gray"-->
+<!--                    android:textSize="@dimen/_12ssp"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@id/tv_price"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/tv_price"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/tv_price" />-->
+
+<!--                <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar-->
+<!--                    android:id="@+id/rangeSeekbar"-->
+<!--                    rangeSeekbarChangeListener="@{(minValue, maxValue)->viewModel.onSeekBarChange(minValue, maxValue)}"-->
+<!--                    seekBarMaxValue="@{viewModel.initMaxPrice}"-->
+<!--                    seekBarMinValue="@{viewModel.initMinPrice}"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="@dimen/_15sdp"-->
+<!--                    app:bar_color="#5ede0023"-->
+<!--                    app:bar_highlight_color="#de0023"-->
+<!--                    app:corner_radius="5"-->
+<!--                    app:data_type="_integer"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/tv_price"-->
+<!--                    app:left_thumb_color="#de0023"-->
+<!--                    app:left_thumb_color_pressed="#de0023"-->
+<!--                    app:right_thumb_color="#de0023"-->
+<!--                    app:right_thumb_color_pressed="#de0023"-->
+<!--                    app:steps="5" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_from_label"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="@dimen/_10sdp"-->
+<!--                    android:text="@string/str_from_"-->
+<!--                    android:textSize="@dimen/_13ssp"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/rangeSeekbar" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_from"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@drawable/rounded_corners_wihte_with_red_strock"-->
+<!--                    android:paddingStart="@dimen/_20sdp"-->
+<!--                    android:paddingTop="@dimen/_2sdp"-->
+<!--                    android:paddingEnd="@dimen/_20sdp"-->
+<!--                    android:paddingBottom="@dimen/_2sdp"-->
+<!--                    android:text="@{viewModel.priceMin}"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@id/tv_from_label"-->
+<!--                    app:layout_constraintEnd_toStartOf="@id/guildline"-->
+<!--                    app:layout_constraintHorizontal_bias="0.2"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/tv_from_label"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/tv_from_label"-->
+<!--                    tools:text="5000" />-->
+
+<!--                <androidx.constraintlayout.widget.Guideline-->
+<!--                    android:id="@+id/guildline"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintGuide_percent="0.5"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_to_label"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="@string/str_to_"-->
+<!--                    android:textSize="@dimen/_13ssp"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/guildline"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/tv_from_label" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_to"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@drawable/rounded_corners_wihte_with_red_strock"-->
+<!--                    android:paddingStart="@dimen/_20sdp"-->
+<!--                    android:paddingTop="@dimen/_2sdp"-->
+<!--                    android:paddingEnd="@dimen/_20sdp"-->
+<!--                    android:paddingBottom="@dimen/_2sdp"-->
+<!--                    android:text="@{viewModel.priceMax}"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@id/tv_to_label"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintHorizontal_bias="0.2"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/tv_to_label"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/tv_to_label"-->
+<!--                    tools:text="20,000" />-->
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/cl_transmission"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/_15sdp"-->
+<!--                app:layout_constraintEnd_toEndOf="@id/cl_price_filter"-->
+<!--                app:layout_constraintStart_toStartOf="@id/cl_price_filter"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/cl_price_filter">-->
+
+<!--                <View-->
+<!--                    android:id="@+id/separator_3"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="@dimen/_1sdp"-->
+<!--                    android:background="@color/dividerColor"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_transmission"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="@dimen/_7sdp"-->
+<!--                    android:includeFontPadding="false"-->
+<!--                    android:text="@string/str_transmission"-->
+<!--                    android:textColor="@color/photos_gray"-->
+<!--                    android:textSize="@dimen/_16ssp"-->
+<!--                    app:layout_constraintStart_toStartOf="@id/separator_3"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/separator_3" />-->
+
+<!--                <androidx.recyclerview.widget.RecyclerView-->
+<!--                    gridAdapter="@{viewModel.transmissionAdapter}"-->
+<!--                    spanCount="@{2}"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="@dimen/_10sdp"-->
+<!--                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/tv_transmission"-->
+<!--                    app:spanCount="2"-->
+<!--                    tools:itemCount="2"-->
+<!--                    tools:listitem="@layout/filter_item_transmission_layout" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+<!--            <androidx.constraintlayout.widget.Guideline-->
+<!--                android:id="@+id/center_guildline"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintGuide_percent="0.5"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+
+<!--            <Button-->
+<!--                android:id="@+id/btn_apply_filter"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="@dimen/_5sdp"-->
+<!--                android:background="@drawable/rounded_corners_primary"-->
+<!--                android:onClick="@{()->viewModel.applyFilter()}"-->
+<!--                android:text="@string/str_apply"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="@dimen/_13ssp"-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/btn_reset_filter"-->
+<!--                app:layout_constraintEnd_toEndOf="@id/cl_price_filter"-->
+<!--                app:layout_constraintStart_toEndOf="@id/center_guildline"-->
+<!--                app:layout_constraintTop_toTopOf="@id/btn_reset_filter" />-->
+
+<!--            <Button-->
+<!--                android:id="@+id/btn_reset_filter"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="@dimen/_5sdp"-->
+<!--                android:background="@drawable/rounded_corners_wihte_with_red_strock"-->
+<!--                android:onClick="@{()->viewModel.resetFilter()}"-->
+<!--                android:text="@string/str_reset"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:textColor="@color/colorPrimary"-->
+<!--                android:textSize="@dimen/dim_confirmation_dialog_btn_cancel_text_size"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toStartOf="@id/center_guildline"-->
+<!--                app:layout_constraintStart_toStartOf="@id/cl_price_filter"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/cl_transmission" />-->
+
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+    </androidx.core.widget.NestedScrollView>
+</layout>

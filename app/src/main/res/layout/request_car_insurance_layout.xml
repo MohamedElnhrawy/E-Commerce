@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.gtera.ui.mycars.insurance.carinsurancerenewal.RequestCarInsuranceViewModel" />
+
+    </data>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/start"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/_20sdp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/end"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/_20sdp" />
+
+
+            <com.gtera.ui.base.edittext.EditText
+                android:id="@+id/et_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:editText="@={viewModel.name}"
+                app:hintColor="@color/headerBlackColor"
+                app:isSuccess="@{viewModel.nameStatus}"
+                app:label="@string/str_car_insurance_name"
+                app:labelColor="@color/colorTextSecondary"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintStart_toStartOf="@id/start"
+                app:layout_constraintTop_toTopOf="parent"
+                app:message="@{viewModel.nameError}"
+                app:textColor="@color/headerBlackColor">
+
+
+            </com.gtera.ui.base.edittext.EditText>
+
+
+            <com.gtera.ui.base.edittext.EditText
+                android:id="@+id/et_mobile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:editText="@={viewModel.mobile}"
+                app:hintColor="@color/headerBlackColor"
+                app:isSuccess="@{viewModel.mobileStatus}"
+                app:inputType="number"
+                app:label="@string/str_account_details_phone_number"
+                app:labelColor="@color/colorTextSecondary"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintStart_toStartOf="@id/start"
+                app:layout_constraintTop_toBottomOf="@+id/et_name"
+                app:message="@{viewModel.mobileError}"
+                app:textColor="@color/headerBlackColor">
+
+
+            </com.gtera.ui.base.edittext.EditText>
+
+
+            <com.gtera.ui.base.edittext.EditText
+                android:id="@+id/et_chassis_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:editText="@={viewModel.chassisNumber}"
+                app:hintColor="@color/headerBlackColor"
+                app:isSuccess="@{viewModel.chassisNumberStatus}"
+                app:label="@string/str_car_insurance_chassis_number"
+                app:labelColor="@color/colorTextSecondary"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintStart_toStartOf="@id/start"
+                app:layout_constraintTop_toBottomOf="@+id/et_mobile"
+                app:message="@{viewModel.chassisNumberError}"
+                app:textColor="@color/headerBlackColor" />
+
+
+            <TextView
+                android:id="@+id/tv_branches_header_txt"
+                style="@style/Header.TextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="@string/str_car_insurance_branch"
+                android:textColor="@color/colorTextSecondary"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintStart_toStartOf="@id/start"
+                app:layout_constraintTop_toBottomOf="@+id/et_chassis_number"
+                tools:text="BirthDate" />
+
+            <Spinner
+                android:id="@+id/spinner_branches"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                onEntrySelected="@{viewModel.branchesListener}"
+                spinnerItems="@{viewModel.branchesNames}"
+                spinnerSelectedItem="@{viewModel.branchesSelectedIndex}"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/spinner_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_branches_header_txt"
+                app:layout_constraintWidth_percent="0.87" />
+
+            <TextView
+                android:id="@+id/tv_spinner_branches_error"
+                visibleIf="@{viewModel.branchesSelectionStatus}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_7ssp"
+                android:gravity="center_vertical"
+                android:text="@{viewModel.branchesError}"
+                android:textColor="@color/editTextErrorTextColor"
+                app:layout_constraintEnd_toEndOf="@id/spinner_branches"
+                app:layout_constraintStart_toStartOf="@id/spinner_branches"
+                app:layout_constraintTop_toBottomOf="@id/spinner_branches"
+                tools:text="asdasdasdsadsad" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_licence_front_photo"
+                visibleIf="@{!viewModel.licenseFrontImageAdded}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/ic_doted_rectangle_black"
+                android:onClick="@{()-> viewModel.showChangePhotoDialog(0,1)}"
+                app:layout_constraintEnd_toStartOf="@+id/end"
+                app:layout_constraintStart_toStartOf="@+id/start"
+                app:layout_constraintTop_toBottomOf="@id/tv_spinner_branches_error">
+
+
+                <ImageView
+                    android:id="@+id/iv_licence_front_upload"
+                    visibleIf="@{!viewModel.licenseFrontImageAdded}"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/_15sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.1"
+                    app:srcCompat="@drawable/ic_upload_image" />
+
+                <TextView
+                    android:id="@+id/iv_licence_front_upload_txt"
+                    visibleIf="@{!viewModel.licenseFrontImageAdded}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text="@string/str_car_insurance_add_licence_front_photo"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_licence_front_upload"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/iv_licence_front_upload"
+                    app:layout_constraintTop_toTopOf="@id/iv_licence_front_upload" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_license_front_added_txt"
+                visibleIf="@{viewModel.licenseFrontImageAdded}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/str_car_insurance_license_front_image_added"
+                app:layout_constraintStart_toStartOf="@+id/start"
+                app:layout_constraintTop_toBottomOf="@id/cl_licence_front_photo" />
+
+
+            <ImageView
+                android:id="@+id/iv_license_front_remove"
+                visibleIf="@{viewModel.licenseFrontImageAdded}"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:onClick="@{()-> viewModel.onRemoveLicenseFrontImage()}"
+                app:layout_constraintBottom_toBottomOf="@id/tv_license_front_added_txt"
+                app:layout_constraintStart_toEndOf="@id/tv_license_front_added_txt"
+                app:layout_constraintTop_toTopOf="@id/tv_license_front_added_txt"
+                app:srcCompat="@drawable/ic_error" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_licence_back_photo"
+                visibleIf="@{!viewModel.licenseBackImageAdded}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/ic_doted_rectangle_black"
+                android:onClick="@{()-> viewModel.showChangePhotoDialog(2,3)}"
+                app:layout_constraintEnd_toStartOf="@+id/end"
+                app:layout_constraintStart_toStartOf="@+id/start"
+                app:layout_constraintTop_toBottomOf="@id/tv_license_front_added_txt">
+
+
+                <ImageView
+                    android:id="@+id/iv_licence_back_upload"
+                    visibleIf="@{!viewModel.licenseBackImageAdded}"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/_15sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.1"
+                    app:srcCompat="@drawable/ic_upload_image" />
+
+                <TextView
+                    android:id="@+id/iv_licence_back_upload_txt"
+                    visibleIf="@{!viewModel.licenseBackImageAdded}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text="@string/str_car_insurance_add_licence_back_photo"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_licence_back_upload"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/iv_licence_back_upload"
+                    app:layout_constraintTop_toTopOf="@id/iv_licence_back_upload" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_license_back_added_txt"
+                visibleIf="@{viewModel.licenseBackImageAdded}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/str_car_insurance_license_back_image_added"
+                app:layout_constraintStart_toStartOf="@+id/start"
+                app:layout_constraintTop_toBottomOf="@id/cl_licence_back_photo" />
+
+
+            <ImageView
+                android:id="@+id/iv_license_back_remove"
+                visibleIf="@{viewModel.licenseBackImageAdded}"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:onClick="@{()-> viewModel.onRmoveLicenseBackImage()}"
+                app:layout_constraintBottom_toBottomOf="@id/tv_license_back_added_txt"
+                app:layout_constraintStart_toEndOf="@id/tv_license_back_added_txt"
+                app:layout_constraintTop_toTopOf="@id/tv_license_back_added_txt"
+                app:srcCompat="@drawable/ic_error" />
+
+            <com.gtera.ui.base.buttons.LoadingButton
+                android:id="@+id/btn_add_to_compare"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="569dp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:focusable="false"
+                android:padding="@dimen/_5sdp"
+                app:clickListener="@{() -> viewModel.requestInsuranceBtnClick()}"
+                app:isLoading="@{viewModel.isLoading}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:text="@string/str_car_insurance_request" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>

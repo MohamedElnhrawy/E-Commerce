@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/car_nav_graph"
+    app:startDestination="@id/myCarsFragment">
+    <fragment
+        android:id="@+id/myCarsFragment"
+        android:name="com.gtera.ui.mycars.MyCarsFragment"
+        android:label="myCarsFragment">
+
+        <action
+            android:id="@+id/action_car_compare"
+            app:destination="@id/carCompareListFragment" />
+
+
+
+        <action
+            android:id="@+id/action_insurance_list"
+            app:destination="@id/insuranceListFragment" />
+        <action
+            android:id="@+id/action_maintenance_list"
+            app:destination="@id/maintenanceFragment" />
+
+
+        <action
+            android:id="@+id/action_my_cars_list"
+            app:destination="@id/myCarsListFragment" />
+
+
+        <action
+            android:id="@+id/action_order_list"
+            app:destination="@id/orderListFragment" />
+
+        <action
+            android:id="@+id/action_show_advertiseList"
+            app:destination="@id/advertiseListFragment" />
+
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/carCompareListFragment"
+        android:name="com.gtera.ui.mycars.carcompare.list.CarCompareListFragment"
+        android:label="CarCompareListFragment" >
+
+        <action
+            android:id="@+id/action_car_compare_details"
+            app:destination="@id/carCompareDetailsFragment" />
+
+
+        <action
+            android:id="@+id/action_car_details"
+            app:destination="@id/carDetailsFragment" />
+
+        <action
+            android:id="@+id/action_used_car_details"
+            app:destination="@id/usedCarDetailsFragment" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/carCompareDetailsFragment"
+        android:name="com.gtera.ui.mycars.carcompare.result.CarCompareDetailsFragment"
+        android:label="CarCompareDetailsFragment" />
+
+
+    <fragment
+        android:id="@+id/requestCarInsuranceFragment"
+        android:name="com.gtera.ui.mycars.insurance.carinsurancerenewal.RequestCarInsuranceFragment"
+        android:label="RequestCarInsuranceFragment" />
+
+    <fragment
+        android:id="@+id/insuranceListFragment"
+        android:name="com.gtera.ui.mycars.insurance.insurancerequeatslist.InsuranceListFragment"
+        android:label="InsuranceListFragment" >
+        <action
+            android:id="@+id/action_car_renewal_insurance"
+            app:destination="@id/requestCarInsuranceFragment" />
+
+        <action
+            android:id="@+id/action_insurance_details"
+            app:destination="@id/insuranceDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/insuranceDetailsFragment"
+        android:name="com.gtera.ui.mycars.insurance.insurancedetails.InsuranceDetailsFragment"
+        android:label="insuranceDetailsFragment" >
+
+        <action
+            android:id="@+id/action_insurance_endorsement"
+            app:destination="@id/endorsementFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/endorsementFragment"
+        android:name="com.gtera.ui.mycars.insurance.endorsement.EndorsementFragment"
+        android:label="endorsementFragment" >
+        <action
+            android:id="@+id/action_endorsement_payment"
+            app:destination="@id/onlinePaymentFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/myCarsListFragment"
+        android:name="com.gtera.ui.mycars.list.MyCarsListFragment"
+        android:label="MyCarsListFragment" >
+        <action
+            android:id="@+id/action_used_car_details"
+            app:destination="@id/usedCarDetailsFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/maintenanceFragment"
+        android:name="com.gtera.ui.mycars.maintenance.MaintenanceListListFragment"
+        android:label="MaintenanceFragment" >
+        <action
+            android:id="@+id/action_new_Maintenance"
+            app:destination="@id/newMaintenanceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newMaintenanceFragment"
+        android:name="com.gtera.ui.mycars.maintenance.add_maintenance.NewMaintenanceFragment"
+        android:label="NewMaintenanceFragment" />
+    <fragment
+        android:id="@+id/onlinePaymentFragment"
+        android:name="com.gtera.ui.mycars.insurance.online_payment.OnlinePaymentFragment"
+        android:label="OnlinePaymentFragment" />
+
+    <fragment
+        android:id="@+id/carDetailsFragment"
+        android:name="com.gtera.ui.cardetials.CarDetailsFragment"
+        android:label="CarDetailsFragment" >
+        <action
+            android:id="@+id/action_order_now"
+            app:destination="@id/orderNowFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/usedCarDetailsFragment"
+        android:name="com.gtera.ui.usedcardetails.UsedCarDetailsFragment"
+        android:label="UsedCarDetailsFragment" />
+
+    <fragment
+        android:id="@+id/orderNowFragment"
+        android:name="com.gtera.ui.ordernow.OrderNowFragment"
+        android:label="OrderNowFragment" />
+
+
+
+    <fragment
+        android:id="@+id/orderListFragment"
+        android:name="com.gtera.ui.ordernow.list.OrderListFragment"
+        android:label="OrderListFragment"  >
+
+        <action
+            android:id="@+id/action_order_orderDetails"
+            app:destination="@id/orderDetailsFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/orderDetailsFragment"
+        android:name="com.gtera.ui.ordernow.details.OrderDetailsFragment"
+        android:label="OrderDetailsFragment" >
+
+        <action
+            android:id="@+id/action_order_acknowledgment"
+            app:destination="@id/acknowledgmentFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/acknowledgmentFragment"
+        android:name="com.gtera.ui.ordernow.acknowledgment.AcknowledgmentFragment"
+        android:label="AcknowledgmentFragment" >
+
+        <action
+            android:id="@+id/action_order_orderOnlinePayment"
+            app:destination="@id/orderOnlinePaymentFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/orderOnlinePaymentFragment"
+        android:name="com.gtera.ui.ordernow.pay.OrderOnlinePaymentFragment"
+        android:label="OrderOnlinePaymentFragment" />
+
+
+
+    <fragment
+        android:id="@+id/advertiseListFragment"
+        android:name="com.gtera.ui.profile.advertise.AdvertiseListFragment"
+        android:label="AdvertiseListFragment" />
+
+</navigation>

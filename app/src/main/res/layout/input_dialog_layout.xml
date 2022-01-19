@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.gtera.ui.dialog.inputdialog.InputDialogViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corners_white"
+        android:minWidth="@dimen/dim_confirmation_dialog_min_width"
+        android:paddingBottom="@dimen/dim_confirmation_dialog_padding">
+
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:background="@drawable/rounded_corners_primary"
+            android:onClick="@{()-> viewModel.onButtonClicked()}"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:text="@{viewModel.buttonText}"
+            android:textAllCaps="false"
+            android:textColor="@color/confirmationDialogButtonCancelTxtColor"
+            android:textSize="@dimen/dim_confirmation_dialog_btn_cancel_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_message"
+            app:layout_constraintWidth_percent="0.85"
+            tools:text="@string/no" />
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="@{viewModel.inputTitle}"
+            android:textColor="@color/confirmationDialogMessageTxtColor"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tv_message"
+            app:layout_constraintStart_toStartOf="@+id/tv_message"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Are you sure for this confirmation?" />
+
+        <EditText
+            android:id="@+id/tv_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:inputType="text"
+            android:background="@drawable/rounded_corners_white_with_gray_strock"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:padding="@dimen/dim_confirmation_dialog_tv_message_padding"
+            android:text="@={viewModel.inputText}"
+            android:textColor="@color/confirmationDialogMessageTxtColor"
+            app:layout_constraintEnd_toEndOf="@+id/btn_cancel"
+            app:layout_constraintStart_toStartOf="@+id/btn_cancel"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

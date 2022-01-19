@@ -1,0 +1,27 @@
+{
+	"data": [{
+             	"id": 1,
+             	"questition": "canI get a car with installment years more than 3 years ?",
+             	"answer": "Yes you can have installment till 10 years ",
+             	"active": true
+             },
+               {
+             	"id": 1,
+             	"questition": "canI get a car with installment years more than 3 years ?",
+             	"answer": "Yes you can have installment till 10 years ",
+             	"active": true
+             },
+               {
+             	"id": 1,
+             	"questition": "canI get a car with installment years more than 3 years ?",
+             	"answer": "Yes you can have installment till 10 years ",
+             	"active": true
+             },
+               {
+             	"id": 1,
+             	"questition": "canI get a car with installment years more than 3 years ?",
+             	"answer": "Yes you can have installment till 10 years ",
+             	"active": true
+             }
+	]
+}

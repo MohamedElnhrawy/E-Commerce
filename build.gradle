@@ -1,0 +1,82 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.3.61'
+    ext.lifecycle_version = '1.1.1'
+    ext.navigation_version = '2.2.2'
+    ext.retrofit_version = '2.6.0'
+    ext.dagger2_version = '2.24'
+    ext.javax_annotation = '3.1.1'
+    ext.rx_java_version = '2.1.15'
+    ext.rx_android_version = '2.0.2'
+    ext.android_x_version = '1.1.0'
+    ext.constraint_layout_version = '1.1.3'
+    ext.junit_version = '4.12'
+    ext.androidx_junit_version = '1.1.1'
+    ext.espresso_version = '3.2.0'
+    ext.lifecycle_version = '2.2.0'
+    ext.data_binding_version = '3.1.3'
+    ext.room_version = '1.1.1'
+    ext.rx_room_version = '2.2.4'
+    ext.lifecycleVersion = '2.2.0'
+    ext.gson_version = '2.8.6'
+    ext.firebaseCoreVersion = '17.4.0'
+    ext.firebaseMessagingVersion = '20.2.4'
+    ext.firebaseAnalyticsVersion = '17.5.0'
+    ext.facebookVersion="5.0.1"
+    ext.deviceNamesVersion = "1.1.9"
+    ext.ssp_sdpVersion = "1.0.6"
+    ext.bannerViewVersion="2.7.1"
+    ext.shimmerRecyclerView="1.0.3"
+    ext.aviLodingVersion="2.1.3"
+    ext.materialDesignVersion ="1.1.0"
+    ext.appCompactVersion = "1.1.0"
+    ext.rx_binding = "3.0.0"
+    ext.banner_version = "2.7.1"
+    ext.banner_viewPagerVersion = "2.0.0"
+    ext.circularImageViewVersion = "3.2.0"
+    ext.glideVersion = "4.10.0"
+    ext.data_binding_compiler_version= "3.1.4"
+    ext.recyclerView_Version= "1.1.0 "
+    ext.logger_interceptor= "3.11.0"
+    ext.androidxPalette= "1.0.0"
+    ext.crystalrangeseekbarVersion= "1.1.3"
+    ext.carouselViewVersion = "0.1.5"
+    ext.rxLocation = "1.0.5"
+
+
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://maven.fabric.io/public' }
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.android.tools.build.jetifier:jetifier-processor:1.0.0-beta01'
+        classpath 'io.michaelrocks:paranoid-gradle-plugin:0.2.5'
+        classpath 'io.fabric.tools:gradle:1.30.0'
+        classpath 'com.google.gms:google-services:4.3.3'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.2.0'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+        maven {
+            url 'https://maven.fabric.io/public'
+        }
+
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

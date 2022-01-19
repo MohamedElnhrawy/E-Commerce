@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gtera E-Commerce</string>
+    <string name="app_logo">Gtera E-Commerce</string>
+
+    <!-- navigation icons text -->
+    <string name="str_navigation_home">الرئيسية</string>
+    <string name="str_navigation_cars">سيارات</string>
+    <string name="str_navigation_search">بحث</string>
+    <string name="str_navigation_profile">الحساب</string>
+
+    <!-- Home Screen -->
+    <string name="str_home_calculate_it_your_self">احسبها بنفسك</string>
+    <string name="str_home_choose_your_budget">اختار ميزانيتك</string>
+    <string name="str_home_ads">مساحة اعلانية</string>
+
+    <string name="confirm">تأكيد</string>
+    <string name="cancel">إلغاء</string>
+
+    <string name="need_login">تحتاج الى تسجيل الدخول</string>
+    <string name="require_login">لا بد من تسجيل الدخول اولا لكى تتمكن من تنفيذ هذا الاجراء</string>
+    <string name="require_login_pos_btn">تسجيل الدخول</string>
+    <string name="require_login_neg_btn">إلغاء</string>
+
+    <string name="str_error">خطأ</string>
+    <string name="str_ok">تم</string>
+    <string name="yes">نعم</string>
+
+    <string name="confirmation">تأكيد</string>
+    <string name="try_again">حاول مجددا</string>
+    <string name="mobile">الموبيل :</string>
+    <string name="check_connection">برجاء التأكد من الاتصال بالانترنت</string>
+    <string name="something_went_wrong">حدث خطأ ما, يرجى المحاولة فى وقت لاحق</string>
+    <string name="no">لا</string>
+    <string name="log_out_success">تم تسجيل الخروج بنجاح.</string>
+    <string name="log_in_success">تم تسجيل الدخول بنجاح</string>
+    <string name="error_title">عنوان الخطأ</string>
+    <string name="error_message">رسالة الخطأ</string>
+    <string name="share_content">مشاركة المحتوى</string>
+    <string name="banner_error">خطأ</string>
+    <string name="banner_success">تم</string>
+    <string name="oops">عفوا!</string>
+    <string name="empty_default_txt">لم يتم العثور على نتائج \n برجاء المحاولة فى وقت لاحق </string>
+    <string name="forgot_password">نسيت كلمة المرور ؟</string>
+    <string name="dont_have_account">ليس لديك حساب ؟</string>
+    <string name="signup">تسجيل</string>
+    <string name="sign_with">او سجل الدخول بـ</string>
+    <string name="sign_with_facebook">سجل الدخول بالفيسبوك</string>
+    <string name="sign_with_google">سجل الدخول بجوجل</string>
+    <string name="name">الأسم</string>
+    <string name="email">البريد الالكترونى</string>
+    <string name="password">كلمة المرور</string>
+    <string name="sign_in">تسجيل الدخول</string>
+    <string name="sign_up">تسجيل</string>
+    <string name="already_have_account">لديك حساب ؟</string>
+    <string name="or_signin_with">او سجل الدخول بـ</string>
+    <string name="banner_icon">banner icon</string>
+    <string name="str_home_categories_new_cars">سيارات جديدة</string>
+    <string name="str_home_categories_used_cars">سيارات مستعملة</string>
+    <string name="str_home_news_header">اخر الاخبار</string>
+    <string name="str_home_categories_header">التصنيفات</string>
+    <string name="str_home_top_deals_header">أهم الصفقات</string>
+    <string name="str_home_offers_header">عروض</string>
+    <string name="str_egp">%s ج.م</string>
+    <string name="str_percentage">%s %%</string>
+    <string name="str_discount_off">%s خصم</string>
+    <string name="str_item">بند</string>
+    <string name="str_advance_of">مقدم %s</string>
+    <string name="str_home_offers_per_month">شهريا</string>
+
+    <string name="field_is_required">%s حقل مطلوب.</string>
+    <string name="password_too_short">يجب أن تحتوي كلمة المرور على 6 أحرف على الأقل.</string>
+    <string name="enter_valid_email">البريد الالكتروني غير صحيح</string>
+    <string name="user_name_length_short">يجب ألا يقل الاسم عن 3 أحرف.</string>
+    <string name="start_special_characters">لا يمكن أن يحتوي الاسم على حروف خاصة.</string>
+    <string name="user_name">الاسم</string>
+    <string name="looks_great">يبدو جيد!</string>
+
+    <!-- Profile -->
+    <string name="str_profile_account_welcome">مرحبا !</string>
+    <string name="str_profile_account_detials">تفاصيل الحساب</string>
+    <string name="str_profile_change_password">تغيير كلمة المرور</string>
+    <string name="str_profile_notification">التنبيهات</string>
+    <string name="str_profile_messages">الرسائل</string>
+    <string name="str_profile_compare">المقارنات</string>
+    <string name="str_profile_favorite">المفضلات</string>
+    <string name="str_profile_get_in_toutch">تواصل معنا </string>
+    <string name="str_profile_faq">الاسئلة الشائعه</string>
+    <string name="str_profile_logout">الخروج</string>
+    <string name="str_profile_language">اللغه</string>
+    <string name="str_profile_sign_in">تسجيل الدخول</string>
+    <string name="str_profile_title">الحساب</string>
+    <string name="str_profile_log_out_confirmation_message">أنت على وشك الخروج ... \n هل انت متأكد؟</string>
+
+    <string name="str_my_car_empty_txt">لم تقم بإضفة اى سيارة</string>
+    <string name="str_brands_screen">ماركات</string>
+    <string name="str_brands_title">الماركات</string>
+    <string name="find_the_brand">أوجد الماركة</string>
+    <string name="str_change_password_header">تغيير كلمة المرور</string>
+    <string name="str_found">موجود</string>
+    <string name="str_reset_password">إعادة تعيين كلمة المرور</string>
+    <string name="str_forget_password_description">أدخل البريد الإلكتروني المرتبط بحسابك.</string>
+    <string name="str_reset_email_sent">تم إرسال رسالة إلى بريدك الإلكتروني</string>
+    <string name="str_sign_in">تسجيل الدخول</string>
+    <string name="str_mail_sent_to">لقد أرسلنا رسالة بريد إلكتروني إلى</string>
+    <string name="str_old_password">كلمة المرور القديمه</string>
+    <string name="str_enter_password">كلمة المرور</string>
+    <string name="str_new_password">كلمة المرور الجديدة</string>
+    <string name="str_confirm_password">تأكيد كلمة المرور</string>
+    <string name="str_save">حفظ</string>
+    <string name="str_updated_successfully">تم التعديل بنجاح.</string>
+    <string name="str_registered_successfully">تم التسجيل بنجاح.</string>
+    <string name="str_current_password">كلمة المرور الحالية</string>
+    <string name="str_password_too_short">يجب أن تحتوي كلمة المرور على 6 أحرف على الأقل.</string>
+    <string name="str_passwords_dont_match">كلمة المرور الجديدة ليست مطابقة</string>
+    <string name="str_photos">الصور</string>
+    <string name="str_start_from">تبدأ من %s</string>
+    <string name="str_Liter">%s ل.</string>
+    <string name="str_KM">%s ك م.</string>
+    <string name="str_km">ك م</string>
+    <string name="str_doors">%s ابواب.</string>
+    <string name="str_seats">%s مقاعد.</string>
+    <string name="str_Order_now">أطلب الأن</string>
+
+    <!-- car sorting  options -->
+    <string name="str_car_sorting">رتب</string>
+    <string name="str_car_sorting_latest">الأحدث</string>
+    <string name="str_car_high_prices">اعلى اسعار</string>
+    <string name="str_car_low_prices">اقل اسعار</string>
+    <string name="str_car_popularity">الشعبية</string>
+
+    <!-- home lising headers -->
+    <string name="str_home_listing_news_title">الأخبار</string>
+    <string name="str_home_listing_top_deals_title">الصفقات</string>
+    <string name="str_home_listing_offers_title">العروض</string>
+
+    <!-- Search view -->
+    <string name="str_search_error_msg">برجاء البحث باكثر من حرفين</string>
+    <string name="str_home_search_placeholder">ابحث في القائمة</string>
+
+    <!-- news -->
+    <string name="str_similar_news">أخبار ذات صلة</string>
+
+
+    <!-- Choose Your Budget -->
+    <string name="str_choose_your_budget">اختار ميزانيتك</string>
+    <string name="str_from">من  %s</string>
+    <string name="str_to">%s الى </string>
+
+    <!-- News -->
+    <string name="str_latest_news">أخر الاخبار </string>
+
+    <!-- Car Compare -->
+    <string name="str_car_added_to_compare_successfully">تم إضافة السيارة الى المقارنات بنجاح</string>
+    <string name="str_car_compare_empty_header">لم تقم بأضافة اى سيارة</string>
+    <string name="str_car_compare_empty_message">أضف السيارات المفضله للمقارنة</string>
+    <string name="str_car_compare_Add">أضف</string>
+    <string name="str_car_compare_number_validation_message">من فضلك اختار اكثر من عربية للمقارنة</string>
+    <string name="str_car_compare_starting_price">اقل سعر</string>
+    <string name="str_car_compare_max_price">اعلى سعر</string>
+    <string name="str_car_compare_num_of_engine_gears">عدد الصبابات</string>
+    <string name="str_car_compare_fuel_tank_capacity">سعة خزان الوقود</string>
+    <string name="str_car_compare_acceleration">التسارع</string>
+    <string name="str_car_compare_num_of_seats">عدد المقاعد</string>
+    <string name="str_car_compare_num_of_doors">عدد الابواب</string>
+    <string name="str_car_compare_max_torque">العزم الاقصى</string>
+    <string name="str_car_compare_average_fuel_consumbtion">منوسط استهلاك الوقود</string>
+    <string name="str_car_compare_max_power_by_horse">اقصى قوه بالحصان</string>
+    <string name="str_car_compare_body_type">النمط</string>
+    <string name="str_car_compare_steering_wheel_type">نوع عجلة القياده</string>
+    <string name="str_car_compare_pull_type">نوع الجر</string>
+    <string name="str_car_compare_electronic_injection">حقن الكترونى</string>
+    <string name="str_car_compare_Power">بور</string>
+    <string name="str_car_compare_monthly_payment">قسط شهرى</string>
+    <string name="str_car_compare_manufacture_year">تاريخ الصنع</string>
+    <string name="str_yes">نعم</string>
+    <string name="str_no">لا</string>
+    <string name="log_removed_from_compare">تم الحذف من قائمة المقارنات</string>
+
+    <!-- Empty View -->
+    <string name="str_empty_view_header">إنتبه !</string>
+    <string name="str_empty_view_message">حصل خطأ ما برجاء المحاولة مجدداً</string>
+
+
+    <!-- My Car View -->
+    <string name="str_myCar">سياراتى</string>
+    <string name="str_maintenance">تصليحات</string>
+    <string name="str_my_advertising">اعلاناتى</string>
+    <string name="str_compare">المقارنات</string>
+    <string name="str_renewal_insurance">تجديد التأمين</string>
+
+    <!-- Account Details -->
+    <string name="str_account_details_header">تفاصيل الحساب</string>
+    <string name="str_account_details_first_name">الأسم الاول</string>
+    <string name="str_account_details_last_name">الأسم الاخير</string>
+    <string name="str_account_details_email">البريد الالكترونى</string>
+    <string name="str_account_details_phone_number">رقم التليفون</string>
+    <string name="str_account_details_birthdate">تاريخ الميلاد</string>
+    <string name="str_account_details_gender">النوع</string>
+    <string name="str_account_details_governorate">المحافظه</string>
+    <string name="str_account_details_city">المدينة</string>
+    <string name="str_account_details_edit">تعديل</string>
+    <string name="str_profile_edit_first_name_length_short">يجب ألا يقل الاسم الاول عن 3 أحرف</string>
+    <string name="str_profile_edit_last_name_length_short">يجب ألا يقل الاسم الاخير عن 3 أحرف</string>
+    <string name="str_profile_edit_email_validation">البريد الالكتروني غير صحيح</string>
+    <string name="str_profile_edit_phone_validation">رقم التليفون غير صحيح</string>
+    <string name="str_profile_edit_governorate_validation">من فضلك اختر المحافظة</string>
+    <string name="str_profile_edit_city_validation">من فضلك اختر المدينة</string>
+    <string name="str_profile_edit_first_name_special_characters">لا يمكن أن يحتوي الاسم الاول على حروف خاصة.</string>
+    <string name="str_profile_edit_last_name_special_characters">لا يمكن أن يحتوي الاسم الاخير على حروف خاصة.</string>
+    <string name="str_profile_edit_mobile_special_characters">لا يمكن أن يحتوي رقم التليفون على حروف خاصة.</string>
+
+
+    <!-- Edit Account -->
+    <string name="str_edit_account_male">ذكر</string>
+    <string name="str_edit_account_female">انثى</string>
+    <string name="str_edit_account_first_name_validation">الاسم الاول لابد ان يحتوى على 3 حروف ع الاقل</string>
+    <string name="str_edit_account_last_name_validation">الاسم الاخير لابد ان يحتوى على 3 حروف ع الاقل</string>
+    <string name="str_edit_account_email_validation">ادخل بريد الكترونى صحيح</string>
+    <string name="str_edit_account_phone_number_validation">رقم التليفون لا بد ان يحتوى على 11 رقم</string>
+
+    <!--Search -->
+    <string name="str_tool_bar_search">بحث</string>
+    <string name="str_search_brands_all">الكل</string>
+    <string name="str_search_length_error">من فضلك اكتب اكتر من حرفين</string>
+    <string name="str_search_related_cars">سيارات ذات صلة</string>
+
+    <!-- take photo  options -->
+    <string name="str_change_photo">تغيير الصورة</string>
+    <string name="str_profile_edit_camera">تصوير</string>
+    <string name="str_profile_edit_gallary">اختار صورة</string>
+
+    <!-- Permission rational -->
+    <string name="str_permission_notice">ملاحظات</string>
+    <string name="str_permission_camera_rational_message">من فضلك يحتاج التطبيق الى اذن فتح الكاميرا لتصوير صورة</string>
+    <string name="str_permission_external_rational_message">من فضلك يحتاج التطبيق الى اذن الذاكرة لاختيار صورة</string>
+
+    <!-- language screen -->
+    <string name="str_arabic_language_txt">العربية</string>
+    <string name="str_english_language_txt">الانجليزية</string>
+    <string name="str_language_title">اللغة</string>
+
+
+    <!-- Favorites -->
+    <string name="str_added_to_favorites_successfully">تم الاضافة الى المفضلة</string>
+    <string name="str_removed_to_favorites_successfully">تم الحذف من المفضلة</string>
+    <string name="str_empty_favorite_header">اضف السيارات التى تحبها</string>
+    <string name="str_empty_favorite_message">ابدأ باضافة السيارات التى تفضل</string>
+    <string name="str_empty_favorite_new_cars">سيارات جديدة</string>
+    <string name="str_empty_favorite_used_cars">سيارات مستعملة</string>
+
+
+    <!-- Car insurance -->
+    <string name="str_insurance_empty_list_header">لا يوجد طلبات تأمين حتى الأن</string>
+    <string name="str_insurance_empty_list_message">اضغط على اضافة لتجديد تأمين سياراتك</string>
+    <string name="str_insurance_empty_list_add">أضف</string>
+    <string name="str_car_insurance_add_licence_front_photo">أضف الصورة الأمامية للرخصة</string>
+    <string name="str_car_insurance_add_licence_back_photo">أضف الصورة الخلفية للرخصة</string>
+    <string name="str_car_insurance_branch">الفرع</string>
+    <string name="str_car_insurance_name">الأسم</string>
+    <string name="str_car_insurance_name_length_short">لا بد ان يكون الاسم ثلاثى واكثر من 6 حروف</string>
+    <string name="str_car_insurance_name_special_characters"> لا يمكن أن يحتوي الاسم  على حروف خاصة.</string>
+    <string name="str_car_insurance_chassis_number">رقم الشاسيه</string>
+    <string name="str_car_insurance_chassis_no">رقم الشاسية :%s</string>
+    <string name="str_car_insurance_price">السعر : %s</string>
+    <string name="str_car_insurance_notes">ملاحظات :</string>
+    <string name="str_car_insurance_details_name"> الأسم :%s</string>
+    <string name="str_car_insurance_details_mobile">الموبيل :%s </string>
+    <string name="str_car_insurance_details_branch">الفرع :%s</string>
+    <string name="str_car_insurance_chassis_number_lengh_short">لا بد ان يحتوى رقم الشاسيه على 14 حرف و رقم ع الاقل</string>
+    <string name="str_car_insurance_chassis_number_special_characters">  لا يمكن أن يحتوي رقم الشاسيه  على حروف خاصة او يتعدى 20 رمز.</string>
+    <string name="str_car_insurance_branch_validation">من فضلك اختر الفرع</string>
+    <string name="str_car_insurance_request">طلب تأمين</string>
+    <string name="str_car_insurance_license_front_image_added">تم اضافة الصورة الأمامية للرخصة</string>
+    <string name="str_car_insurance_license_back_image_added">تم اضافة الصورة الخلفية للرخصة</string>
+    <string name="str_car_insurance_request_title">تجديد التأمين</string>
+    <string name="str_car_insurance_request_sent_dialog_title">لقد تم ارسال طلبك</string>
+    <string name="str_car_insurance_request_sent_dialog_message">شكرا لك على طلبك سيتم مراجعه الطلب والتأكيد معك قريبا</string>
+    <string name="str_car_insurance_request_endorsement">المصادقة</string>
+    <string name="str_car_insurance_request_endorsement_button_txt">Accept and pay</string>
+    <string name="str_car_insurance_request_endorsement_message">أقر بأنني مالك السيارة السابقة ببياناتها ، وأنا أعلم أنه سيتم خصم 2٪ من طراز السيارة كل عام من إجمالي قطع الغيار المعتمدة وأيضًا 2٪ مستنفدة (الأجزاء التالفة) أيضًا ، خصم 10 ٪ من إجمالي الفاتورة في حالة الإصلاح في التوكيل ، إن وجد ، في الوثيقة ، السنوات الخمس الأولى من النموذج و 25٪ من السنة السادسة للنموذج حتى السنة العاشرة من النموذج.</string>
+    <string name="str_car_insurance_request_confirmed">تم التأكيد</string>
+    <string name="str_car_insurance_request_pending">قيد الانتظار</string>
+    <string name="str_car_insurance_request_paid">مدفوع</string>
+    <string name="str_car_insurance_request_cancelled">تم الإلغاء</string>
+    <string name="str_new_insurance_request">طلب تأمين جديد</string>
+    <string name="str_inurance_list_history">التاريخ</string>
+    <string name="str_insurance_details_header_message">لقد تم الموافقة ع طلبك</string>
+    <string name="str_insurance_details_button_pay_txt">أدفع</string>
+    <string name="str_insurance_details_button_accept_and_pay_txt">الموافقة والدفع</string>
+    <string name="str_inurance_request_license_image_validation">من فضلك أضف الصورة الأمامية والخلفية للرخصه</string>
+
+<!-- used car-->
+    <string name="str_you_must_sign_in_first">اوه لا  يجب عليك تسجيل الدخول اولاً</string>
+    <string name="str_colors">الألوان</string>
+    <string name="str_currency">%s ج.م</string>
+    <string name="str_price_range">رنج السعر</string>
+    <string name="str_range_price">/ ج.م</string>
+    <string name="str_transmission">النقل</string>
+    <string name="str_manual">مانيوال</string>
+    <string name="str_automatic">اوتوماتيك</string>
+    <string name="str_filter_title">تصفية</string>
+    <string name="str_apply">تطبيق</string>
+    <string name="str_reset">إعاده</string>
+    <string name="str_to_">الى</string>
+    <string name="str_from_">من</string>
+    <string name="str_super_automatic">سوبر اتوماتيك</string>
+    <string name="str_manufacture_year">تاريخ الصنع</string>
+    <string name="str_engine_capacity">سعة المحرك</string>
+    <string name="str_driving_license">رخصة القيادة</string>
+    <string name="str_num_of_doors">عدد الابواب</string>
+    <string name="str_color">Color</string>
+    <string name="str_make_offer">قدم عرض</string>
+    <string name="str_send_message">ارسل رسالة</string>
+    <string name="str_cc">CC</string>
+
+    <!-- Add my Car -->
+    <string name="str_add_my_car">سيارتى</string>
+    <string name="str_add_my_car_header">أضف سيارتك</string>
+    <string name="str_add_my_car_select_brand">اختار الماركة</string>
+    <string name="str_add_my_car_select_model_for">اختار الموديل من %</string>
+    <string name="str_add_my_car_select_manufacture_year">اختار سنة الصنع ل %</string>
+    <string name="str_add_my_car_other">%s أخر</string>
+    <string name="str_add_my_car_brand">ماركة</string>
+    <string name="str_add_my_car_model">موديل</string>
+    <string name="str_add_my_car_year">السنة</string>
+    <string name="str_add_my_car_empty_list_add">أضف سياراتك</string>
+    <string name="str_add_my_car_selector_button_continue_txt">استمرار</string>
+    <string name="str_add_my_car_selector_button_back_txt">رجوع</string>
+    <string name="str_add_my_car_other_write_hint_txt">اكتب</string>
+    <string name="str_add_my_car_empty_header">لا يوجد سيارات هنا</string>
+    <string name="str_add_my_car_empty_message">ابدأ باضافة سياراتك</string>
+    <string name="str_add_my_car_add">أضافة سيارة</string>
+    <string name="str_add_my_car_add_new">اضف سيارة جديدة</string>
+    <string name="str_add_my_car_price">السعر</string>
+    <string name="str_add_my_car_Color">اللون</string>
+    <string name="str_add_my_car_description">الوصف</string>
+    <string name="str_add_my_car_motor_cc">موتور سى سى</string>
+    <string name="str_add_my_car_motor_power_by_horse">قوة المحرك بالحصان</string>
+    <string name="str_add_my_car_number_of_engine_gears">عدد النقلات</string>
+    <string name="str_add_my_car_number_of_casting">عدد الصبابات</string>
+    <string name="str_add_my_car_number_of_doors">عدد الابواب</string>
+    <string name="str_add_my_car_number_of_seats">عدد المقاعد</string>
+    <string name="str_add_my_car_fuel_tank_capacity">سعة خزان الوقود</string>
+    <string name="str_add_my_car_max_torque">العزم الاقصى</string>
+    <string name="str_add_my_car_average_fuel_consumption">متوسط استهلاك الوقود</string>
+    <string name="str_add_my_car_max_speed">السرعه القصوى</string>
+    <string name="str_add_my_car_number_of_airbags">عدد الوسائد الهوائية</string>
+    <string name="str_add_my_car_pull_type">نوع الجر</string>
+    <string name="str_add_my_car_body_type">النمط</string>
+    <string name="str_add_my_car_transmission_type"> ناقل الحركة</string>
+    <string name="str_add_my_car_steering_wheel_type">عجلة القيادة</string>
+    <string name="str_add_my_car_Category">الفئة</string>
+    <string name="str_my_car_add_picture_of_your_car">اضف صور سياراتك</string>
+    <string name="str_my_car_add_more_picture">أضف المزيد من الصور</string>
+    <string name="str_my_car_add_photos">الصور %س \10</string>
+    <string name="str_my_car_add_photos_max_size_warning">من فضلك لا يمكنك اضافة اكثر من 10 صور</string>
+    <string name="str_my_car_add_photos_min_size_warning">من فضلك اضف صورة واحده لسيارتك ع الاقل</string>
+    <string name="str_choose_transmission_type">اختر ناقل الحركة</string>
+    <string name="str_choose_body_type">اختر النمط</string>
+    <string name="str_choose_pull_type">اختر نوع الجر</string>
+    <string name="str_choose_category_type">اختر فئة السيارة</string>
+    <string name="str_choose_steering_wheel_type">اختر نوع عجلة القيادة</string>
+    <string name="str_selector_brand_validation">من فضلك اختر ماركة</string>
+    <string name="str_selector_brand_write_validation">من فضلك اكتب الماركة</string>
+    <string name="str_selector_model_write_validation">من فضلك اكتب الموديل </string>
+    <string name="str_selector_year_write_validation">من فضلك اكتب السنه</string>
+    <string name="str_selector_year_write_validation_error">من فضلك اكتب سنة من اربع ارقام</string>
+    <string name="str_selector_model_validation">من فضلك اختر موديل</string>
+    <string name="str_selector_year_validation">من فضلك اختر سنة</string>
+    <string name="str_your_car_added_successfully">لقد تم اضافة سيراتك بنجاح</string>
+
+
+    <string name="str_job_title">الوظيفة</string>
+    <string name="str_advance_payment">مقدم الدفع</string>
+    <string name="str_installment_years">سنوات التقسيط</string>
+    <string name="str_monthly_salary">المرتب الشهري</string>
+    <string name="str_calculate_it">أحسبها</string>
+    <string name="str_calculate_it_your_self">أحسبها بنفسك</string>
+    <string name="str_choose_job">أختر الوظيفه</string>
+    <string name="str_choose_installment_years">أختر عدد سنوات التقسيط</string>
+    <string name="str_please_choose_your_job">أختر وظيفتك</string>
+    <string name="str_please_insert_advance_payment">من فضلك أدخل مقدم الدفع</string>
+    <string name="str_please_insert_monthly_salary">من فضلك أدخل لمرتب الشهري</string>
+    <string name="str_please_insert_installment_years">من فضلك أدخل سنوات التقسيط</string>
+    <string name="str_please_brand">من فضلك أختر ماركة واحده علي الأقل</string>
+    <string name="str_price">السعر: </string>
+    <string name="str_monthly_installment">التقسيط الشهري: </string>
+    <string name="str_insurance">التأمين: </string>
+    <string name="str_adminstrative_expenses">مصاريف ادارية: </string>
+    <string name="str_totla_amount_required">لمطلوب سداده: </string>
+    <string name="str_last_update">اخر تحديث: </string>
+    <string name="str_car_code">كود السيارة: </string>
+    <string name="str_credit_card">بطاقة الإئتمان</string>
+    <string name="str_total_installments">مجموع التقسيط</string>
+    <string name="str_card_number">رقم البطاقة</string>
+    <string name="str_bank_card_name">اسم البطاقة</string>
+    <string name="str_card_limits">الحد الإئتماني</string>
+    <string name="invalid_card_data">معلومات البطاقه غير صحيحه</string>
+    <string name="str_map">الخريطه</string>
+    <string name="str_list">القائمه</string>
+    <string name="str_user_location">الموقع الحالي</string>
+    <string name="str_empty_maintenance">لا توجد طلبات</string>
+    <string name="str_add">أضف</string>
+    <string name="str_date">التاريخ</string>
+    <string name="str_service_center">مركز الخدمه</string>
+    <string name="search_error_msg">ابحث باكثر من حرفين</string>
+    <string name="str_total_cost">التكلفه الاجماليه</string>
+    <string name="str_notes">ملاحظات</string>
+    <string name="str_contact_us">تواصل معنا</string>
+    <string name="str_phone">موبايل</string>
+    <string name="str_name">الأسم</string>
+    <string name="str_message">الرساله</string>
+    <string name="str_email">البريد الالكترونى</string>
+    <string name="str_invalid_information">معلومات غير صحيحه</string>
+    <string name="str_reload">أعد المحاوله</string>
+    <string name="str_per_month">كل شهر/</string>
+
+    <!-- Notifications -->
+    <string name="str_notificatios">التنبيهات</string>
+    <string name="str_notificatios_empty_notificatios_header">لا يوجد تنبيهات</string>
+    <string name="str_notificatios_empty_notificatios_body">لم تصل اى تنبيهات حتى الأن</string>
+
+    <!-- Messages -->
+    <string name="str_messages">الرسائل</string>
+    <string name="str_messages_empty_message_header">لا يوجد رسائل هنا </string>
+    <string name="str_messages_empty_message_body">لا يوجد رسائل فى بريدك حتى الان </string>
+    <string name="str_messages_today">اليوم </string>
+    <string name="str_messages_ago">دقائق </string>
+    <string name="str_type_message">اكتب رسالة</string>
+
+    <!-- FAQ -->
+    <string name="str_faq">الاسئلة الشائعه</string>
+
+    <!-- Input Dialog -->
+    <string name="str_input_dialog_send">ارسل</string>
+    <string name="str_input_dialog_message">رسالة </string>
+    <string name="str_input_dialog_offer">قدم عرض</string>
+    <string name="str_input_dialog_send_message">ارسل رسالة</string>
+    <string name="str_input_dialog_message_sent_successfully">تم ارسال الرسالة</string>
+    <string name="str_input_dialog_Offer_sent_successfully">تم ارسال العرض</string>
+
+    <!-- OrderNow  -->
+    <string name="str_order_requests">طلبات الحجز</string>
+    <string name="str_order_requests_empty_header">طلبات الحجز</string>
+    <string name="str_order_requests_empty_body">لم تقم باى طلب حجز , احجز الان</string>
+    <string name="str_order_now_upload_power_attorny_photos">ارفع صور التوكيلات</string>
+    <string name="str_order_now_need_license_disclamer">من فضلك إصدر توكيل بالترخيص للاسماء الاتية </string>
+    <string name="str_order_now_power_attorny_names">اسماء الوكلاء :</string>
+    <string name="str_order_now_with_car_insurance">بتأمين على السيارة</string>
+    <string name="str_order_now_need_license">تحتاج ترخيص سيارة</string>
+    <string name="str_order_now_cash">كاش</string>
+    <string name="str_order_now_premium">تقسيط</string>
+    <string name="str_order_now_car_color">لون العربية</string>
+    <string name="str_order_now_delivery_place">مكان الاستلام</string>
+    <string-array  name="str_order_now_delivery_places">
+    <item >المنزل </item>
+    <item>العمل</item>
+    <item >الفرع</item>
+    </string-array>
+    <string name="str_order_now_photos_max_size_warning">من فضلك لا يمكنك اضافة اكثر من 5 صور</string>
+    <string name="str_order_now_branch_validation">من فضلك اختار الفرع</string>
+    <string name="str_order_now_advanced_payment_validation">من فضلك ادخل مقدم الدفع</string>
+    <string name="str_order_now_advanced_payment_amount_validation">من فضلك مقدم الدفع يجب ان يكون على الاقل 1000 ج.م</string>
+    <string name="str_order_now_images_validation">من فضلك أضف صور التوكيلات</string>
+    <string name="str_order_now_color_validation">من فضلك اختر اللون</string>
+
+
+    <!-- My Add -->
+    <string name="str_advertising_title">اعلاناتى</string>
+    <string name="str_advertising_empty_header">لا يوجد اعلانات هنا </string>
+    <string name="str_advertising_empty_body">لم تقم باضافة اى اعلانات, اضف الأن</string>
+    <string name="str_advertising_address">العنوان</string>
+    <string name="str_advertising_name">الأسم</string>
+    <string name="str_advertising_status">الحالة</string>
+    <string name="str_advertising_status_note">ملاحظات الحالة </string>
+    <string name="str_advertising_price">السعر</string>
+    <string name="str_advertising_show_email">اعرض الايميل</string>
+    <string name="str_advertising_show_mobile">اعرض الموبايل</string>
+    <string name="str_advertising_viewing_days">ايام المعاينة</string>
+    <string name="str_advertising_viewing_times">اوقات المعاينة </string>
+    <string name="str_first_name">First Name</string>
+    <string name="str_account_details_address">Address</string>
+    <string name="str_download">download</string>
+    <string name="str_open">open</string>
+    <string name="str_downloading">downloading</string>
+    <string name="str_choose_application">choose application</string>
+
+    <string name="see_all">المزيد</string>
+    <string name="str_navigation_products">منتجات</string>
+    <string name="add_to_order">إضافة للسلة</string>
+    <string name="added_to_basket_success">تم الإضافة للسلة بنجاح</string>
+
+</resources>

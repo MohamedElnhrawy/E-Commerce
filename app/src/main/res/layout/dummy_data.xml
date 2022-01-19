@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewModel"
+            type="com.gtera.ui.profile.ProfileItemViewModel" />
+    </data>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_dummy_data_height"
+        android:background="@color/dummy_view_color"
+        android:orientation="vertical">
+
+    </View>
+</layout>

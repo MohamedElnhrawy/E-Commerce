@@ -1,0 +1,3 @@
+package com.gtera.ui.authorization.resetpassword
+
+interface ResetPasswordNavigator

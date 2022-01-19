@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_16sdp"
+    android:layout_marginEnd="@dimen/_16sdp"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/selector_title"
+        style="@style/shimmerLayoutStyle"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_185sdp"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:layout_marginEnd="@dimen/_3sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/search"
+        style="@style/shimmerLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:elevation="@dimen/_2sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/selector_title" />
+
+    <View
+        android:id="@+id/item1"
+        style="@style/shimmerLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:elevation="@dimen/_2sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search" />
+
+    <View
+        android:id="@+id/choose_your_budget"
+        style="@style/shimmerLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:elevation="@dimen/_2sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item1" />
+
+    <View
+        android:id="@+id/car_categories_header"
+        style="@style/shimmerLayoutStyle"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_11sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:elevation="@dimen/_2sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/choose_your_budget" />
+
+
+    <include
+        android:id="@+id/new_cars"
+        layout="@layout/shimmer_home_collection_layout"
+        android:layout_width="@dimen/_125sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/car_categories_header" />
+
+    <include
+        android:id="@+id/used_cars"
+        layout="@layout/shimmer_home_collection_layout"
+        android:layout_width="@dimen/_125sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        app:layout_constraintStart_toEndOf="@id/new_cars"
+        app:layout_constraintTop_toTopOf="@id/new_cars" />
+
+
+    <View
+        android:id="@+id/news_header"
+        style="@style/shimmerLayoutStyle"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_11sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:elevation="@dimen/_2sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/new_cars" />
+
+    <View
+        android:id="@+id/news_all"
+        style="@style/shimmerLayoutStyle"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_11sdp"
+        android:layout_marginEnd="@dimen/_4sdp"
+        android:elevation="@dimen/_2sdp"
+        app:layout_constraintBottom_toBottomOf="@id/news_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/news_header" />
+
+    <include
+        android:id="@+id/news_item_1"
+        layout="@layout/shimmer_home_collection_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/news_all" />
+
+    <include
+        android:id="@+id/news_item_2"
+        layout="@layout/shimmer_home_collection_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        app:layout_constraintStart_toEndOf="@id/news_item_1"
+        app:layout_constraintTop_toBottomOf="@id/news_item_1"
+        app:layout_constraintTop_toTopOf="@id/news_item_1" />
+
+
+    <View
+        android:id="@+id/ads2"
+        style="@style/shimmerLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:elevation="@dimen/_2sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/news_item_2" />
+
+
+    <View
+        android:id="@+id/top_deals"
+        style="@style/shimmerLayoutStyle"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_11sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:elevation="@dimen/_2sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ads2" />
+
+    <View
+        android:id="@+id/top_deals_all"
+        style="@style/shimmerLayoutStyle"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_11sdp"
+        android:layout_marginEnd="@dimen/_4sdp"
+        android:elevation="@dimen/_2sdp"
+        app:layout_constraintBottom_toBottomOf="@id/top_deals"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/top_deals" />
+
+
+    <include
+        android:id="@+id/top_deals1"
+        layout="@layout/shimmer_home_collection_layout"
+        android:layout_width="@dimen/_125sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_deals" />
+
+    <include
+        android:id="@+id/top_deals2"
+        layout="@layout/shimmer_home_collection_layout"
+        android:layout_width="@dimen/_125sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        app:layout_constraintStart_toEndOf="@id/top_deals1"
+        app:layout_constraintTop_toTopOf="@id/top_deals1" />
+
+
+    <View
+        android:id="@+id/offers_header"
+        style="@style/shimmerLayoutStyle"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_11sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:elevation="@dimen/_2sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_deals2" />
+
+    <View
+        android:id="@+id/offers_all"
+        style="@style/shimmerLayoutStyle"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_11sdp"
+        android:layout_marginEnd="@dimen/_4sdp"
+        android:elevation="@dimen/_2sdp"
+        app:layout_constraintBottom_toBottomOf="@id/offers_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/offers_header" />
+
+    <include
+        android:id="@+id/offers_item_1"
+        layout="@layout/shimmer_home_collection_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/offers_all" />
+
+    <include
+        android:id="@+id/offers_item_2"
+        layout="@layout/shimmer_home_collection_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        app:layout_constraintStart_toEndOf="@id/offers_item_1"
+        app:layout_constraintTop_toBottomOf="@id/offers_item_1"
+        app:layout_constraintTop_toTopOf="@id/offers_item_1" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

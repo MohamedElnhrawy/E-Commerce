@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corners_white"
+        android:minWidth="@dimen/dim_confirmation_dialog_min_width"
+        android:paddingBottom="@dimen/dim_confirmation_dialog_padding">
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dim_confirmation_dialog_btn_ok_mrgn_top"
+            visibleIf="@{!viewModel.isInformationDailoge}"
+            android:background="@drawable/rounded_corners_wihte_with_red_strock"
+            android:onClick="@{()-> viewModel.onYesButtonClicked()}"
+            android:text="@{viewModel.positiveTxt.isEmpty() ? @string/yes: viewModel.positiveTxt}"
+            android:textAllCaps="false"
+            android:textColor="@color/confirmationDialogButtonOkTxtColor"
+            android:textSize="@dimen/dim_confirmation_dialog_btn_ok_text_size"
+            app:layout_constraintEnd_toEndOf="@+id/btn_cancel"
+            app:layout_constraintStart_toStartOf="@+id/btn_cancel"
+            app:layout_constraintTop_toBottomOf="@id/btn_cancel"
+            app:layout_constraintWidth_percent="0.48"
+            tools:text="@string/yes" />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dim_confirmation_dialog_btn_ok_mrgn_top"
+            android:background="@drawable/rounded_corners_primary"
+            android:onClick="@{()-> viewModel.onNoButtonClicked()}"
+            android:text="@{viewModel.negativeTxt.isEmpty() ? @string/no: viewModel.negativeTxt}"
+            android:textAllCaps="false"
+            android:textColor="@color/confirmationDialogButtonCancelTxtColor"
+            android:textSize="@dimen/dim_confirmation_dialog_btn_cancel_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_message"
+            app:layout_constraintWidth_percent="0.48"
+            tools:text="@string/no" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_header_icon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@{viewModel.confirmationIconBackgroundColor}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_header_icon"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/dim_confirmation_dialog_padding"
+                android:padding="@dimen/dim_confirmation_dialog_tv_title_padding"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.32"
+                app:srcCompat="@{viewModel.confirmationIcon}"
+                tools:src="@drawable/ic_logout" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            visibleIf="@{!viewModel.confirmationTitle.empty}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dim_confirmation_dialog_btn_ok_mrgn_top"
+            android:gravity="center"
+            android:padding="@dimen/dim_confirmation_dialog_tv_message_padding"
+            android:text="@{viewModel.confirmationTitle}"
+            android:textColor="@color/confirmationDialogMessageTxtColor"
+            android:textSize="@dimen/dim_confirmation_dialog_tv_message_text_size"
+            android:focusable="true"
+            android:textStyle="bold"
+            android:layout_marginStart="@dimen/dim_confirmation_dialog_padding"
+            android:layout_marginEnd="@dimen/dim_confirmation_dialog_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_header_icon"
+            tools:text="Are you sure for this confirmation?" />
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:focusable="true"
+            android:gravity="center"
+            android:padding="@dimen/dim_confirmation_dialog_tv_message_padding"
+            android:text="@{viewModel.confirmationMessage}"
+            android:textColor="@color/confirmationDialogMessageTxtColor"
+            android:textSize="@{viewModel.confirmationTitle == null ? @dimen/_10sdp :@dimen/_14sdp}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            tools:text="Are you sure for this confirmation?" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.gtera.ui.dialog.confirmation.ConfirmationDialogViewModel" />
+    </data>
+</layout>

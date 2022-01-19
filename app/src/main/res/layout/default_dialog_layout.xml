@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corners_white"
+        android:padding="@dimen/dim_default_dialog_padding">
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dim_default_dialog_btn_ok_mrgn_top"
+            android:background="@drawable/rounded_corners_primary"
+            android:onClick="@{()-> viewModel.onPositiveButtonClicked()}"
+            android:text="@{viewModel.positiveBtnText}"
+            android:textAllCaps="false"
+            android:textColor="@color/defaultDialogButtonOkTxtColor"
+            android:textSize="@dimen/dim_default_dialog_btn_ok_text_size"
+            app:layout_constraintEnd_toStartOf="@+id/btn_cancel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_message"
+            app:layout_constraintWidth_percent="0.45"
+            tools:text="Positive" />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corners_white"
+            android:onClick="@{()-> viewModel.onNegativeButtonClicked()}"
+            android:text="@{viewModel.negativeBtnText}"
+            android:textAllCaps="false"
+            android:textColor="@color/defaultDialogButtonCancelTxtColor"
+            android:textSize="@dimen/dim_default_dialog_btn_cancel_text_size"
+            android:visibility="@{viewModel.hasNegativeButton? View.VISIBLE:View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_ok"
+            app:layout_constraintTop_toTopOf="@id/btn_ok"
+            app:layout_constraintWidth_percent="0.45"
+            tools:text="Negative" />
+
+        <TextView
+            android:id="@+id/tv_info_header_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/dim_default_dialog_tv_title_padding"
+            android:textColor="@color/defaultDialogHeaderTxtColor"
+            android:textSize="@dimen/dim_default_dialog_tv_title_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Dialog Title" />
+
+        <!--        android:text="@{viewModel.addressTitle}"-->
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/dim_default_dialog_tv_message_padding"
+            android:text="@{viewModel.message.trim()}"
+            android:textColor="@color/defaultDialogMessageTxtColor"
+            android:textSize="@dimen/dim_default_dialog_tv_message_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_info_header_txt"
+            tools:text="Dialog Default Message" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.gtera.ui.dialog.defaultdialog.DefaultDialogViewModel" />
+    </data>
+</layout>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="colorPrimary">#3D4E5F</color>
+	<color name="colorPrimaryDark">#465769</color>
+	<color name="colorAccent">#000</color>
+
+	<color name="colorStatusBar">@color/colorPrimary</color>
+	<color name="colorStatusBarNoToolbar">@color/colorStatusBar</color>
+	<color name="ic_launcher_background">#fafcfd</color>
+
+	<color name="vector_icons_primary_color">#455768</color>
+	<color name="vector_icons_Secondary_color">#FF000000</color>
+	<color name="dividerColor">#e4e1e3</color>
+
+	<color name="dark_blue_grey">#181f4d</color>
+	<color name="pale_gray">#fafcfd</color>
+	<color name="gray">#bbc0c6</color>
+	<color name="warm_grey">#979797</color>
+	<color name="edittext_gray">#d4d4d5</color>
+	<color name="lists_bg_gray">#f6f6f6</color>
+	<color name="photos_gray">#181f4d</color>
+
+	<color name="success_color">#00b517</color>
+	<color name="error_color">#e94334</color>
+	<color name="adsColor">#5889e0</color>
+
+	<color name="dummy_view_color">#ECEEED</color>
+
+	<color name="headerBlackColor">#333333</color>
+	<color name="descriptionGrayColor">#959393</color>
+
+	<color name="ic_splash_logo_background">#FFFFFF</color>
+	<color name="splashScreenBGColor">#FFFFFF</color>
+	<color name="colorToolbarAction">#CC909090</color>`
+	<color name="colorToolbarActionActive">#FFFFFF</color>
+	<color name="colorBorder">#e5e5e5</color>
+	<color name="white">#FFFFFF</color>
+	<color name="black">#000000</color>
+	<color name="primary_text">#5F5F5F</color>
+	<color name="colorAccentSecondary">#fff</color>
+	<!-- Navigation colors -->
+	<color name="navigationColorBG">@color/white</color>
+	<color name="colorNavPrimary">@color/colorPrimary</color>
+	<color name="colorNavAccent">#BDBDBD</color>
+	<!-- confirmation dialog -->
+	<color name="confirmationDialogHeaderTxtColor">@color/colorPrimary</color>
+	<color name="confirmationDialogMessageTxtColor">#000000</color>
+	<color name="confirmationDialogButtonOkTxtColor">#5E371C</color>
+	<color name="confirmationDialogButtonCancelTxtColor">#FFFFFF</color>
+	<color name="colorBackgroundPrimary">#435667</color>
+
+	<color name="drawerMenuItemImageTintColor">#5E371C</color>
+	<color name="colorText">@color/colorPrimary</color>
+	<color name="empt_view_background_color">#fff</color>
+	<color name="buttonTextColor">#FFFFFF</color>
+	<color name="headerTextViewsColor">@color/colorText</color>
+	<color name="colorTextDesc">#777777</color>
+
+	<!-- default dialog -->
+	<color name="defaultDialogHeaderTxtColor">@color/colorPrimary</color>
+	<color name="defaultDialogMessageTxtColor">#000000</color>
+	<color name="defaultDialogButtonOkTxtColor">#FFFFFF</color>
+	<color name="defaultDialogButtonCancelTxtColor">#5E371C</color>
+	<!-- Banner Layout -->
+	<color name="bannerLayoutTextColor">#FFFFFF</color>
+	<color name="bannerLayoutBGColor">#03bc53</color>
+
+	<!-- PlaceHolder color -->
+	<color name="placeHolderColor">#E0E0E0</color>
+
+	<!-- dividers color -->
+	<color name="horizontalDividerColor">#EEEEEE</color>
+
+	<!-- dividers color -->
+	<color name="ShimmerViewColor">#EEEEEE</color>
+
+	<color name="mainApplicationBGColor">@color/pale_gray</color>
+
+	<!-- Base Layout -->
+	<color name="baseLayoutFramBGColor">@color/pale_grey</color>
+
+	<!-- saerchView -->
+	<color name="twilight_blue">#0f4c81</color>
+	<color name="colorTextDark">#042F53</color>
+	<color name="hint_text">#afafaf</color>
+	<color name="home_search_box_border">#D3D0D0</color>
+
+
+	<!-- toolbar -->
+	<color name="toolbarBGColor">@color/colorPrimary</color>
+	<color name="passwordResetConfirmationToolbarBGColor">@color/white</color>
+	<color name="toolbarCartQtyTextColor">@color/white</color>
+	<color name="toolbarTitleTextColor">#fff</color>
+	<color name="toolbarIconColor">@color/toolbarTitleTextColor</color>
+	<color name="toolbarCurvyTitleTextColor">#FFFFFF</color>
+	<color name="toolbarCurvyIconColor">@color/toolbarCurvyTitleTextColor</color>
+	<color name="toolbarTabHeaderBGColor">@color/colorPrimary</color>
+	<color name="colorTextSecondary">#777777</color>
+	<color name="changePasswordColorTextSecondary">#333333</color>
+	<color name="colorTextSecondaryWhite">#fff</color>
+	<color name="colorIndicatorAccent">@color/colorTextSecondary</color>
+	<color name="loadingLayoutIvLoadingTintColor">@color/colorPrimary</color>
+	<color name="default_background_color">#fafcfd</color>
+	<color name="red_500">#F44336</color>
+	<color name="transparent">#00000000</color>
+
+	<color name="editTextErrorTextColor">#EF5350</color>
+	<color name="editTextHeaderTextColor">#333333</color>
+	<color name="semi_black">#333333</color>
+	<color name="editTextLabelColor">@color/black</color>
+	<color name="progressBarColor">#FFFFFF</color>
+	<color name="colorBackgroundLight">#802A8D96</color>
+	<color name="pale_grey">#FAFCFD</color>
+	<color name="text_primary">#455668</color>
+	<color name="colorFacebook">#3B5998</color>
+	<!-- EditText View Default-->
+	<color name="editTextColor">@color/grey_900</color>
+	<color name="editTextHintColor">@color/grey_500</color>
+	<color name="editTextSuccessTextColor">@color/green_800</color>
+	<color name="grey_900">#212121</color>
+	<color name="grey_500">#9E9E9E</color>
+	<color name="green_800">#2E7D32</color>
+
+	<color name="spinner_title_color">@color/colorPrimary</color>
+
+	<color name="setting_color_grey">#A5A4A4</color>
+	<color name="indicator_dark">#99000000</color>
+	<color name="cherry">#de0023</color>
+	<color name="silver_two">#80E6E8E9</color>
+
+
+
+
+	<!-- favorites tabs color -->
+	<color name="tabsIndicatorColor">#EC5E60</color>
+	<color name="tabsBackgroundColors">#EC5E60</color>
+	<color name="textSecondary">#EC5E60</color>
+
+	<!-- insurance color -->
+
+	<color name="confirmedInsuranceColor">#7ed67e</color>
+	<color name="pendingInsuranceColor">#393939</color>
+	<color name="PayedInsuranceColor">#808080</color>
+	<color name="cancelledInsuranceColor">#de0023</color>
+
+	<!-- range color -->
+	<color name="rangeBarColor">#5ede0023</color>
+
+	<!-- Messages -->
+	<color name="messagesDateColor">#5d5d5d</color>
+
+	<color name="grey_50">#FAFAFA</color>
+	<color name="grey_100">#F5F5F5</color>
+	<color name="grey_200">#EEEEEE</color>
+	<color name="grey_300">#E0E0E0</color>
+	<color name="grey_400">#BDBDBD</color>
+	<color name="grey_600">#757575</color>
+	<color name="grey_700">#616161</color>
+	<color name="grey_800">#424242</color>
+	<color name="order_number_color">#212121</color>
+	<color name="grey_txt_color">#707070</color>
+	<color name="tab_grey_txt_color">#808080</color>
+</resources>

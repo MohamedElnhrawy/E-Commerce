@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="listener"
+            type="com.gtera.ui.base.SearchActionListener" />
+
+        <variable
+            name="searchTxt"
+            type="String" />
+
+        <variable
+            name="showErrorMsg"
+            type="Boolean" />
+
+
+        <variable
+            name="searchCount"
+            type="String" />
+
+        <variable
+            name="itemClickListener"
+            type="android.widget.AdapterView.OnItemClickListener" />
+
+        <variable
+            name="adapter"
+            type="com.gtera.ui.adapter.AutoCompleteAdapter" />
+
+        <variable
+            name="suggestListener"
+            type="com.gtera.ui.base.EditingActionListener" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/borderd_search_box"
+            android:focusable="false"
+            android:focusableInTouchMode="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <AutoCompleteTextView
+                android:dropDownWidth="match_parent"
+                android:id="@+id/search_bar"
+                adapter="@{adapter}"
+                preformSearch="@{listener}"
+                searchItemSelect="@{itemClickListener}"
+                searchTextListener="@{suggestListener}"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:textStyle="italic"
+                android:hint="@string/str_home_search_placeholder"
+                android:imeOptions="actionSearch"
+                android:maxLines="1"
+                android:paddingStart="@dimen/dim_search_bar_text_padding_start"
+                android:paddingEnd="@dimen/dim_search_bar_text_padding_end"
+                android:singleLine="true"
+                android:text="@={searchTxt}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorTextDark"
+                android:textColorHint="@color/hint_text"
+                android:textDirection="locale"
+                android:textSize="@dimen/dim_search_bar_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/iv_search"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.8" />
+
+            <ImageView
+                android:id="@+id/iv_search"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:onClick="@{()->listener.preformSearch(searchTxt)}"
+                android:padding="@dimen/dim_search_bar_icon_padding"
+                android:scaleType="centerInside"
+                android:tint="@color/twilight_blue"
+                app:layout_constraintBottom_toBottomOf="@id/search_bar"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/search_bar"
+                app:srcCompat="@drawable/ic_search" />
+
+        </LinearLayout>
+
+        <TextView
+            android:textSize="@dimen/_10sdp"
+            android:id="@+id/tv_error_msg"
+            visibleIf="@{showErrorMsg}"
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:text="@string/str_search_error_msg"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/container" />
+
+        <TextView
+            android:textSize="@dimen/_10sdp"
+            android:id="@+id/tv_result_count"
+            android:layout_width="0dp"
+
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:text="@{searchCount}"
+            android:textColor="@color/colorTextSecondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/container" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

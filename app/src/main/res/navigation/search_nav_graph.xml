@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/search_nav_graph"
+    app:startDestination="@+id/searchFragment">
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.gtera.ui.search.SearchFragment"
+        android:label="searchFragment" >
+        <action
+            android:id="@+id/action_search_result"
+            app:destination="@id/searchResultFragment" />
+
+        <action
+            android:id="@+id/action_car_details"
+            app:destination="@id/carDetailsFragment" />
+
+        <action
+            android:id="@+id/action_used_car_details"
+            app:destination="@id/usedCarDetailsFragment" />
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/searchResultFragment"
+        android:name="com.gtera.ui.search.result.SearchResultFragment"
+        android:label="searchResultFragment" >
+
+        <action
+            android:id="@+id/action_search_filter"
+            app:destination="@id/searchFilterFragment" />
+
+        <action
+            android:id="@+id/action_car_details"
+            app:destination="@id/carDetailsFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/searchFilterFragment"
+        android:name="com.gtera.ui.search.filter.SearchFilterFragment"
+        android:label="SearchFilterFragment" >
+
+        <action
+            android:id="@+id/action_car_details"
+            app:destination="@id/carDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/carDetailsFragment"
+        android:name="com.gtera.ui.cardetials.CarDetailsFragment"
+        android:label="CarDetailsFragment" >
+        <action
+            android:id="@+id/action_order_now"
+            app:destination="@id/orderNowFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/usedCarDetailsFragment"
+        android:name="com.gtera.ui.usedcardetails.UsedCarDetailsFragment"
+        android:label="UsedCarDetailsFragment" />
+
+    <fragment
+        android:id="@+id/orderNowFragment"
+        android:name="com.gtera.ui.ordernow.OrderNowFragment"
+        android:label="OrderNowFragment" />
+
+</navigation>

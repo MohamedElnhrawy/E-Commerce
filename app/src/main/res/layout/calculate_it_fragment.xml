@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.gtera.ui.calculateit.CalculateItVM" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/pale_grey"
+            tools:context=".ui.authorization.login.SignInActivity">
+
+            <TextView
+                style="@style/semiBlackHeader"
+                android:id="@+id/tv_job_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_job_title"
+                app:layout_constraintStart_toStartOf="@+id/start"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <Spinner
+                android:id="@+id/jobs"
+                style="@style/SpinnerTheme"
+                android:layout_width="0dp"
+                android:gravity="start"
+                android:inputType="text"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:textAlignment="viewStart"
+                android:textDirection="locale"
+                spinnerItems="@{viewModel.jobTitles}"
+                android:selectedItemPosition="@={viewModel.jobTitlesSelectedIndex}"
+                app:layout_constraintEnd_toEndOf="@+id/end"
+                app:layout_constraintStart_toStartOf="@+id/start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_job_title"
+                />
+
+            <TextView
+                style="@style/semiBlackHeader"
+                android:id="@+id/tv_advance_payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_advance_payment"
+                app:layout_constraintStart_toStartOf="@+id/start"
+                app:layout_constraintTop_toBottomOf="@+id/jobs"/>
+
+            <EditText
+                android:text="@={viewModel.advancePayment}"
+                android:id="@+id/et_advance_payment"
+                android:layout_width="0dp"
+                app:layout_constraintStart_toStartOf="@id/start"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintTop_toBottomOf="@+id/tv_advance_payment"
+               style="@style/calculateItEditText.Theme"
+                android:inputType="number"/>
+            <TextView
+                style="@style/semiBlackHeader"
+                android:id="@+id/tv_installment_years"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="@string/str_installment_years"
+                app:layout_constraintStart_toStartOf="@+id/start"
+                app:layout_constraintTop_toBottomOf="@+id/et_advance_payment"/>
+            <Spinner
+                android:id="@+id/sp_installment_years"
+                style="@style/SpinnerTheme"
+                android:layout_width="0dp"
+                android:gravity="start"
+                android:inputType="text"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:textAlignment="viewStart"
+                android:textDirection="locale"
+                spinnerItems="@{viewModel.installmentYears}"
+                android:selectedItemPosition="@={viewModel.installmentYearsSelectedIndex}"
+                app:layout_constraintEnd_toEndOf="@+id/end"
+                app:layout_constraintStart_toStartOf="@+id/start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_installment_years"
+                />
+
+            <TextView
+                style="@style/semiBlackHeader"
+                android:id="@+id/tv_monthly_salary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_monthly_salary"
+                app:layout_constraintStart_toStartOf="@+id/start"
+                app:layout_constraintTop_toBottomOf="@+id/sp_installment_years"/>
+
+            <EditText
+                android:text="@={viewModel.monthlySalary}"
+                android:imeOptions="actionDone"
+                android:id="@+id/et_monthly_salary"
+                android:layout_width="0dp"
+                app:layout_constraintStart_toStartOf="@id/start"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintTop_toBottomOf="@+id/tv_monthly_salary"
+                style="@style/calculateItEditText.Theme"
+                android:inputType="number"/>
+
+            <TextView
+                style="@style/semiBlackHeader"
+                android:id="@+id/tv_brands_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_brands_screen"
+                app:layout_constraintStart_toStartOf="@id/start"
+                app:layout_constraintTop_toBottomOf="@+id/et_monthly_salary"
+                tools:text="Brands" />
+
+            <CheckBox
+                android:id="@+id/cb_all"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:checked="@{viewModel.isAllSelected}"
+                android:onClick="@{()-> viewModel.selectAllBrands()}"
+                android:buttonTint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_brands_header"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_brands_header" />
+
+            <TextView
+                android:textColor="@color/semi_black"
+                android:id="@+id/tv_all"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:text="@string/str_search_brands_all"
+                android:gravity="top"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_brands_header"
+                app:layout_constraintEnd_toStartOf="@+id/cb_all"
+                app:layout_constraintTop_toTopOf="@+id/tv_brands_header" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_brands"
+                horizentalGridAdapter="@{viewModel.brandsAdapter}"
+                pagingSpanCount="@{viewModel.spanCount}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/start"
+                app:layout_constraintTop_toBottomOf="@id/tv_brands_header"
+                app:layout_constraintVertical_bias="0"
+                app:spanCount="3"
+                tools:itemCount="7"
+                tools:listitem="@layout/brand_item_grid_layout" />
+
+
+            <TextView
+                style="@style/semiBlackHeader"
+                android:id="@+id/tv_total_installments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_total_installments"
+                app:layout_constraintStart_toStartOf="@+id/start"
+                app:layout_constraintTop_toBottomOf="@+id/rv_cards"/>
+
+            <EditText
+                android:text="@={viewModel.totalInstallments}"
+                android:imeOptions="actionDone"
+                android:id="@+id/et_total_installments"
+                android:layout_width="0dp"
+                app:layout_constraintStart_toStartOf="@id/start"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintTop_toBottomOf="@+id/tv_total_installments"
+                style="@style/calculateItEditText.Theme"
+                android:inputType="number"/>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cons_cards"
+                android:onClick="@{()-> viewModel.onAddCreditCardClicked()}"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@drawable/credit_card_header"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/start"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintTop_toBottomOf="@+id/rv_brands">
+
+                <ImageView
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:id="@+id/iv_master"
+                    android:background="@drawable/ic_mastercard"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+                <TextView
+                    style="@style/semiBlackHeader"
+                    android:layout_marginTop="0dp"
+                    android:text="@string/str_credit_card"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_plus"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    app:layout_constraintStart_toEndOf="@+id/iv_master"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_master"
+                    app:layout_constraintTop_toTopOf="@+id/iv_master"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:layout_marginEnd="@dimen/_14sdp"
+                    android:id="@+id/iv_plus"
+                    android:src="@drawable/ic_add"
+                    app:layout_constraintWidth_percent=".06"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintStart_toStartOf="@id/start"
+                app:layout_constraintTop_toBottomOf="@+id/cons_cards"
+                android:background="@color/pale_grey"
+                android:id="@+id/rv_cards"
+                adapter="@{viewModel.cardsAdapter}"
+                viewOrientation="@{viewModel.carsVerticalOrientation}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintVertical_bias="0"
+                tools:itemCount="1"
+                tools:listitem="@layout/credit_card_item_layout" />
+
+            <com.gtera.ui.base.buttons.LoadingButton
+                android:id="@+id/confirm_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                app:altBackground="@drawable/rounded_corners_light"
+                app:background="@drawable/rounded_corners_primary"
+                app:clickListener="@{() -> viewModel.calculateItClicked()}"
+                app:isEnabled="@{!viewModel.isLoading() &amp;&amp; viewModel.jobTitlesSelectedIndex != 0 &amp;&amp; viewModel.installmentYearsSelectedIndex != 0 &amp;&amp;  ! viewModel.advancePayment.isEmpty() &amp;&amp; ! viewModel.monthlySalary.isEmpty()}"
+                app:isLoading="@{viewModel.isLoading}"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintStart_toStartOf="@id/start"
+                app:layout_constraintTop_toBottomOf="@+id/et_total_installments"
+                app:layout_constraintVertical_bias="1.0"
+                app:text="@string/str_calculate_it" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/start"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/_20sdp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/end"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/_20sdp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

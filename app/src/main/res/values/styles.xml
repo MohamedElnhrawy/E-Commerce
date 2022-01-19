@@ -1,0 +1,299 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/black</item>
+        <item name="android:textViewStyle">@style/AppTheme.TextStyle</item>
+        <item name="android:statusBarColor">@color/colorStatusBar</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:indeterminateTint">@color/colorAccentSecondary</item>
+        <item name="android:textAlignment">gravity</item>
+        <item name="android:textDirection">locale</item>
+        <item name="android:windowBackground">@color/default_background_color</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="bottomSheetStyle">@style/CustomBottomSheet</item>
+    </style>
+
+
+    <style name="AppTheme.TextStyle.Header.Medium.White" parent="AppTheme.TextStyle.Header.Medium">
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="mainButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="backgroundColor">@color/colorPrimary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="textSize">@dimen/_18sdp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="AppTheme.TextStyle.Header.Medium" parent="AppTheme.TextStyle.Header">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+
+    <style name="AppTheme.TextStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/din_next_regular</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+
+    <style name="AppTheme.TextStyle.Header" parent="android:Widget.TextView">
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:fontFamily">@font/din_next_medium</item>
+        <item name="android:textColor">@color/headerTextViewsColor</item>
+        <item name="android:textSize">@dimen/_13ssp</item>
+
+    </style>
+
+    <style name="AppTheme.TextStyle.Medium" parent="AppTheme.TextStyle">
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+
+    <style name="AppTheme.TextStyle.EmptyView.Header" parent="AppTheme.TextStyle.Header">
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="AppTheme.TextStyle.Description" parent="AppTheme.TextStyle">
+        <item name="android:textColor">@color/colorTextDesc</item>
+    </style>
+
+
+    <style name="AppTheme.TextStyle.Header.Black" parent="AppTheme.TextStyle">
+        <item name="android:textColor">@color/headerBlackColor</item>
+        <item name="android:textSize">@dimen/_15ssp</item>
+    </style>
+
+    <style name="AppTheme.TextStyle.description.gray" parent="AppTheme.TextStyle">
+        <item name="android:textColor">@color/descriptionGrayColor</item>
+        <item name="android:textSize">@dimen/_13ssp</item>
+    </style>
+
+    <style name="AppTheme.TextStyle.Secondary.white" parent="AppTheme.TextStyle">
+        <item name="android:textColor">@color/colorTextSecondaryWhite</item>
+        <item name="android:textSize">@dimen/_13ssp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="AppTheme.TextStyle.EmptyView.Description" parent="AppTheme.TextStyle.Description" />
+
+
+    <!-- Horizontal divider style -->
+    <style name="horizontalDividerViewStyle">
+        <item name="android:background">@color/horizontalDividerColor</item>
+        <item name="android:layout_height">@dimen/dim_horizontal_divider_height</item>
+    </style>
+
+
+    <!-- Shimmer layout style -->
+    <style name="shimmerLayoutStyle">
+        <item name="android:background">@color/ShimmerViewColor</item>
+    </style>
+
+
+    <style name="AppTheme.TextStyle.Secondary" parent="AppTheme.TextStyle">
+        <item name="android:textColor">@color/colorTextSecondary</item>
+        <item name="android:textSize">@dimen/_13ssp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="AppTheme.TextStyle.Toolbar.Action" parent="AppTheme.TextStyle.Secondary">
+        <item name="android:textSize">@dimen/dim_toolbar_tv_action_txt_size</item>
+    </style>
+
+
+    <style name="AppTheme.Toolbar">
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@color/toolbarTitleTextColor</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/dim_toolbar_cart_iv_title_txt_size</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="autoSizeMaxTextSize">@dimen/dim_toolbar_cart_iv_title_txt_size</item>
+        <item name="autoSizeMinTextSize">@dimen/dim_toolbar_cart_iv_title_min_txt_size</item>
+    </style>
+
+    <style name="AppTheme.Toolbar.Curvy" parent="AppTheme.Toolbar">
+        <item name="android:textColor">@color/toolbarCurvyTitleTextColor</item>
+    </style>
+
+    <style name="ThemeFullScreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/black</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+
+    <style name="Widget.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="itemHorizontalTranslationEnabled">true</item>
+        <item name="selectedMargin">0dp</item>
+        <item name="iconPadding">5dp</item>
+        <item name="background">@drawable/top_rounded_corners_white_bg</item>
+        <item name="itemBackground">@color/navigationColorBG</item>
+
+    </style>
+
+	<style name="Header.TextView" parent="AppTheme.TextStyle">
+		<item name="android:fontFamily">@font/din_next_medium</item>
+		<item name="android:textColor">@color/headerBlackColor</item>
+		<item name="android:textSize">@dimen/_14ssp</item>
+		<item name="android:includeFontPadding">false</item>
+	</style>
+
+
+
+    <style name="CustomBottomSheet" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+
+    </style>
+
+    <style name="CustomShapeAppearanceOverlay.MaterialComponents.BottomSheet" parent="">
+        <item name="cornerSizeTopRight">16dp</item>
+        <item name="cornerSizeTopLeft">16dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
+
+    <style name="PickerTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorText</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="SpinnerTheme" parent="android:Widget.Spinner">
+        <item name="android:background">@drawable/bg_spinner</item>
+        <item name="android:spinnerMode">dropdown</item>
+        <item name="android:popupBackground">@color/white</item>
+        <item name="android:layout_height">@dimen/_35sdp</item>
+        <item name="android:layout_marginTop">@dimen/_5sdp</item>
+    </style>
+
+    <style name="semiBlackHeader" parent="AppTheme.TextStyle">
+        <item name="android:textColor">@color/semi_black</item>
+        <item name="android:textSize">@dimen/_15ssp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_marginTop">@dimen/_5sdp</item>
+    </style>
+
+    <style name="calculateItEditText.Theme" parent="android:Widget.EditText">
+        <item name="android:textColor">@color/semi_black</item>
+        <item name="android:textSize">@dimen/_15ssp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:background">@drawable/borderd_search_box</item>
+        <item name="android:layout_height">@dimen/_35sdp</item>
+        <item name="android:layout_marginTop">@dimen/_5sdp</item>
+        <item name="android:paddingStart">@dimen/_5sdp</item>
+        <item name="android:paddingEnd">@dimen/_5sdp</item>
+    </style>
+
+    <style name="contactUsEditText" parent="android:Widget.EditText">
+        <item name="android:textColor">@color/semi_black</item>
+        <item name="android:textSize">@dimen/_15ssp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:background">@drawable/edit_text_no_border</item>
+        <item name="android:layout_height">@dimen/_40sdp</item>
+        <item name="android:layout_marginTop">@dimen/_5sdp</item>
+        <item name="android:paddingStart">@dimen/_5sdp</item>
+        <item name="android:paddingEnd">@dimen/_5sdp</item>
+    </style>
+
+
+    <style name="TabsStyle" parent="Widget.Design.TabLayout">
+        <item name="android:background">@color/white</item>
+        <item name="android:elevation">@dimen/_3sdp</item>
+        <item name="tabIndicatorColor">@color/tabsIndicatorColor</item>
+        <item name="tabSelectedTextColor">@color/tabsIndicatorColor</item>
+        <item name="tabTextAppearance">@style/TabstyleOneTextAppearance</item>
+
+    </style>
+
+    <style name="TabstyleOneTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:fontFamily">@font/din_next_medium</item>
+        <item name="android:textColor">@color/semi_black</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:paddingStart">@dimen/_5sdp</item>
+        <item name="android:paddingEnd">@dimen/_5sdp</item>
+        <item name="android:lines">1</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+
+    <style name="calculateItDesc" parent="AppTheme.TextStyle">
+        <item name="android:textColor">@color/semi_black</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="carMaintenanceEditText" parent="calculateItEditText.Theme">
+        <item name="android:background">@drawable/edit_text_no_border</item>
+    </style>
+
+    <style name="TransparentDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:colorBackground">     @android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.3</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="AppTheme.TextStyle.SubHeader" parent="AppTheme.TextStyle.Header.Bold">
+        <item name="android:textSize">@dimen/_13ssp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="AppTheme.TextStyle.Header.Bold" parent="AppTheme.TextStyle.Header">
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:textSize">@dimen/_18ssp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="AppTheme.TextStyle.Big" parent="AppTheme.TextStyle">
+        <item name="android:textSize">@dimen/_15ssp</item>
+    </style>
+
+
+
+
+    <style name="AppTheme.TextStyle.Big.Primary" parent="AppTheme.TextStyle">
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="AppTheme.TextStyle.Primary" parent="AppTheme.TextStyle">
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="AppTheme.TextStyle.White" parent="android:Widget.TextView">
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:fontFamily">@font/din_next_medium</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:shadowColor">@color/black</item>
+    </style>
+
+</resources>

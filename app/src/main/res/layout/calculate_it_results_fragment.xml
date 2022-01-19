@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.gtera.ui.calculateit.result.CalculateItResultsVM" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/pale_grey"
+            tools:context=".ui.authorization.login.SignInActivity">
+
+            <TextView
+                visibleIf="@{!viewModel.budgetNote.isEmpty()}"
+                android:id="@+id/tv_header"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/start"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@{viewModel.budgetNote}"/>
+            <View
+                visibleIf="@{!viewModel.budgetNote.isEmpty()}"
+                android:id="@+id/div"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_header"
+                app:layout_constraintStart_toStartOf="@id/start"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_1sdp"
+                style="@style/horizontalDividerViewStyle"/>
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintStart_toStartOf="@id/start"
+                app:layout_constraintTop_toBottomOf="@+id/div"
+                android:background="@color/pale_grey"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:id="@+id/rv_message_conversations"
+                adapter="@{viewModel.carsAdapter}"
+                viewOrientation="@{viewModel.carsVerticalOrientation}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="vertical"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintVertical_bias="0"
+                tools:itemCount="1"
+                tools:listitem="@layout/calculate_it_car_item_layout" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/start"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/_20sdp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/end"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/_20sdp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

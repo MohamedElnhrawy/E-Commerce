@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Confirmation Dialog-->
+    <dimen name="dim_confirmation_dialog_padding">@dimen/_11sdp</dimen>
+    <dimen name="dim_confirmation_dialog_min_width">@dimen/_240sdp</dimen>
+    <dimen name="dim_confirmation_dialog_btn_ok_mrgn_top">@dimen/_15sdp</dimen>
+    <dimen name="dim_confirmation_dialog_btn_ok_text_size">@dimen/_13ssp</dimen>
+    <dimen name="dim_confirmation_dialog_tv_message_padding">@dimen/_11sdp</dimen>
+    <dimen name="dim_confirmation_dialog_tv_message_text_size">@dimen/_14ssp</dimen>
+    <dimen name="dim_confirmation_dialog_tv_title_padding">@dimen/_3sdp</dimen>
+    <dimen name="dim_confirmation_dialog_tv_title_text_size">@dimen/_13ssp</dimen>
+    <dimen name="dim_confirmation_dialog_btn_cancel_text_size">@dimen/_13ssp</dimen>
+    <dimen name="dim_btn_background_corners">4dp</dimen>
+
+
+    <!-- slider margin  -->
+
+    <dimen name="dim_home_slider_margin">10dp</dimen>
+    <!-- drawer layout  item layout -->
+    <dimen name="dim_drawer_layout_item_bottom_padding">@dimen/_8sdp</dimen>
+    <dimen name="dim_drawer_layout_item_iv_item_image_width">34dp</dimen>
+    <dimen name="dim_drawer_layout_item_iv_item_image_height">34dp</dimen>
+    <dimen name="dim_drawer_layout_item_iv_item_image_padding">5dp</dimen>
+    <dimen name="dim_drawer_layout_item_tv_item_name_mrgn_top">15dp</dimen>
+    <!--  Base Empty layout -->
+    <dimen name="dim_base_empty_layout_tv_empty_title_txt_size">@dimen/_15ssp</dimen>
+    <dimen name="dim_base_empty_layout_iv_empty_padding">@dimen/_4sdp</dimen>
+
+
+    <!-- default Dialog-->
+    <dimen name="dim_default_dialog_padding">@dimen/_10sdp</dimen>
+    <dimen name="dim_default_dialog_btn_ok_mrgn_top">@dimen/_8sdp</dimen>
+    <dimen name="dim_default_dialog_btn_ok_text_size">@dimen/_13ssp</dimen>
+    <dimen name="dim_default_dialog_tv_message_padding">@dimen/_4sdp</dimen>
+    <dimen name="dim_default_dialog_tv_message_text_size">@dimen/_14ssp</dimen>
+    <dimen name="dim_default_dialog_tv_title_padding">@dimen/_3sdp</dimen>
+    <dimen name="dim_default_dialog_tv_title_text_size">@dimen/_13ssp</dimen>
+    <dimen name="dim_default_dialog_btn_cancel_text_size">@dimen/_13ssp</dimen>
+
+
+    <!-- drawer layout -->
+    <dimen name="dim_drawer_layout_drawer_icon_mrgn_top">@dimen/_25sdp</dimen>
+    <dimen name="dim_drawer_layout_tv_powered_by_mrgn_bottom">28dp</dimen>
+    <dimen name="dim_drawer_layout_tv_Vname_mrgn_bottom">@dimen/_5sdp</dimen>
+
+
+    <!-- Banner layout-->
+    <dimen name="dim_banner_layout_mrgn">13dp</dimen>
+    <dimen name="dim_banner_layout_textmsg_mrgn_start">20dp</dimen>
+    <dimen name="dim_banner_layout_banner_label_txt_size">@dimen/_14ssp</dimen>
+    <dimen name="dim_banner_layout_banner_message_txt_size">@dimen/_13ssp</dimen>
+    <dimen name="dim_banner_layout_status_icon_width">30dp</dimen>
+    <dimen name="dim_banner_layout_status_icon_height">30dp</dimen>
+    <dimen name="dim_banner_layout_rlCancel_container_height">20dp</dimen>
+    <dimen name="dim_banner_layout_rlCancel_container_width">20dp</dimen>
+    <dimen name="dim_banner_layout_rlCancel_height">15dp</dimen>
+    <dimen name="dim_banner_layout_rlCancel_width">15dp</dimen>
+    <dimen name="dim_banner_layout_rlCancel_mrgn_start">10dp</dimen>
+
+    <!-- horizontal divider -->
+    <dimen name="dim_horizontal_divider_height">@dimen/_1sdp</dimen>
+
+    <!--  Base layout -->
+    <dimen name="dim_base_layout_nav_view_min_width">@dimen/_200sdp</dimen>
+
+
+    <!-- dummy Data -->
+    <dimen name="dim_dummy_data_height">@dimen/_30sdp</dimen>
+    <!-- toolbar -->
+
+    <dimen name="dim_toolbar_padding">@dimen/_1sdp</dimen>
+    <dimen name="dim_toolbar_iv_back_padding">@dimen/_5sdp</dimen>
+    <dimen name="dim_toolbar_iv_back_mrgn_top">@dimen/_12sdp</dimen>
+    <dimen name="dim_toolbar_iv_back_mrgn_end">@dimen/_8sdp</dimen>
+    <dimen name="dim_toolbar_iv_back_mrgn_bottom">@dimen/_12sdp</dimen>
+    <dimen name="dim_toolbar_iv_back_mrgn_start">@dimen/_8sdp</dimen>
+    <dimen name="dim_toolbar_iv_menu_padding">@dimen/_2sdp</dimen>
+    <dimen name="dim_toolbar_iv_search_padding">@dimen/_3sdp</dimen>
+    <dimen name="dim_toolbar_iv_action_padding">@dimen/_8sdp</dimen>
+    <dimen name="dim_toolbar_tv_action_padding">@dimen/_8sdp</dimen>
+    <dimen name="dim_toolbar_tv_action_txt_size">@dimen/_13sdp</dimen>
+    <dimen name="dim_toolbar_cart_iv_header_logo_padding">@dimen/_2sdp</dimen>
+    <dimen name="dim_toolbar_cart_iv_title_txt_size">@dimen/_16ssp</dimen>
+    <dimen name="dim_toolbar_cart_iv_title_min_txt_size">@dimen/_12ssp</dimen>
+    <dimen name="dim_toolbar_cart_iv_title_max_txt_size">@dimen/_19ssp</dimen>
+    <dimen name="dim_toolbar_elevation">@dimen/_3sdp</dimen>
+    <dimen name="dim_toolbar_zero_elvation">@dimen/zero_elevation</dimen>
+
+
+    <!-- Loading Layout -->
+    <dimen name="dim_loading_layout_container_padding">30dp</dimen>
+    <dimen name="dim_loading_layout_iv_loading_height">120dp</dimen>
+    <dimen name="dim_loading_layout_iv_loading_width">80dp</dimen>
+    <dimen name="curvy_toolbar_height">@dimen/_56sdp</dimen>
+
+
+    <!-- curvy toolbar -->
+    <dimen name="dim_toolbar_curvy_padding">@dimen/_1sdp</dimen>
+    <dimen name="dim_toolbar_curvy_iv_back_padding">@dimen/_5sdp</dimen>
+    <dimen name="dim_toolbar_curvy_iv_menu_padding">@dimen/_2sdp</dimen>
+    <dimen name="dim_toolbar_curvy_has_action_txt_padding">@dimen/_8sdp</dimen>
+    <dimen name="dim_toolbar_curvy_has_action_txt_txt_size">@dimen/_11sdp</dimen>
+    <dimen name="dim_toolbar_curvy_cart_container_mrgn_end">@dimen/_10sdp</dimen>
+    <dimen name="dim_toolbar_curvy_cart_iv_cart_padding">@dimen/_8sdp</dimen>
+    <dimen name="dim_toolbar_curvy_cart_tv_cart_qty_mrgn_start">@dimen/_5sdp</dimen>
+    <dimen name="dim_toolbar_curvy_cart_tv_cart_qty_mrgn_bottom">@dimen/_5sdp</dimen>
+    <dimen name="dim_toolbar_curvy_cart_tv_cart_qty_txt_size">@dimen/_7ssp</dimen>
+    <dimen name="dim_toolbar_curvy_cart_iv_header_logo_txt_size">@dimen/_2sdp</dimen>
+    <dimen name="dim_toolbar_curvy_cart_iv_title_txt_size">@dimen/_16ssp</dimen>
+    <dimen name="dim_toolbar_curvy_cart_iv_title_min_txt_size">@dimen/_12ssp</dimen>
+    <dimen name="dim_toolbar_curvy_cart_iv_title_max_txt_size">@dimen/_19ssp</dimen>
+    <dimen name="dim_toolbar_curvy_zero_elvation">@dimen/zero_dp</dimen>
+    <dimen name="dim_toolbar_curvy_elevation">@dimen/_3sdp</dimen>
+    <dimen name="zero_elevation">@dimen/zero_dp</dimen>
+    <dimen name="zero_dp">0dp</dimen>
+
+
+    <!--  Bottom Navigation -->
+    <dimen name="dim_bottom_navigation_padding_top">@dimen/_3sdp</dimen>
+    <dimen name="bottom_navigation_icon_size" tools:override="true">45dp</dimen>
+    <dimen name="design_bottom_navigation_height" tools:override="true">62dp</dimen>
+
+
+    <!--  Change Passsword Layout -->
+    <dimen name="dim_change_password_layout_padding">@dimen/_5sdp</dimen>
+    <dimen name="dim_change_password_layout_change_password_mrgn_top">@dimen/_40sdp</dimen>
+    <dimen name="dim_change_password_layout_change_password_mrgn_bottom">@dimen/_15sdp</dimen>
+    <dimen name="edit_view_padding">@dimen/_5sdp</dimen>
+
+    <!-- Search view -->
+    <dimen name="dim_search_bar_icon_padding">@dimen/_10sdp</dimen>
+    <dimen name="dim_search_bar_text_padding_start">@dimen/_10sdp</dimen>
+    <dimen name="dim_search_bar_text_padding_end">@dimen/_20sdp</dimen>
+    <dimen name="dim_search_bar_text_size">@dimen/_12sdp</dimen>
+
+    <dimen name="radius">@dimen/_10sdp</dimen>
+    <dimen name="dots_height">@dimen/_10sdp</dimen>
+
+
+    <dimen name="dim_home_sc_category_view_padding_top">@dimen/_4sdp</dimen>
+    <dimen name="dim_home_sc_category_title_mrgn_start">@dimen/_16sdp</dimen>
+    <dimen name="dim_home_sc_category_title_mrgn_end">@dimen/_16sdp</dimen>
+    <dimen name="dim_home_sc_category_more_mrgn_start">@dimen/_16sdp</dimen>
+    <dimen name="dim_home_sc_category_more_mrgn_end">@dimen/_16sdp</dimen>
+    <dimen name="dim_home_sc_category_list_mrgn_top">@dimen/_5sdp</dimen>
+    <dimen name="dim_home_sc_category_list_padding_start">@dimen/_10sdp</dimen>
+    <dimen name="dim_home_sc_category_list_padding_end">0dp</dimen>
+
+    <!-- Product details Related Products view-->
+    <dimen name="dim_product_details_sc_related_view_mrn_start">@dimen/_4sdp</dimen>
+    <dimen name="dim_product_details_sc_related_view_mrn_end">0dp</dimen>
+    <dimen name="dim_product_details_sc_related_view_mrn_top">@dimen/_4sdp</dimen>
+    <dimen name="dim_product_details_sc_related_view_mrn_bottom">0dp</dimen>
+    <dimen name="dim_product_details_sc_related_view_list_mrn_top">@dimen/_5sdp</dimen>
+    <dimen name="dim_product_item_horizontal_width">@dimen/_140sdp</dimen>
+    <dimen name="dim_product_item_horizontal_mrgn">@dimen/_3sdp</dimen>
+    <dimen name="dim_product_item_horizontal_card_elevation">@dimen/_1sdp</dimen>
+
+</resources>

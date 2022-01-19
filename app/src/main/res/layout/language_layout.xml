@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.gtera.ui.profile.language.LanguageViewModel" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_ar_language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.onArabicLanguageSelection()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_ar_language"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/str_arabic_language_txt"
+                android:textColor="@{viewModel.isLangAr ? @color/colorText:@color/black}"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:textColor="@color/colorText" />
+
+            <RadioButton
+                android:id="@+id/rbtn_ar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:onClick="@{() -> viewModel.onArabicLanguageSelection()}"
+                android:buttonTint="@color/colorPrimary"
+                android:checked="@{viewModel.isLangAr}"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_ar_language"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_ar_language"
+                tools:checked="true" />
+
+            <View
+                android:id="@+id/ar_horzontal_line"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@color/dividerColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_ar_language" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_en_language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.onEnglishLanguageSelection()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_ar_language">
+
+            <TextView
+                android:id="@+id/tv_en_language"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/str_english_language_txt"
+                android:textColor="@{!viewModel.isLangAr ? @color/colorText:@color/black}"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/en_horzontal_line"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@color/dividerColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_en_language" />
+
+
+            <RadioButton
+                android:id="@+id/rbtn_en"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:buttonTint="@color/colorPrimary"
+                android:checked="@{!viewModel.isLangAr}"
+                android:onClick="@{() -> viewModel.onEnglishLanguageSelection()}"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_en_language"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_en_language" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.gtera.ui.base.buttons.LoadingButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            app:altBackground="@drawable/rounded_corners_light"
+            app:background="@drawable/rounded_corners_primary"
+            app:isEnabled="@{!viewModel.isLoading() &amp;&amp; viewModel.isEnabled}"
+            app:isLoading="@{viewModel.isLoading}"
+            app:clickListener="@{() -> viewModel.onSaveButtonClick()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_en_language"
+            app:layout_constraintVertical_bias="0.95"
+            app:layout_constraintWidth_percent="0.95"
+            app:text="@string/str_save" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

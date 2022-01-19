@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.gtera.ui.calculateit.result.CalculateItCarItemVM" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="@dimen/_2sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_3sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        app:cardElevation="@dimen/_1sdp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_4sdp">
+
+
+            <View
+                android:id="@+id/h_seperator"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@color/dividerColor"
+                app:layout_constraintBottom_toTopOf="@+id/tv_car_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_car_image"
+                imageUrl="@{viewModel.imageUrl}"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:padding="@dimen/_5sdp"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toTopOf="@id/h_seperator"
+                app:layout_constraintDimensionRatio="2.5:0.95"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/ic_logo" />
+
+            <TextView
+                style="@style/calculateItDesc"
+                android:id="@+id/tv_car_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:gravity="start|center_vertical"
+                android:lines="2"
+                android:text="@{viewModel.carName}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_car_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Toyota rush‏ 1.5 A/T F/O " />
+
+            <TextView
+                style="@style/calculateItDesc"
+                app:layout_constraintTop_toBottomOf="@+id/tv_car_title"
+                app:layout_constraintStart_toStartOf="@+id/tv_car_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="viewStart"
+                android:id="@+id/tv_car_add_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:gravity="start|center_vertical"
+                android:text="@{viewModel.carPrice}"
+                tools:text="400,000 EGP" />
+
+            <TextView
+                style="@style/calculateItDesc"
+                app:layout_constraintTop_toBottomOf="@+id/tv_car_add_date"
+                app:layout_constraintStart_toStartOf="@+id/tv_car_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="viewStart"
+                android:id="@+id/tv_monthly_installment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:gravity="start|center_vertical"
+                android:text="@{viewModel.monthlyInstallmnet}"
+                tools:text="400,000 EGP" />
+            <TextView
+                style="@style/calculateItDesc"
+                app:layout_constraintTop_toBottomOf="@+id/tv_monthly_installment"
+                app:layout_constraintStart_toStartOf="@+id/tv_car_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="viewStart"
+                android:id="@+id/tv_insurance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:gravity="start|center_vertical"
+                android:text="@{viewModel.insurance}"
+                tools:text="400,000 EGP" />
+            <TextView
+                style="@style/calculateItDesc"
+                app:layout_constraintTop_toBottomOf="@+id/tv_insurance"
+                app:layout_constraintStart_toStartOf="@+id/tv_car_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="viewStart"
+                android:id="@+id/tv_administrative"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:gravity="start|center_vertical"
+                android:text="@{viewModel.administrativeExpense}"
+                tools:text="400,000 EGP" />
+            <TextView
+                style="@style/calculateItDesc"
+                app:layout_constraintTop_toBottomOf="@+id/tv_administrative"
+                app:layout_constraintStart_toStartOf="@+id/tv_car_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="viewStart"
+                android:id="@+id/tv_total_amount_required"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:gravity="start|center_vertical"
+                android:text="@{viewModel.totalAmountRequired}"
+                tools:text="400,000 EGP" />
+            <TextView
+                style="@style/calculateItDesc"
+                app:layout_constraintTop_toBottomOf="@+id/tv_total_amount_required"
+                app:layout_constraintStart_toStartOf="@+id/tv_car_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="viewStart"
+                android:id="@+id/tv_last_update"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:gravity="start|center_vertical"
+                android:text="@{viewModel.lastUpdate}"
+                tools:text="400,000 EGP" />
+
+            <TextView
+                style="@style/calculateItDesc"
+                app:layout_constraintTop_toBottomOf="@+id/tv_last_update"
+                app:layout_constraintStart_toStartOf="@+id/tv_car_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="viewStart"
+                android:id="@+id/tv_car_code"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:gravity="start|center_vertical"
+                android:text="@{viewModel.carCode}"
+                tools:text="400,000 EGP" />
+
+
+            <ImageView
+                android:background="@null"
+                android:id="@+id/iv_share_icon"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleX="3"
+                android:scaleY="3"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.1"
+                app:srcCompat="@drawable/ic_share" />
+
+            <ImageView
+                android:textColor="@color/semi_black"
+                android:id="@+id/iv_favorite_icon"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleX="3"
+                android:scaleY="3"
+                app:srcCompat="@{viewModel.isFavoriteCar ? @drawable/ic_favorite_on : @drawable/ic_favorite_off}"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.1"
+                tools:srcCompat="@drawable/ic_favorite_off" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
