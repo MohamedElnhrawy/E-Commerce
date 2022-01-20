@@ -1,6 +1,7 @@
 package com.gtera.base
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog.OnDateSetListener
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -11,6 +12,7 @@ import android.location.Location
 import android.os.Bundle
 import android.provider.MediaStore
 import android.text.TextUtils
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.annotation.CallSuper
@@ -21,11 +23,7 @@ import androidx.databinding.ObservableBoolean
 import androidx.lifecycle.*
 import androidx.lifecycle.Observer
 import com.gtera.R
-import com.gtera.data.error.ErrorDetails
-import com.gtera.data.interfaces.APICommunicatorListener
 import com.gtera.data.local.LocaleHelper
-import com.gtera.data.model.requests.FavoriteResponse
-import com.gtera.data.model.requests.FavoritesRequest
 import com.gtera.data.repository.AppRepository
 import com.gtera.di.providers.ResourceProvider
 import com.gtera.event.EmptyEvent
@@ -50,7 +48,11 @@ import com.gtera.ui.utils.AppScreenRoute
 import com.gtera.utils.*
 import com.facebook.appevents.AppEventsLogger
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+import com.google.firebase.auth.PhoneAuthCredential
 import com.gtera.data.model.CartProduct
+import com.gtera.data.model.User
 import io.reactivex.disposables.CompositeDisposable
 import java.util.*
 import javax.inject.Inject
@@ -68,6 +70,7 @@ abstract class BaseViewModel<N> :
     @Inject
     lateinit var appRepository: AppRepository
 
+    @SuppressLint("StaticFieldLeak")
     @Inject
     lateinit var context: Context
 
@@ -254,12 +257,6 @@ abstract class BaseViewModel<N> :
 
     protected val isUserLoggedIn: Boolean?
         protected get() = appRepository?.isUserLoggedIn()
-
-    protected val isGuestUser: Boolean?
-        protected get() = appRepository?.isGuestUser()
-
-    protected val isActiveUser: Boolean?
-        protected get() = appRepository?.isActiveUser()
 
 
     open val hasBack: Boolean?
@@ -1033,51 +1030,6 @@ abstract class BaseViewModel<N> :
     }
 
 
-    fun addOrRemoveFavorite(
-        addToFavoritesRequest: FavoritesRequest,
-        navigator: ConfirmationDialogNavigator,
-        isAdd: Boolean
-    ) {
-        if (appRepository.isUserLoggedIn()) {
-            if (isAdd) {
-                appRepository.addToFavorites(
-                    addToFavoritesRequest,
-                    lifecycleOwner,
-                    object : APICommunicatorListener<FavoriteResponse?> {
-                        override fun onSuccess(result: FavoriteResponse?) {
-                            showSuccessBanner(getStringResource(R.string.str_added_to_favorites_successfully))
-                        }
-
-                        override fun onError(throwable: ErrorDetails?) {
-                            showErrorBanner(throwable?.errorMsg)
-                        }
-
-                    })
-            } else {
-
-                appRepository.removeFromFavorites(
-                    addToFavoritesRequest,
-                    lifecycleOwner,
-                    object : APICommunicatorListener<FavoriteResponse?> {
-                        override fun onSuccess(result: FavoriteResponse?) {
-                            showSuccessBanner(getStringResource(R.string.str_removed_to_favorites_successfully))
-                        }
-
-                        override fun onError(throwable: ErrorDetails?) {
-                            showErrorBanner(throwable?.errorMsg)
-                        }
-
-                    })
-            }
-
-
-        } else {
-
-            showRequiredLoginDialog(getDrawableResources(R.drawable.ic_login), navigator)
-        }
-
-    }
-
 
     fun openSignInView(key: String?, requestCode: Int?) {
         val extras = Bundle()
@@ -1086,27 +1038,57 @@ abstract class BaseViewModel<N> :
     }
 
 
-     fun getGoToSignInConfirmationNavigator(): ConfirmationDialogNavigator? {
-
-        return object : ConfirmationDialogNavigator {
-            override fun onYesClicked() {
-
-
-                openSignInView(APPConstants.EXTRAS_KEY_FAVORITE, APPConstants.REQUEST_CODE_FAVORITE)
-
-            }
-
-            override fun onNoClicked() {
-                dismissConfirmationDialog()
-            }
-        }
-    }
+//     fun getGoToSignInConfirmationNavigator(): ConfirmationDialogNavigator? {
+//
+//        return object : ConfirmationDialogNavigator {
+//            override fun onYesClicked() {
+//
+//
+//                openSignInView(APPConstants.EXTRAS_KEY_FAVORITE, APPConstants.REQUEST_CODE_FAVORITE)
+//
+//            }
+//
+//            override fun onNoClicked() {
+//                dismissConfirmationDialog()
+//            }
+//        }
+//    }
     fun getStringFromResources(id: Int, vararg formatArgs: Any?): String? {
         val mContext: Context = LocaleHelper.setLocale(
             context,
             appRepository.getAppLanguage()
         )
         return mContext.resources.getString(id, *formatArgs)
+    }
+
+    fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential,auth: FirebaseAuth){
+        auth.signInWithCredential(credential)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    // open main screen ,  save user to local
+                    val fbUser = task.result?.user
+                    val user = fbUser?.let { it1 ->
+                        User(
+                            fbUser.email, fbUser.displayName, fbUser.phoneNumber,
+                            it1.uid
+                        )
+                    }
+                    user?.let { it1 ->
+                        appRepository.insertUserLocally(it1)
+                        openView(AppScreenRoute.MAIN_SCREEN, null)
+                    }
+
+                } else {
+                    // Sign in failed, display a message and update the UI
+                    if (task.exception is FirebaseAuthInvalidCredentialsException) {
+                        // The verification code entered was invalid
+                        showErrorBanner("Invalid OTP")
+                    }
+                }
+            }
+
+        isLoading.set(false)
+        Log.d("GFG", "onVerificationCompleted Success")
     }
 
 }

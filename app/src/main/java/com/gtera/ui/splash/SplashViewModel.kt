@@ -35,11 +35,10 @@ class SplashViewModel : BaseViewModel<SplashNavigator> {
 
 
     private fun openMainScreen() {
-        //TODO: UPDATE CONDITION
-//        if (appRepository.isUserLoggedIn())
+        if (appRepository.isUserLoggedIn())
             openView(AppScreenRoute.MAIN_SCREEN, null)
-//        else
-//            openView(AppScreenRoute.SIGN_IN_SCREEN, null)
+        else
+            openView(AppScreenRoute.SIGN_IN_SCREEN, null)
 
     }
 

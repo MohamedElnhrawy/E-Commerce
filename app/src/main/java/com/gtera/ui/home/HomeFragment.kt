@@ -1,5 +1,7 @@
 package com.gtera.ui.home
 
+import android.view.View
+import android.view.ViewStub
 import com.gtera.R
 import com.gtera.base.BaseFragment
 import com.gtera.databinding.HomeLayoutBinding
@@ -34,6 +36,15 @@ class HomeFragment :
 
     override val isListingView: Boolean
         get() = true
+
+
+    override fun initCartView() {
+        val viewStub: ViewStub? = viewDataBinding.cartView.viewStub
+        if (viewStub == null ||
+            viewDataBinding.cartView.isInflated
+        ) return
+        viewStub.inflate()
+    }
 
 
 }

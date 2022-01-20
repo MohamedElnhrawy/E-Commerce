@@ -531,9 +531,9 @@ abstract class BaseActivity<T : ViewDataBinding, V : BaseViewModel<*>?> :
         return R.layout.shimmer_base_fragment_layout
     }
 
-    protected fun screenEmptyView(): EmptyView {
+    open fun screenEmptyView(): EmptyView {
         return EmptyView(
-            R.drawable.ic_search,
+            R.drawable.ic_empty_list,
             R.string.oops,
             R.string.empty_default_txt,
             viewModel?.resourceProvider!!
@@ -896,7 +896,7 @@ abstract class BaseActivity<T : ViewDataBinding, V : BaseViewModel<*>?> :
         extras: Bundle?
     ) {
         val intent = Intent(this, activity)
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
         if (extras != null) intent.putExtras(extras)
         finishAffinity()
         startActivity(intent)

@@ -6,4 +6,4 @@ import androidx.recyclerview.widget.RecyclerView
 //    class ViewHolder<V : ViewDataBinding>(val binding: V) : RecyclerView.ViewHolder(binding.getRoot())
 
 class ViewHolder/*<V : ViewDataBinding?> */internal constructor(val binding: ViewDataBinding?) :
-    RecyclerView.ViewHolder(binding?.getRoot()!!)
+    RecyclerView.ViewHolder(binding?.root!!)

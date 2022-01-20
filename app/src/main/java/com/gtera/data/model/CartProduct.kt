@@ -17,6 +17,9 @@ class CartProduct  : Serializable {
     @field:SerializedName("name")
     var name: String? = null
 
+    @field:SerializedName("category_name")
+    var categoryName: String? = null
+
     @field:SerializedName("description")
     var description: String? = null
 
@@ -39,7 +42,8 @@ class CartProduct  : Serializable {
         image: String?,
         price: Double?,
         cartQuantity: Int,
-        totalPrice: Float?
+        totalPrice: Float?,
+        categoryName : String?
     ) {
         this.id = id
         this.name = name
@@ -48,6 +52,7 @@ class CartProduct  : Serializable {
         this.price = price
         this.cartQuantity = cartQuantity
         this.totalPrice = totalPrice
+        this.categoryName = categoryName
     }
 
 

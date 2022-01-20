@@ -15,6 +15,7 @@ import com.gtera.ui.base.ListOrientation
 import com.gtera.ui.common.ClickListener
 import com.gtera.ui.common.ViewHolderInterface
 import com.gtera.ui.home.viewmodels.*
+import com.gtera.ui.utils.AppScreenRoute
 import com.gtera.utils.Utilities
 import java.util.*
 import javax.inject.Inject
@@ -30,8 +31,8 @@ class HomeViewModel @Inject constructor() : BaseViewModel<HomeNavigator>() {
     var hasCart = ObservableField(false)
 
     var allCartItemsClick =
-        View.OnClickListener { v: View? ->
-//            openAllOffers()
+        View.OnClickListener { _: View? ->
+            openView(AppScreenRoute.CART_SCREEN,null)
         }
 
     // adapters
@@ -52,27 +53,29 @@ class HomeViewModel @Inject constructor() : BaseViewModel<HomeNavigator>() {
 
 
     //Orientation
-    var cartOrientation: ListOrientation? = ListOrientation.ORIENTATION_HORIZONTAL
+    var cartOrientation: ListOrientation = ListOrientation.ORIENTATION_HORIZONTAL
     var categoriesOrientation: ListOrientation? = ListOrientation.ORIENTATION_VERTICAL
 
 
     override fun onViewCreated() {
-        getLiveCart()
         super.onViewCreated()
         getHomeContent()
+        getLiveCart()
+
 
     }
 
     private fun initCart() {
-//        cartAdapter = BaseAdapter(cartList, object : ViewHolderInterface {
-//
-//
-//            override fun onViewClicked(position: Int, id: Int) {
-////                val extras = Bundle()
-////                extras.putSerializable(APPConstants.EXTRAS_KEY_NEWS, newsList[position].news)
-////                openView(AppScreenRoute.HOME_NEWS_DETAILS, extras)
-//            }
-//        })
+        cartAdapter = BaseAdapter(cartList, object : ViewHolderInterface {
+
+
+            override fun onViewClicked(position: Int, id: Int) {
+                openView(AppScreenRoute.CART_SCREEN,null)
+//                val extras = Bundle()
+//                extras.putSerializable(APPConstants.EXTRAS_KEY_NEWS, newsList[position].news)
+//                openView(AppScreenRoute.HOME_NEWS_DETAILS, extras)
+            }
+        })
     }
 
     private fun initCategories() {
@@ -98,7 +101,7 @@ class HomeViewModel @Inject constructor() : BaseViewModel<HomeNavigator>() {
                 addCategories(result?.data?.categories!!)
                 hideLoading()
                 isRefreshing.set(false)
-
+                getUserData()
             }
 
             override fun onError(throwable: ErrorDetails?) {
@@ -131,19 +134,25 @@ class HomeViewModel @Inject constructor() : BaseViewModel<HomeNavigator>() {
             }
     }
 
-    private fun addCarts(list: List<Product?>) {
+    private fun addCarts(list: List<CartProduct?>) {
 //        if (Utilities.isNullList(list)) return
-//
-//        this.cartList.clear()
-//        if (list.isNotEmpty()) hasCart.set(true)
-//        for (product in list) {
-//            val productItemViewModel = NewsItemViewModel(
-//                news, resourceProvider, ListOrientation.ORIENTATION_HOME
-//            )
-//            this.cartList.add(productItemViewModel)
-//        }
-//        cartAdapter?.updateList(cartList)
-//        cartAdapter?.notifyDataSetChanged()
+        navigator?.initCartView()
+        this.cartList.clear()
+      hasCart.set(list.isNotEmpty())
+        for (item in list) {
+            val cartItemViewModel = item?.let {
+                CartItemViewModel(
+                    it, resourceProvider, cartOrientation
+                )
+            }
+            cartItemViewModel?.let {
+                this.cartList.add(it)
+            }
+            if (cartList.size == 3)
+                break
+        }
+        cartAdapter?.updateList(cartList)
+        cartAdapter?.notifyDataSetChanged()
     }
 
     private fun addCategories(list: List<Category?>) {
@@ -156,17 +165,31 @@ class HomeViewModel @Inject constructor() : BaseViewModel<HomeNavigator>() {
             this.categoriesList.add(categoryItemViewModel)
         }
         categoriesAdapter?.updateList(categoriesList)
-        categoriesAdapter?.notifyDataSetChanged()
     }
 
     private fun getLiveCart(){
         appRepository.getLiveCartList(lifecycleOwner,
             androidx.lifecycle.Observer<List<CartProduct?>?> {
+                it?.let { it1 -> addCarts(it1) }
                Log.e("cccccc",it?.size.toString())
             })
     }
 
 
+    override fun onViewRecreated() {
+        super.onViewRecreated()
+        if (!Utilities.isNullList(categoriesList))
+            navigator?.initCartView()
+    }
 
+    fun getUserData(){
+        appRepository.getLoggedInUser(lifecycleOwner, object : APICommunicatorListener<User?> {
+            override fun onSuccess(result: User?) {
+                welcomeText.set(welcomeText.get()+ result?.getWelcomedName())
+            }
+            override fun onError(throwable: ErrorDetails?) {
+            }
+        })
+    }
 
 }

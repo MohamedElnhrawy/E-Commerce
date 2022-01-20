@@ -44,10 +44,12 @@
             app:srcCompat="@drawable/ic_right_red_arrow" />
 
         <TextView
+            android:textAlignment="viewStart"
             android:id="@+id/tv_info_header_txt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_17sdp"
+            android:layout_margin="@dimen/_5sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:paddingTop="@dimen/_15sdp"
             android:paddingBottom="@dimen/_15sdp"

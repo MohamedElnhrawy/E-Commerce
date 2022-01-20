@@ -23,6 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/pale_grey"
+            android:animateLayoutChanges="true"
             tools:context=".ui.authorization.login.SignInActivity">
 
             <com.gtera.ui.base.edittext.EditText
@@ -30,17 +31,18 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_20sdp"
-                app:label="@string/email"
+                app:label="@string/str_emial_or_phone"
                 app:labelColor="@color/colorTextSecondary"
-                app:editText="@={viewModel.userMail}"
-                app:inputType="textEmailAddress"
-                app:isSuccess="@{viewModel.userMailStatus}"
+                app:editText="@={viewModel.user}"
+                app:inputType="text"
+                app:isSuccess="@{viewModel.userStatus}"
                 app:layout_constraintEnd_toEndOf="@id/end"
                 app:layout_constraintStart_toStartOf="@id/start"
                 app:layout_constraintTop_toTopOf="parent"
-                app:message="@{viewModel.userMailError}" />
+                app:message="@{viewModel.userError}" />
 
             <com.gtera.ui.base.edittext.EditText
+                visibleIf="@{viewModel.showPassword}"
                 android:id="@+id/et_password"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -56,17 +58,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/et_email"
                 app:passwordToggleEnabled="true" />
 
-            <TextView
-                android:id="@+id/tv_forgot_pass"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:text="@string/forgot_password"
-                android:onClick="@{()->viewModel.forgetPasswordClick()}"
-                android:textColor="@color/text_primary"
-                android:textSize="@dimen/_12sdp"
-                app:layout_constraintEnd_toEndOf="@id/end"
-                app:layout_constraintTop_toBottomOf="@+id/et_password" />
+
 
 
             <com.gtera.ui.base.buttons.LoadingButton
@@ -80,133 +72,9 @@
                 app:isLoading="@{viewModel.isLoading}"
                 app:layout_constraintEnd_toEndOf="@id/end"
                 app:layout_constraintStart_toStartOf="@id/start"
-                app:layout_constraintTop_toBottomOf="@+id/tv_forgot_pass"
+                app:layout_constraintTop_toBottomOf="@+id/et_password"
                 app:text="@string/sign_in" />
 
-            <TextView
-                android:id="@+id/tv_have_account"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:gravity="center"
-                android:text="@string/dont_have_account"
-                android:textColor="@color/semi_black"
-                android:textSize="@dimen/_12sdp"
-                app:layout_constraintEnd_toEndOf="@id/end"
-                app:layout_constraintStart_toStartOf="@id/start"
-                app:layout_constraintTop_toBottomOf="@+id/btn_signin" />
-
-            <TextView
-                android:id="@+id/tv_signup"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:gravity="center"
-                android:text="@string/signup"
-                android:onClick="@{()->viewModel.onSignUpBtnClick()}"
-                android:textColor="@color/text_primary"
-                android:textSize="@dimen/_12sdp"
-                app:layout_constraintEnd_toEndOf="@id/end"
-                app:layout_constraintStart_toStartOf="@id/start"
-                app:layout_constraintTop_toBottomOf="@+id/tv_have_account" />
-
-            <TextView
-                android:id="@+id/tv_try_sign"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_40sdp"
-                android:gravity="center"
-                android:text="@string/sign_with"
-                android:textColor="@color/semi_black"
-                android:textSize="@dimen/_12sdp"
-                app:layout_constraintStart_toStartOf="@id/start"
-                app:layout_constraintTop_toBottomOf="@+id/tv_have_account" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cons_google"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_40sdp"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:onClick="@{()->viewModel.onGoogleLoginButtonClicked()}"
-                android:background="@drawable/rounded_corners_white_with_gray_strock"
-                app:layout_constraintEnd_toEndOf="@id/end"
-                app:layout_constraintStart_toStartOf="@id/start"
-                app:layout_constraintTop_toBottomOf="@+id/tv_try_sign">
-
-                <TextView
-                    android:id="@+id/tv_google"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sign_with_google"
-                    android:textAllCaps="false"
-                    android:textColor="@color/semi_black"
-                    android:textSize="@dimen/_12sdp"
-
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:src="@drawable/ic_google"
-                    android:scaleType="center"
-                    android:layout_marginEnd="@dimen/_6sdp"
-                    app:layout_constraintBottom_toBottomOf="@+id/tv_google"
-                    app:layout_constraintDimensionRatio="1:1"
-                    app:layout_constraintEnd_toStartOf="@+id/tv_google"
-                    app:layout_constraintTop_toTopOf="@+id/tv_google" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cons_facebook"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_40sdp"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:background="@drawable/facebook_corner_bg"
-                android:text="@string/sign_with_facebook"
-                android:textAllCaps="false"
-                android:onClick="@{() -> viewModel.onFacebookLoginButtonClicked()}"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_12sdp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/end"
-                app:layout_constraintStart_toStartOf="@id/start"
-                app:layout_constraintTop_toBottomOf="@+id/cons_google"
-                app:layout_constraintVertical_bias="0.07999998">
-
-                <TextView
-                    android:id="@+id/tv_facebook"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:includeFontPadding="false"
-                    android:text="@string/sign_with_facebook"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_12sdp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_marginEnd="@dimen/_5sdp"
-                    android:src="@drawable/ic_facebook_white"
-                    app:layout_constraintBottom_toBottomOf="@+id/tv_facebook"
-                    app:layout_constraintDimensionRatio="1:1"
-                    app:layout_constraintEnd_toStartOf="@+id/tv_facebook"
-                    app:layout_constraintTop_toTopOf="@+id/tv_facebook" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            <androidx.constraintlayout.widget.Group
-                android:id="@+id/group"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:constraint_referenced_ids="cons_google,cons_facebook" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/start"

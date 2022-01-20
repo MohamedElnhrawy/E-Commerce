@@ -2,13 +2,14 @@ package com.gtera.ui.profile
 
 import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableField
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.ktx.Firebase
 import com.gtera.R
 import com.gtera.base.BaseViewModel
 import com.gtera.data.error.ErrorDetails
 import com.gtera.data.interfaces.APICommunicatorListener
 import com.gtera.data.model.User
 import com.gtera.data.model.response.BaseResponse
-import com.gtera.data.model.response.LogOutResponse
 import com.gtera.ui.adapter.BaseAdapter
 import com.gtera.ui.common.ViewHolderInterface
 import com.gtera.ui.dialog.confirmation.ConfirmationDialogNavigator
@@ -51,34 +52,7 @@ class ProfileViewModel @Inject constructor() : BaseViewModel<ProfileNavigator>()
 
 
     private fun getItemsList() {
-
-
-        isLoggedIn.set(appRepository.isUserLoggedIn())
-        if (isLoggedIn.get()) {
-            showLoading(false)
-            appRepository.getLoggedInUser(lifecycleOwner, object : APICommunicatorListener<User?> {
-                override fun onSuccess(result: User?) {
-                    hideLoading()
-                    loggedUser = result
-                    userName.set(result?.firstName.let {
-                        it ?: getStringResource(R.string.str_profile_account_welcome)
-                    } + " " + result?.lastName.let { it ?: "" })
-                    profileImage.set(loggedUser?.profilePicture)
-
-                    drawProfileList()
-                }
-
-
-                override fun onError(throwable: ErrorDetails?) {
-                    hideLoading()
-                    showErrorBanner(throwable?.errorMsg)
-                    drawProfileList()
-                }
-            })
-        } else
             drawProfileList()
-
-
     }
 
     private fun drawProfileList() {
@@ -87,76 +61,24 @@ class ProfileViewModel @Inject constructor() : BaseViewModel<ProfileNavigator>()
         if (appRepository.isUserLoggedIn()) {
             list.add(
                 ProfileItemViewModel(
-                    R.drawable.ic_profile_placeholder,
-                    R.string.str_profile_account_detials,
-                    resourceProvider,
-                    true,
-                    0
-                )
-            )
-            list.add(
-                ProfileItemViewModel(
-                    R.drawable.ic_change_password,
-                    R.string.str_profile_change_password,
-                    resourceProvider,
-                    true,
-                    0
-                )
-            )
-            list.add(
-                ProfileItemViewModel(
-                    R.drawable.ic_notification,
-                    R.string.str_profile_notification,
-                    true,
-                    resourceProvider,
-                    loggedUser?.notificationsCount.let { it ?: 0 }
-                )
-            )
-            list.add(
-                ProfileItemViewModel(
                     R.drawable.ic_messages,
-                    R.string.str_profile_messages,
+                    R.string.cart,
                     resourceProvider,
                     true,
-                    loggedUser?.messagesCount.let { it ?: 0 }
+                   0
                 )
             )
-            list.add(
-                ProfileItemViewModel(
-                    R.drawable.ic_profile_favorite,
-                    R.string.str_profile_favorite,
-                    resourceProvider,
-                    true,
-                    loggedUser?.favouritesCount.let { it ?: 0 }
-                )
-            )
-            list.add(
-                ProfileItemViewModel(
-                    R.drawable.ic_language,
-                    R.string.str_profile_language,
-                    resourceProvider,
-                    true,
-                    0
-                )
-            )
-            list.add(
-                ProfileItemViewModel(
-                    R.drawable.ic_get_in_toutch,
-                    R.string.str_profile_get_in_toutch,
-                    resourceProvider,
-                    true,
-                    0
-                )
-            )
-            list.add(
-                ProfileItemViewModel(
-                    R.drawable.ic_faq,
-                    R.string.str_profile_faq,
-                    resourceProvider,
-                    true,
-                    0
-                )
-            )
+
+//            list.add(
+//                ProfileItemViewModel(
+//                    R.drawable.ic_language,
+//                    R.string.str_profile_language,
+//                    resourceProvider,
+//                    true,
+//                    0
+//                )
+//            )
+
             list.add(
                 ProfileItemViewModel(
                     R.drawable.ic_log_out,
@@ -166,19 +88,16 @@ class ProfileViewModel @Inject constructor() : BaseViewModel<ProfileNavigator>()
                     0
                 )
             )
-
-
         } else {
-
-            list.add(
-                ProfileItemViewModel(
-                    R.drawable.ic_language,
-                    R.string.str_profile_language,
-                    resourceProvider,
-                    true,
-                    0
-                )
-            )
+//            list.add(
+//                ProfileItemViewModel(
+//                    R.drawable.ic_language,
+//                    R.string.str_profile_language,
+//                    resourceProvider,
+//                    true,
+//                    0
+//                )
+//            )
             list.add(
                 ProfileItemViewModel(
                     R.drawable.ic_sign_in,
@@ -197,11 +116,9 @@ class ProfileViewModel @Inject constructor() : BaseViewModel<ProfileNavigator>()
 
     override fun onViewClicked(position: Int, id: Int) {
         val titleResource = list[position].getTitleResource()
-        if (titleResource == R.string.str_profile_sign_in) {
+        if (titleResource == R.string.str_profile_sign_in)
             openView(SIGN_IN_SCREEN, null)
-        } else if (titleResource == R.string.str_profile_change_password) {
-            openView(CHANGE_PASSWORD, null)
-        } else if (titleResource == R.string.str_profile_logout) {
+          else if (titleResource == R.string.str_profile_logout) {
 
             showConfirmationDialog(
                 getDrawableResources(R.drawable.ic_logout),
@@ -209,22 +126,11 @@ class ProfileViewModel @Inject constructor() : BaseViewModel<ProfileNavigator>()
                 getSignOutConfirmationNavigator()!!
             )
 
-        } else if (titleResource == R.string.str_profile_account_detials) {
-            openView(PROFILE_INFO, null)
-
-        } else if (titleResource == R.string.str_profile_favorite) {
-
-            openView(FAVORITES, null)
-        } else if (titleResource == R.string.str_profile_language) {
+        } else if (titleResource == R.string.str_profile_language)
             openFragment(R.id.action_change_language, null)
-        }else if (titleResource == R.string.str_profile_get_in_toutch)
-            openFragment(R.id.action_show_branches, null)
-        else if (titleResource == R.string.str_profile_notification)
-            openView(NOTIFICATIONS, null)
-        else if (titleResource == R.string.str_profile_messages)
-            openView(MESSAGES, null)
-        else if (titleResource == R.string.str_profile_faq)
-            openView(FAQ, null)
+         else if (titleResource == R.string.cart)
+            openView(CART_SCREEN, null)
+
     }
 
 
@@ -233,10 +139,10 @@ class ProfileViewModel @Inject constructor() : BaseViewModel<ProfileNavigator>()
         return object : ConfirmationDialogNavigator {
             override fun onYesClicked() {
 
-                appRepository.signOut(lifecycleOwner, object :
-                    APICommunicatorListener<BaseResponse<LogOutResponse>?> {
-                    override fun onSuccess(result: BaseResponse<LogOutResponse>?) {
-
+                appRepository.logoutLocale(lifecycleOwner, object :
+                    APICommunicatorListener<Void?> {
+                    override fun onSuccess(result: Void?) {
+                        FirebaseAuth.getInstance().signOut()
                         openNewActivity(SplashActivity::class.java, null)
                     }
 

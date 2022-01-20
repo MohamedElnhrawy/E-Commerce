@@ -1,7 +1,7 @@
 package com.gtera.data.model.response
 
-import com.gtera.data.model.MetaData
 import com.google.gson.annotations.SerializedName
+import com.gtera.data.model.MetaData
 import java.io.Serializable
 
 

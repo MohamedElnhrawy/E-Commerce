@@ -48,7 +48,6 @@ class BottomNavigationActivity : BaseActivity<BottomNavLayoutBinding, BottomNavV
             mViewDataBinding.navigationView.setupWithNavController(
                 navGraphIds = listOf<Int>(
                     R.navigation.home_nav_graph,
-//                    R.navigation.my_cars_nav_graph,
                     R.navigation.search_nav_graph,
                     R.navigation.profile_nav_graph
                 ),

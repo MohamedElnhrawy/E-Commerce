@@ -135,6 +135,7 @@
 	<color name="tabsIndicatorColor">#EC5E60</color>
 	<color name="tabsBackgroundColors">#EC5E60</color>
 	<color name="textSecondary">#EC5E60</color>
+	<color name="textSecondaryTrans">#80EC5E60</color>
 
 	<!-- insurance color -->
 

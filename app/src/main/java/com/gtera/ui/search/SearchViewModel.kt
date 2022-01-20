@@ -38,7 +38,8 @@ class SearchViewModel @Inject constructor() : BaseViewModel<SearchNavigator>() {
     var searchListener: SearchActionListener = object : SearchActionListener {
         override fun preformSearch(searchText: String?) {
             searchTextField.set(searchText)
-            searchText?.let { getProducts(it) }
+            if (!searchTextField.get().isNullOrEmpty())
+                getProducts(searchTextField.get()!!)
         }
     }
 
@@ -72,7 +73,8 @@ class SearchViewModel @Inject constructor() : BaseViewModel<SearchNavigator>() {
         this.productsList.clear()
         if (list != null) {
             for (product in list) {
-                val productItemViewModel = ProductItemViewModel(product!!, productsOrientation,resourceProvider)
+                val productItemViewModel =
+                    ProductItemViewModel(product!!, productsOrientation, resourceProvider)
 
                 this.productsList.add(productItemViewModel)
             }
@@ -90,7 +92,7 @@ class SearchViewModel @Inject constructor() : BaseViewModel<SearchNavigator>() {
                     APPConstants.EXTRAS_KEY_PRODUCT,
                     productsList[position].product
                 )
-                openView(AppScreenRoute.PRODUCT_DETAILS_SCREEN,extras)
+                openView(AppScreenRoute.PRODUCT_DETAILS_SCREEN, extras)
             }
         })
 
@@ -100,8 +102,11 @@ class SearchViewModel @Inject constructor() : BaseViewModel<SearchNavigator>() {
                 category!!.products?.let {
                     addProducts(it)
                 }
-            else
-                getProducts(searchTextField.get()!!)
+            else {
+                isRefreshing.set(false)
+                if (!searchTextField.get().isNullOrEmpty())
+                    getProducts(searchTextField.get()!!)
+            }
         }
     }
 
@@ -111,7 +116,6 @@ class SearchViewModel @Inject constructor() : BaseViewModel<SearchNavigator>() {
 
 
     fun getProducts(searchText: String) {
-        showLoading(false)
         appRepository.searchProducts(searchText,
             lifecycleOwner,
             object :
@@ -121,6 +125,7 @@ class SearchViewModel @Inject constructor() : BaseViewModel<SearchNavigator>() {
                     isRefreshing.set(false)
                     addProducts(filterList(result?.data).toList())
                 }
+
                 override fun onError(throwable: ErrorDetails?) {
                     hideLoading()
                     isRefreshing.set(false)
@@ -140,7 +145,9 @@ class SearchViewModel @Inject constructor() : BaseViewModel<SearchNavigator>() {
         val filteredList: ArrayList<Product?> = ArrayList()
         if (list != null) {
             for (item in list) {
-                if (searchTextField.get().let { item?.name!!.toLowerCase().contains(it!!.toLowerCase()) }) {
+                if (searchTextField.get()
+                        .let { item?.name!!.toLowerCase().contains(it!!.toLowerCase()) }
+                ) {
                     filteredList.add(item)
                 }
             }

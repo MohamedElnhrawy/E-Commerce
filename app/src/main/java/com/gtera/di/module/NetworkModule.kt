@@ -85,7 +85,7 @@ class NetworkModule {
             .readTimeout(60, TimeUnit.SECONDS)
             .addInterceptor(headerInterceptor)
             .addInterceptor(loggerInterceptor)
-            .build();
+            .build()
     }
 
     @Singleton

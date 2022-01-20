@@ -33,7 +33,7 @@
             app:layout_constraintVertical_bias="0.42"
             app:layout_constraintWidth_percent="0.25"
             app:srcCompat="@{emptyView.viewImg}"
-            tools:srcCompat="@drawable/ic_search" />
+            tools:srcCompat="@drawable/ic_empty_list" />
 
         <TextView
             android:id="@+id/tv_empty_title"

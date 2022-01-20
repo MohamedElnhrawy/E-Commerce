@@ -40,7 +40,7 @@
     <string name="banner_error">خطأ</string>
     <string name="banner_success">تم</string>
     <string name="oops">عفوا!</string>
-    <string name="empty_default_txt">لم يتم العثور على نتائج \n برجاء المحاولة فى وقت لاحق </string>
+    <string name="empty_default_txt">لم يتم العثور على نتائج.</string>
     <string name="forgot_password">نسيت كلمة المرور ؟</string>
     <string name="dont_have_account">ليس لديك حساب ؟</string>
     <string name="signup">تسجيل</string>
@@ -71,6 +71,7 @@
     <string name="field_is_required">%s حقل مطلوب.</string>
     <string name="password_too_short">يجب أن تحتوي كلمة المرور على 6 أحرف على الأقل.</string>
     <string name="enter_valid_email">البريد الالكتروني غير صحيح</string>
+    <string name="enter_valid_phone">رقم التليفون غير صحيح</string>
     <string name="user_name_length_short">يجب ألا يقل الاسم عن 3 أحرف.</string>
     <string name="start_special_characters">لا يمكن أن يحتوي الاسم على حروف خاصة.</string>
     <string name="user_name">الاسم</string>
@@ -405,7 +406,7 @@
     <string name="str_date">التاريخ</string>
     <string name="str_service_center">مركز الخدمه</string>
     <string name="search_error_msg">ابحث باكثر من حرفين</string>
-    <string name="str_total_cost">التكلفه الاجماليه</string>
+    <string name="str_total_cost">الاجمالي</string>
     <string name="str_notes">ملاحظات</string>
     <string name="str_contact_us">تواصل معنا</string>
     <string name="str_phone">موبايل</string>
@@ -490,5 +491,16 @@
     <string name="str_navigation_products">منتجات</string>
     <string name="add_to_order">إضافة للسلة</string>
     <string name="added_to_basket_success">تم الإضافة للسلة بنجاح</string>
+    <string name="cart">السلة</string>
+    <string name="order_have_placed">تم إضافة الطلب</string>
+    <string name="phone_verification">التحقق</string>
+    <string name="invalid_promotion">كود غير مفعل</string>
+    <string name="excedded_items">تخطيت عدد العناصر المسموح به</string>
+    <string name="increase_cart_items">قيمه الخصم تخطت الحد الأقصي</string>
+    <string name="excluded_category_exists">Sorry, Excluded category exists</string>
+    <string name="invalid_promotion_amount">كميه الخصم غير صحيحه</string>
+    <string name="str_emial_or_phone">البريد او الموبايل</string>
+    <string name="email_verification_sent">تم ارسال بريد التفعيل</string>
+    <string name="promotion_applied">تم تطبيق الخصم بنجاح!</string>
 
 </resources>

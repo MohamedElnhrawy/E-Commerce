@@ -1,3 +1,0 @@
-package com.gtera.ui.profile.notifications
-
-interface NotificationListNavigator

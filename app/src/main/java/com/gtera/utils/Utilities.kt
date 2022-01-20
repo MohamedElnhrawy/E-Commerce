@@ -22,8 +22,6 @@ import com.gtera.R
 import com.gtera.data.error.ErrorDetails
 import com.gtera.di.providers.ResourceProvider
 import com.bumptech.glide.request.RequestOptions
-import com.google.android.gms.maps.model.BitmapDescriptor
-import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.gson.Gson
 import okhttp3.RequestBody
 import okhttp3.ResponseBody
@@ -32,6 +30,7 @@ import org.json.JSONException
 import org.json.JSONObject
 import retrofit2.HttpException
 import java.io.*
+import java.sql.Timestamp
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Singleton
@@ -203,7 +202,7 @@ object Utilities {
     fun isValidEmail(target: CharSequence): Boolean {
         val regex: Regex =
             "(^[_A-Za-z0-9-+]{2,}(\\.[_A-Za-z0-9-+]+)*@[A-Za-z0-9-]{2,}(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,4})$)".toRegex()
-        return target.toString().matches(regex)
+        return target.toString().trim().matches(regex)
     }
 
     fun isValidPersonName(name: String): Boolean {
@@ -239,7 +238,6 @@ object Utilities {
         return phoneNumber.toString().matches(regex.toRegex()) || phoneNumber.toString()
             .matches(regex_ar.toRegex())
     }
-
 
     fun getColorFromRes(context: Context, @ColorRes id: Int): Int {
         return ContextCompat.getColor(context, id)
@@ -302,18 +300,7 @@ object Utilities {
         return newString
     }
 
-    fun bitmapDescriptorFromVector(context: Context,@DrawableRes vectorDrawableResourceId:Int ): BitmapDescriptor {
-        val vectorDrawable = ContextCompat.getDrawable(context, vectorDrawableResourceId)
-        vectorDrawable?.setBounds(0, 0, vectorDrawable.intrinsicWidth, vectorDrawable.intrinsicHeight)
-        val bitmap = vectorDrawable?.intrinsicWidth?.let {
-            Bitmap.createBitmap(
-                it,
-                vectorDrawable.intrinsicHeight, Bitmap.Config.ARGB_8888)
-        }
-        val canvas = bitmap?.let { Canvas(it) }
-        canvas?.let { vectorDrawable?.draw(it) }
-        return BitmapDescriptorFactory.fromBitmap(bitmap)
-    }
+
 
 
 
@@ -379,6 +366,17 @@ object Utilities {
         val cal = Calendar.getInstance()
         cal.time = date
         return cal
+    }
+
+    fun stringToData(text:String?) : Date?{
+        return if (text != null)
+            SimpleDateFormat("yyyy-MM-dd").parse(text)
+        else null
+    }
+
+    fun getCurrentDate(): Date {
+        val stamp = Timestamp(System.currentTimeMillis())
+        return java.sql.Date(stamp.time)
     }
 
     fun getMessagesDate(dateString: String?, context: Context): String? {

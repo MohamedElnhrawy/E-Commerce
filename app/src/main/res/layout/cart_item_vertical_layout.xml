@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="@dimen/_5sdp"
+        app:cardUseCompatPadding="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/mainApplicationBGColor"
+        >
+
+        <ImageView
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/iv_item_image"
+            imageUrl="@{viewModel.cartProduct.image}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/grey_400"
+            android:scaleType="fitXY"
+            app:layout_constraintWidth_percent=".4"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        <TextView
+            android:id="@+id/tv_item_name"
+            style="@style/AppTheme.TextStyle.Header.Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:singleLine="true"
+            android:text="@{viewModel.cartProduct.name}"
+            android:textStyle="bold"
+            android:layout_margin="@dimen/_5sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_item_image"
+            app:layout_constraintTop_toTopOf="@+id/iv_item_image"
+            tools:text="Plain Croissant" />
+
+        <TextView
+            android:id="@+id/tv_item_description"
+            style="@style/AppTheme.TextStyle.Description"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/_4sdp"
+            android:gravity="start"
+            android:ellipsize="end"
+            android:maxLines="2"
+            app:layout_constraintBottom_toTopOf="@+id/tv_item_price"
+            android:text="@{viewModel.cartProduct.description}"
+            app:layout_constraintEnd_toEndOf="@+id/tv_item_name"
+            app:layout_constraintStart_toStartOf="@+id/tv_item_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_item_name"
+            tools:text="Plain Croissant" />
+
+        <TextView
+            android:id="@+id/tv_item_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:gravity="start"
+            android:includeFontPadding="false"
+            android:text="@{viewModel.price}"
+            app:autoSizeMaxTextSize="@dimen/_12sdp"
+            app:autoSizeMinTextSize="@dimen/_8sdp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_item_total_price"
+            app:layout_constraintEnd_toEndOf="@+id/tv_item_name"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/tv_item_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_item_name"
+            app:layout_constraintVertical_bias="0.95"
+            tools:text="12.50 LE" />
+
+        <TextView
+            android:id="@+id/tv_item_total_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:gravity="start"
+            android:text="@{viewModel.totalCoast}"
+            app:autoSizeMaxTextSize="@dimen/_12sdp"
+            app:autoSizeMinTextSize="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_item_image"
+            app:layout_constraintEnd_toEndOf="@+id/tv_item_name"
+            app:layout_constraintStart_toStartOf="@+id/tv_item_name"
+            app:layout_constraintVertical_bias="1.0"
+            tools:text="12.50 LE" />
+
+        <TextView
+            android:padding="@dimen/_5sdp"
+            app:layout_constraintStart_toStartOf="@+id/iv_item_image"
+            android:textAlignment="center"
+            android:includeFontPadding="false"
+            android:background="@drawable/primary_circle"
+            android:layout_margin="@dimen/_5ssp"
+            app:layout_constraintTop_toTopOf="@+id/iv_item_image"
+            android:id="@+id/tv_qty"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:lines="1"
+            android:ellipsize="end"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintWidth_percent=".1"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="@{Integer.toString(viewModel.cartProduct.cartQuantity)}"
+            tools:text="333333" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <data>
+
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.gtera.ui.home.viewmodels.CartItemViewModel" />
+
+    </data>
+</layout>

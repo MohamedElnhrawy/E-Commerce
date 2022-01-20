@@ -7,7 +7,7 @@ import com.gtera.data.local.preferences.PreferencesHelper
 import com.gtera.di.providers.BaseResourceProvider
 import com.gtera.di.providers.ResourceProvider
 import com.gtera.ui.splash.SplashViewModel
-import com.gtera.utils.APPConstants.ABAZA_SHARED_PREFERENCES
+import com.gtera.utils.APPConstants.App_SHARED_PREFERENCES
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -30,7 +30,7 @@ abstract class ContextModule {
         @Singleton
         @Provides
         fun provideSharedPreferences(context: Context): SharedPreferences {
-            return context.getSharedPreferences(ABAZA_SHARED_PREFERENCES, Context.MODE_PRIVATE)
+            return context.getSharedPreferences(App_SHARED_PREFERENCES, Context.MODE_PRIVATE)
         }
 
         @Provides

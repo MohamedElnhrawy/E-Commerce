@@ -10,6 +10,9 @@ data class Product(
     @field:SerializedName("name")
     var name: String? = null,
 
+    @field:SerializedName("category_name")
+    var categoryName: String? = null,
+
     @field:SerializedName("description")
     var description: String? = null,
     @field:SerializedName("image")

@@ -3,10 +3,16 @@ package com.gtera.ui.profile
 import com.gtera.R
 import com.gtera.base.BaseFragment
 import com.gtera.databinding.ProfileLayoutBinding
+import com.gtera.di.providers.ResourceProvider
+import javax.inject.Inject
 
 class ProfileFragment :
     BaseFragment<ProfileLayoutBinding, ProfileViewModel>(),
     ProfileNavigator {
+
+    @Inject
+    lateinit var resourceProvider: ResourceProvider
+
     override val layoutId: Int
         get() = R.layout.profile_layout
 
@@ -27,6 +33,6 @@ class ProfileFragment :
     override val isListingView: Boolean
         get() = true
 
-    override val toolbarTitle: String?
-        get() = getString(R.string.str_profile_title)
+    override val toolbarTitle: String
+        get() = resourceProvider.getString(R.string.str_profile_title)
 }

@@ -9,98 +9,15 @@
         android:label="profileFragment">
 
         <action
-            android:id="@+id/action_profile_info"
-            app:destination="@id/profileInfoFragment" />
-        <action
             android:id="@+id/action_change_language"
             app:destination="@id/languageFragment" />
-        <action
-            android:id="@+id/action_favorites"
-            app:destination="@id/favoritesFragment" />
-        <action
-            android:id="@+id/action_show_branches"
-            app:destination="@id/branchesFragment" />
-
-        <action
-            android:id="@+id/action_show_notifications"
-            app:destination="@id/notificationListFragment" />
-
-        <action
-            android:id="@+id/action_show_messages"
-            app:destination="@id/messagesListFragment" />
-
-        <action
-            android:id="@+id/action_show_faq"
-            app:destination="@id/fAQFragment" />
-
 
     </fragment>
-
-    <fragment
-        android:id="@+id/profileInfoFragment"
-        android:name="com.gtera.ui.profile.info.ProfileInfoFragment"
-        android:label="ProfileInfoFragment">
-
-        <action
-            android:id="@+id/action_edit_profile"
-            app:destination="@id/editProfileFragment" />
-
-
-    </fragment>
-
-    <fragment
-        android:id="@+id/editProfileFragment"
-        android:name="com.gtera.ui.profile.edit.EditProfileFragment"
-        android:label="EditProfileFragment" />
 
     <fragment
         android:id="@+id/languageFragment"
         android:name="com.gtera.ui.profile.language.LanguageFragment"
         android:label="LanguageFragment" />
-
-    <fragment
-        android:id="@+id/favoritesFragment"
-        android:name="com.gtera.ui.profile.favorites.FavoritesFragment"
-        android:label="FavoritesFragment" />
-    <fragment
-        android:id="@+id/branchesFragment"
-        android:name="com.gtera.ui.profile.branches.BranchesFragment"
-        android:label="BranchesFragment" >
-        <action
-            android:id="@+id/action_contactUs"
-            app:destination="@id/contactUsFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/contactUsFragment"
-        android:name="com.gtera.ui.profile.contactus.ContactUsFragment"
-        android:label="ContactUsFragment" />
-
-
-    <fragment
-        android:id="@+id/notificationListFragment"
-        android:name="com.gtera.ui.profile.notifications.NotificationListFragment"
-        android:label="NotificationListFragment" />
-
-    <fragment
-        android:id="@+id/messagesListFragment"
-        android:name="com.gtera.ui.profile.messages.MessagesListFragment"
-        android:label="MessagesListFragment" >
-
-        <action
-            android:id="@+id/action_show_message_details"
-            app:destination="@id/messageDetailsFragment" />
-    </fragment>
-
-
-    <fragment
-        android:id="@+id/messageDetailsFragment"
-        android:name="com.gtera.ui.profile.messages.details.MessageDetailsFragment"
-        android:label="MessageDetailsFragment" />
-
-    <fragment
-        android:id="@+id/fAQFragment"
-        android:name="com.gtera.ui.profile.faq.FAQFragment"
-        android:label="FAQFragment" />
 
 
 

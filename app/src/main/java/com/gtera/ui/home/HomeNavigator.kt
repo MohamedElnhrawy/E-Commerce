@@ -1,3 +1,5 @@
 package com.gtera.ui.home
 
-interface HomeNavigator
+interface HomeNavigator{
+    fun initCartView()
+}

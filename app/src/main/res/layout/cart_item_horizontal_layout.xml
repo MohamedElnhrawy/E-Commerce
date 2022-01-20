@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.gtera.ui.home.viewmodels.CartItemViewModel" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/dim_product_item_horizontal_width"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dim_product_item_horizontal_mrgn"
+        app:cardElevation="@dimen/dim_product_item_horizontal_card_elevation"
+        app:cardUseCompatPadding="true">
+
+        <include
+            layout="@layout/cart_item_base_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:viewModel="@{viewModel}" />
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/mainApplicationBGColor"
+        android:paddingBottom="@dimen/_8sdp">
+
+        <ImageView
+            android:id="@+id/iv_item_image"
+            imageUrl="@{viewModel.cartProduct.image}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/grey_400"
+            android:scaleType="fitXY"
+            app:layout_constraintDimensionRatio="1:1.20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        <TextView
+            android:id="@+id/tv_item_name"
+            style="@style/AppTheme.TextStyle.Header.Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_4sdp"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@{viewModel.cartProduct.name}"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_item_image"
+            tools:text="Plain Croissant" />
+
+        <TextView
+            android:includeFontPadding="false"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:id="@+id/tv_item_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:gravity="center"
+            android:lines="1"
+            android:text="@{viewModel.price}"
+            app:autoSizeMaxTextSize="@dimen/_12sdp"
+            app:autoSizeMinTextSize="@dimen/_8sdp"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_item_name"
+            tools:text="12.50 LE" />
+
+        <TextView
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:id="@+id/tv_item_total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:lines="1"
+            android:text="@{viewModel.totalCoast}"
+            app:autoSizeMaxTextSize="@dimen/_12sdp"
+            app:autoSizeMinTextSize="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_item_price"
+            tools:text="12.50 LE" />
+
+        <TextView
+            android:textAlignment="center"
+            android:includeFontPadding="false"
+            android:background="@drawable/primary_circle"
+            android:layout_margin="@dimen/_10ssp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/tv_qty"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintWidth_percent=".15"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="@{Integer.toString(viewModel.cartProduct.cartQuantity)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="333333" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <data>
+
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.gtera.ui.home.viewmodels.CartItemViewModel" />
+
+    </data>
+</layout>

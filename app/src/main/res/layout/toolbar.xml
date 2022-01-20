@@ -160,7 +160,7 @@
                     android:background="@null"
                     android:dropDownWidth="match_parent"
                     android:hint="@string/str_tool_bar_search"
-                    android:imeOptions="actionSearch"
+                    android:imeOptions="actionNone"
                     android:maxLines="1"
                     android:paddingStart="@dimen/dim_search_bar_text_padding_start"
                     android:paddingEnd="@dimen/dim_search_bar_text_padding_end"

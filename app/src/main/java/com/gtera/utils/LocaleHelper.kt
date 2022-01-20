@@ -12,7 +12,7 @@ object LocaleHelper {
     ): Context {
         val preferencesHelper = PreferencesHelper(
             context.getSharedPreferences(
-                APPConstants.ABAZA_SHARED_PREFERENCES,
+                APPConstants.App_SHARED_PREFERENCES,
                 Context.MODE_PRIVATE
             ),
             context

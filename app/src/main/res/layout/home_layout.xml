@@ -14,6 +14,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/mainApplicationBGColor"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -45,63 +46,40 @@
                     android:focusableInTouchMode="true">
 
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_marginTop="@dimen/_12sdp"
-                        android:id="@+id/cv_welcome"
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        app:cardCornerRadius="@dimen/_4sdp"
-                        app:cardBackgroundColor="@color/tabsIndicatorColor"
-                        app:layout_constraintWidth_percent=".9"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintDimensionRatio="6:1.1"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0">
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/cons_welcome"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                           >
 
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:minHeight="@dimen/_100sdp"
+                            android:padding="@dimen/_5sdp"
+                            app:layout_constraintWidth_percent=".9"
+                            android:background="@drawable/rounded_corners_pink"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:id="@+id/cv_welcome"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
                             <TextView
-                                android:id="@+id/tv_ads"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@{viewModel.welcomeText}"
-                                android:textColor="@color/buttonTextColor"
-                                android:textStyle="bold"
-                                android:textSize="@dimen/_20ssp"
+                                app:layout_constraintTop_toTopOf="parent"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+                                android:gravity="center"
+                                android:id="@+id/tv_ads"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:text="@{viewModel.welcomeText}"
+                                android:textColor="@color/buttonTextColor"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_16ssp" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    </androidx.cardview.widget.CardView>
-
-
-
-                    <include
-                        android:id="@+id/cart_view"
-                        layout="@layout/home_offers_layout"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:adapter="@{viewModel.cartAdapter}"
-                        app:visible="@{viewModel.hasCart}"
-                        app:swipeRef="@{swrefHome}"
-                        app:orientation="@{viewModel.cartOrientation}"
-                        app:allItemsClick= "@{viewModel.allCartItemsClick}"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/cv_welcome" />
 
 
 
                     <androidx.recyclerview.widget.RecyclerView
                         adapter="@{viewModel.categoriesAdapter}"
-                        app:layout_constraintBottom_toBottomOf="parent"
                         android:id="@+id/rv_products"
                         recyclerSwipe="@{swrefHome}"
                         android:orientation="vertical"
@@ -111,7 +89,21 @@
                         tools:listitem="@layout/home_category_item_layout"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/cart_view" />
+                        app:layout_constraintTop_toBottomOf="@id/cv_welcome" />
+
+                    <ViewStub
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:id="@+id/cart_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hasCart="@{viewModel.hasCart}"
+                        android:layout="@layout/home_cart_layout"
+                        app:adapter="@{viewModel.cartAdapter}"
+                        app:onMoreClick="@{viewModel.allCartItemsClick}"
+                        app:orientation="@{viewModel.cartOrientation}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/rv_products" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>

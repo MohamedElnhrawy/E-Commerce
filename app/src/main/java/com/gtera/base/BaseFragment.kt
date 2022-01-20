@@ -117,9 +117,9 @@ abstract class BaseFragment<T : ViewDataBinding, V : BaseViewModel<*>?> :
 
             if(data?.clipData!= null) {
 
-                val mClipData: ClipData = data.getClipData()!!
+                val mClipData: ClipData = data.clipData!!
                 val mArrayUri = ArrayList<String>()
-                val count: Int = data.getClipData()?.getItemCount()!!
+                val count: Int = data.clipData?.itemCount!!
 
 
                 it.run {
@@ -317,7 +317,7 @@ abstract class BaseFragment<T : ViewDataBinding, V : BaseViewModel<*>?> :
     }
 
     protected open fun screenEmptyView(): EmptyView {
-        return EmptyView(R.drawable.ic_search, R.string.oops, R.string.empty_default_txt, viewModel?.resourceProvider!!)
+        return EmptyView(R.drawable.ic_empty_list, R.string.oops, R.string.empty_default_txt, viewModel?.resourceProvider!!)
     }
 
     protected open val dataView: View

@@ -53,7 +53,7 @@ class ProductDetailsViewModel @Inject constructor() : BaseViewModel<ProductDetai
     fun addToBasket(){
         val handler = Handler()
         showLoading(true)
-        val cartItem = CartProduct(product.get()?.id,product.get()?.name,product.get()?.description,product.get()?.image,product.get()?.price,productQty.get(),(productQty.get() * product.get()?.price!!).toFloat())
+        val cartItem = CartProduct(product.get()?.id,product.get()?.name,product.get()?.description,product.get()?.image,product.get()?.price,productQty.get(),(productQty.get() * product.get()?.price!!).toFloat(),product.get()?.categoryName)
         appRepository.addProductToCart(cartItem)
         hideLoading()
         showSuccessBanner(getStringResource(R.string.added_to_basket_success))

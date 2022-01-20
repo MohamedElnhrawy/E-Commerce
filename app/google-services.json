@@ -1,51 +1,42 @@
 {
   "project_info": {
-    "project_number": "558888236507",
-    "firebase_url": "https://abaza-51cf7.firebaseio.com",
-    "project_id": "abaza-51cf7",
-    "storage_bucket": "abaza-51cf7.appspot.com"
+    "project_number": "416054115184",
+    "project_id": "gtera-d374d",
+    "storage_bucket": "gtera-d374d.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:558888236507:android:b969fc30df2cd5c00363fe",
+        "mobilesdk_app_id": "1:416054115184:android:371ae36b80a50abddeedb5",
         "android_client_info": {
           "package_name": "com.gtera"
         }
       },
       "oauth_client": [
         {
-          "client_id": "558888236507-b2r5g8u5u6h32h0uqch57j5oliia693q.apps.googleusercontent.com",
+          "client_id": "416054115184-nlbkjmelgl4u6g1809un9n2c1kn2u0o5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.gtera",
-            "certificate_hash": "6998f43a0f7510e52792e3b1b1919a86b3dadff7"
+            "certificate_hash": "778a16855bb34f5b0fbbd02a66c30059dc406624"
           }
         },
         {
-          "client_id": "558888236507-7qt5lfdtiohiiv80oq8uc0ok1u0mj7uc.apps.googleusercontent.com",
+          "client_id": "416054115184-5mn8n6lldpfke8khsaj41eg725lbhs4t.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCiQ2SQbegUiwrOAWyCgzGfoEoaLRZh0WE"
+          "current_key": "AIzaSyB_G75zScx7KKTFG82CDmm2duBGhFuWCgs"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "558888236507-uh1kddk25bhbkgd4mrps05vdp4t95ki3.apps.googleusercontent.com",
+              "client_id": "416054115184-5mn8n6lldpfke8khsaj41eg725lbhs4t.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "558888236507-5gh17uv4gcb5vg0k8nhri4bc3ofq36nc.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "co.panarabmedia.abaza",
-                "app_store_id": "1518460332"
-              }
             }
           ]
         }

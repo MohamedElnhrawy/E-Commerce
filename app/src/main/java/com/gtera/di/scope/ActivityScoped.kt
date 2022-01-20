@@ -1,4 +1,4 @@
-package com.example.firestoresmartchatmvvm.injection.scope
+package com.gtera.di.scope
 
 import javax.inject.Scope
 

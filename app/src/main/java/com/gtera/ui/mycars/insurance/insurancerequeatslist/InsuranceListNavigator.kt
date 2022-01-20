@@ -1,3 +1,0 @@
-package com.gtera.ui.mycars.insurance.insurancerequeatslist
-
-interface InsuranceListNavigator

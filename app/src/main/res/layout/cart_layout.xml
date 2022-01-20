@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.gtera.ui.cart.CartViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            visibleIf="@{viewModel.showPromotion}"
+            style="@style/AppTheme.TextStyle.Header.Bold"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="@string/promotion_applied"
+            android:background="@color/confirmedInsuranceColor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/promotion_applied"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_products"
+            adapter="@{viewModel.cartAdapter}"
+            viewOrientation="@{viewModel.cartOrientation}"
+            android:layout_width="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/promotion_applied"
+            android:layout_marginBottom="@dimen/_5sdp"
+            app:layout_constraintBottom_toTopOf="@+id/confirm_btn"
+            tools:itemCount="3"
+            tools:listitem="@layout/cart_item_vertical_layout" />
+
+        <com.gtera.ui.base.buttons.LoadingButton
+            app:isEnabled="@{!viewModel.isLoading() &amp;&amp; viewModel.hasCart}"
+            app:layout_constraintWidth_percent=".9"
+            android:id="@+id/confirm_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            app:altBackground="@drawable/rounded_corners_light"
+            app:background="@drawable/rounded_corners_primary"
+            app:clickListener="@{() -> viewModel.checkoutClicked()}"
+            app:isLoading="@{viewModel.isLoading}"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:btnText="@{viewModel.totalCoastField}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

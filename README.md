@@ -1,45 +1,64 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+# E-Commerce :partly_sunny:
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+## Architecture
+The architecture of this application relies and complies with the following points below:
+* A single-activity architecture, using the [Navigation Components](https://developer.android.com/guide/navigation) to manage fragment operations.
+* Pattern [Model-View-ViewModel](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel)(MVVM) which facilitates a separation of development of the graphical user interface.
+* [Android architecture components](https://developer.android.com/topic/libraries/architecture/) which help to keep the application robust, testable, and maintainable.
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
 
----
+## Technologies used:
 
-## Edit a file
+* [Retrofit](https://square.github.io/retrofit/) a REST Client for Android which makes it relatively easy to retrieve and upload JSON (or other structured data) via a REST based webservice.
+* [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) to store and manage UI-related data in a lifecycle conscious way.
+* [Navigation Component](https://developer.android.com/guide/navigation) to handle all navigations and also passing of data between destinations.
+* [Material Design](https://material.io/develop/android/docs/getting-started/) an adaptable system of guidelines, components, and tools that support the best practices of user interface design.
+* [Data Binding](https://developer.android.com/topic/libraries/data-binding/) to declaratively bind UI components in layouts to data sources.
+* [Room](https://developer.android.com/topic/libraries/architecture/room) persistence library which provides an abstraction layer over SQLite to allow for more robust database access while harnessing the full power of SQLite.
+* [Android KTX](https://developer.android.com/kotlin/ktx) which helps to write more concise, idiomatic Kotlin code.
+* [Dagger2](https://developer.android.com/training/dependency-injection/dagger-android) which helps to write more readable,usable and testable.
+* [Firebase Services](https://firebase.google.com/docs?authuser=0) which helps to sign in with email and phone.
+* [Deep Links](https://developer.android.com/training/app-links/deep-linking) which helps to apply promotions deep linking for cart.
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
 
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+## Installation
+Auth:
+     install app login with preferred sign in method [phone , email&pass] :
+        - phone method will accept  Egyptian numbers only for simple validation, A verification otp will be sent with 6 digits
+                to verify that phone, then logged in user saved locally to app then you get authorized to enter the app.
+        - email sign in will create account if not exists and send verification email else will sign in directly.
+Home Flow:
+        - home screen have welcome tile with available info from firebase Auth user returned from signed in process, if not null
+                you will see [name else email else phone].
+        - dynamic vertical list of Categories consists of horizontal list of products with see all action.
+            note: categories all accessed locally from json file called [home.txt].
 
----
+        - clicking any product will show full pro details screen with option to add to cart, cart is room local database
 
-## Create a file
+Shopping List (cart):
+        _ adding to cart will update home view with a new horizontal cat items list with see all cart product action or from
+            profile.
 
-Next, you’ll add a new file to this repository.
+        - cart screen navigation from home or profile with checkout action that empty cart only
 
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
+        - Promotion supported for non empty cart with some queries and standard format according to promotion requirements
+         *[example]:[https://www.ecommerce-app.com/promotion?code=200&start=2022-01-20&end=2022-01-28&min=1&max=20&exclude=School&amount=50]
 
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
+Products List:
+        - search performed in local json file called [search.txt]
+        - screen with search view to search only products not categories.
+        - swipe refresh option
+        - click action to see full product details screen.
 
----
+Profile screen:
+        - 2 options for :
+           - showing cart.
+           - logout [locally and (remote -> firebase)]
 
-## Clone a repository
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
 
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
+[Note]: SMS Verification only valid for only 50 request per day.
 
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+
+Copyright (c) 2022 Mohamed Alnahrawy.
+

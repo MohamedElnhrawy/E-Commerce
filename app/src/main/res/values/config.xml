@@ -1,28 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <bool name="is_testing_server">true</bool>
-    <bool name="enable_products_search">true</bool>
     <integer name="search_txt_size">2</integer>
-    <bool name="is_bottom_nav">true</bool>
     <bool name="enable_search_error_msg">false</bool>
-    <!-- enable removing any zero after the dot in prices  for example 12.50 become 12.5 -->
-    <bool name="price_trim_tailing_zeros">true</bool>
-    <!-- default app language first opened-->
-    <string name="app_default_lang" translatable="false">ar</string>
-    <!-- toolbar is large title style-->
     <bool name="is_large_title_toolbar">false</bool>
-    <!-- enable getting response from cashed json files instead of server-->
     <bool name="enable_mocking">true</bool>
-
-    <!-- Requests Encryption & Decryption Enable-->
     <bool name="enable_encryption">false</bool>
     <bool name="enable_decryption">false</bool>
-
     <bool name="status_bar_light">true</bool>
     <bool name="status_bar_no_toolbar_light">@bool/status_bar_light</bool>
-
-    <bool name="used_car_details_auto_play_slider">false</bool>
-    <bool name="enable_profile_branches">true</bool>
-    <string name="abaza_phone" translatable="false">01066782989</string>
-    <string name="abaza_email" translatable="false">mohamed@gmail.com</string>
 </resources>

@@ -44,7 +44,7 @@
     <string name="banner_error">Error</string>
     <string name="dummy_pass" translatable="false">123456</string>
     <string name="oops">Oops!</string>
-    <string name="empty_default_txt">No Results Found \n PLease Try Again Later</string>
+    <string name="empty_default_txt">Sorry, No Results Found</string>
     <string name="str_my_car_empty_txt">You did\'t add any Car</string>
     <string name="banner_icon">banner icon</string>
     <string name="str_home_categories_new_cars">New Cars</string>
@@ -77,6 +77,7 @@
     <string name="field_is_required">%s is required.</string>
     <string name="password_too_short">Password must contain at least 6 characters.</string>
     <string name="enter_valid_email">Enter a valid email address</string>
+    <string name="enter_valid_phone">Enter a valid phone number</string>
     <string name="user_name_length_short">Name must contain at least 3 characters</string>
     <string name="start_special_characters">Name can not contain special character.</string>
     <string name="user_name">Name</string>
@@ -515,6 +516,17 @@
     <string name="str_navigation_products">Products</string>
     <string name="add_to_order">Add to Basket</string>
     <string name="added_to_basket_success">Added to basket successfully.</string>
+    <string name="cart">Cart</string>
+    <string name="order_have_placed">Your Order Has Been Placed</string>
+    <string name="phone_verification">Phone Verification</string>
+    <string name="invalid_promotion">Sorry, This promotion expired</string>
+    <string name="excedded_items">Sorry, Items exceeded limit.</string>
+    <string name="increase_cart_items">Sorry you exceeded 50 percent discount</string>
+    <string name="excluded_category_exists">Sorry, Excluded category exists</string>
+    <string name="invalid_promotion_amount">Promotion amount invalid</string>
+    <string name="str_emial_or_phone">Email / Phone</string>
+    <string name="email_verification_sent">Email Verification sent</string>
+    <string name="promotion_applied">Promotion Applied Successfully!</string>
 
 
 </resources>

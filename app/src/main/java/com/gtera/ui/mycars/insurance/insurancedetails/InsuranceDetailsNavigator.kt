@@ -1,3 +1,0 @@
-package com.gtera.ui.mycars.insurance.insurancedetails
-
-interface InsuranceDetailsNavigator

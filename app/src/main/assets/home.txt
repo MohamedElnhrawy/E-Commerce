@@ -16,7 +16,8 @@ Meet AirPods (3rd generation). All-new design featuring spatial audio with dynam
             "https://as-images.apple.com/is/MME73_AV1?wid=1000&hei=1000&fmt=jpeg&qlt=95&.v=1632861333000"
           ,
           "stock_qty": 100,
-          "price": 50
+          "price": 50,
+          "category_name":"Electronics"
 
         },
    {
@@ -29,7 +30,8 @@ Meet AirPods (3rd generation). All-new design featuring spatial audio with dynam
             "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ML733_VW_34FR+watch-41-stainless-gold-cell-7s_VW_34FR_WF_CO?wid=1400&hei=1400&trim=1,0&fmt=p-jpg&qlt=95&.v=1630042278000,1631661322000"
           ,
               "stock_qty": 100,
-              "price": 100
+              "price": 100,
+               "category_name":"Electronics"
 
         },
    {
@@ -43,7 +45,8 @@ Perform simple gestures on the smooth, seamless Apple Magic Mouse. Wireless and 
             "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MK2E3?wid=1144&hei=1144&fmt=jpeg&qlt=80&.v=1626468075000"
           ,
               "stock_qty": 100,
-              "price": 150
+              "price": 150,
+               "category_name":"Electronics"
 
         }
 
@@ -63,7 +66,8 @@ Perform simple gestures on the smooth, seamless Apple Magic Mouse. Wireless and 
             "https://m.media-amazon.com/images/I/4195d4BlJ+L._AC_.jpg"
           ,
               "stock_qty": 100,
-              "price": 50
+              "price": 50,
+               "category_name":"School"
 
         },
    {
@@ -76,7 +80,8 @@ Perform simple gestures on the smooth, seamless Apple Magic Mouse. Wireless and 
             "https://m.media-amazon.com/images/I/41gSIPfiQBL._AC_.jpg"
           ,
               "stock_qty": 100,
-              "price": 100
+              "price": 100,
+               "category_name":"School"
 
         },
    {
@@ -89,7 +94,9 @@ Perform simple gestures on the smooth, seamless Apple Magic Mouse. Wireless and 
             "https://m.media-amazon.com/images/I/71CVe5QF8OL._AC_UL640_FMwebp_QL65_.jpg"
           ,
               "stock_qty": 100,
-              "price": 150
+              "price": 150,
+                                         "category_name":"School"
+
 
         }
 
@@ -109,7 +116,8 @@ Perform simple gestures on the smooth, seamless Apple Magic Mouse. Wireless and 
             "https://m.media-amazon.com/images/I/51-4u7qzjvL._AC_SL1001_.jpg"
           ,
               "stock_qty": 100,
-              "price": 50
+              "price": 50,
+              "category_name":"Home"
 
         },
    {
@@ -122,7 +130,8 @@ Perform simple gestures on the smooth, seamless Apple Magic Mouse. Wireless and 
             "https://m.media-amazon.com/images/I/61jCFa3MZkS._AC_SL1000_.jpg"
           ,
               "stock_qty": 100,
-              "price": 100
+              "price": 100,
+               "category_name":"Home"
 
         },
    {
@@ -134,7 +143,8 @@ Perform simple gestures on the smooth, seamless Apple Magic Mouse. Wireless and 
             "https://m.media-amazon.com/images/I/61unHUtubQL._AC_SL1500_.jpg"
           ,
               "stock_qty": 100,
-              "price": 150
+              "price": 150,
+               "category_name":"Home"
 
         }
 

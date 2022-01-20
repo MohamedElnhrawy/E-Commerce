@@ -1,4 +1,4 @@
-package com.gtera.ui.orders
+package com.gtera.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View

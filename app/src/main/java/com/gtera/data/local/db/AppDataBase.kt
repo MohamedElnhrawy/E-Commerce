@@ -11,7 +11,7 @@ import com.gtera.data.model.User
 
 @Database(
     entities = [User::class,CartProduct::class],
-    version = 2,
+    version = 1,
     exportSchema = false
 )
 @TypeConverters(Converter::class)

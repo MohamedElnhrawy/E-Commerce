@@ -14,8 +14,8 @@ android {
         applicationId "com.gtera"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 9
-        versionName "1.0.9"
+        versionCode 1
+        versionName "1.0"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled = true
@@ -131,12 +131,6 @@ dependencies {
     androidTestImplementation "androidx.room:room-testing:$rx_room_version"
 
 
-
-    //facebook
-    implementation "com.facebook.android:facebook-android-sdk:$project.facebookVersion"
-    implementation 'com.facebook.android:facebook-login:[5,6)'
-
-
     implementation "com.jakewharton.rxbinding3:rxbinding:$rx_binding"
 
     //Device Name
@@ -152,8 +146,6 @@ dependencies {
     //Loding view
     implementation "com.wang.avi:library:$aviLodingVersion"
 
-    // BannerView
-    implementation "com.duolingo.open:rtl-viewpager:$banner_viewPagerVersion"
 
     implementation "com.github.zhpanvip:BannerViewPager:$banner_version"
 
@@ -171,12 +163,6 @@ dependencies {
     implementation "androidx.paging:paging-rxjava2:2.1.2" // For Kotlin use paging-rxjava2-ktx
 
 
-    implementation "com.google.android.exoplayer:exoplayer:2.10.5"
-    implementation "com.google.android.exoplayer:exoplayer-core:2.10.5"
-    implementation "com.google.android.exoplayer:exoplayer-dash:2.10.5"
-    implementation "com.google.android.exoplayer:exoplayer-hls:2.10.5"
-    implementation "com.google.android.exoplayer:exoplayer-smoothstreaming:2.10.5"
-    implementation "com.google.android.exoplayer:exoplayer-ui:2.10.5"
 
     implementation 'com.github.Deishelon:RoundedBottomSheet:1.0.1'
 
@@ -199,14 +185,15 @@ dependencies {
     implementation "com.google.firebase:firebase-analytics-ktx:$firebaseAnalyticsVersion"
     //Firebase Crashlytics SDK.
     implementation 'com.google.firebase:firebase-crashlytics:17.2.1'
-    // fireBase
-    implementation "com.google.firebase:firebase-messaging:$firebaseMessagingVersion"
     // rxlocation
     implementation "com.patloew.rxlocation:rxlocation:$rxLocation"
     implementation "com.google.android.gms:play-services-location:17.0.0"
-    //Map Location
-    implementation 'com.google.android.gms:play-services-maps:17.0.0'
 
+    implementation "com.google.firebase:firebase-messaging:$firebaseMessagingVersion"
+
+    implementation 'com.google.android.gms:play-services-safetynet:18.0.1'
+    implementation 'io.github.chaosleung:pinview:1.4.4'
+    implementation 'com.google.firebase:firebase-dynamic-links-ktx:19.1.1'
 
     //DFP Google ads
 //    implementation 'com.google.android.gms:play-services-ads:19.3.0'

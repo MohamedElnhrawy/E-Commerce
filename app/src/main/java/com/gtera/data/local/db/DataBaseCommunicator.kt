@@ -21,7 +21,7 @@ class DataBaseCommunicator @Inject constructor(
 
     fun clearData(listener: APICommunicatorListener<Void?>?) {
         Completable.fromAction {
-            appDataBase.clearAllTables();
+            appDataBase.clearAllTables()
         }
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
@@ -33,7 +33,7 @@ class DataBaseCommunicator @Inject constructor(
         listener: APICommunicatorListener<Void?>?
     ) {
         Completable.fromAction {
-            appDataBase.userDao().insert(user);
+            appDataBase.userDao().insert(user)
         }
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
@@ -45,7 +45,7 @@ class DataBaseCommunicator @Inject constructor(
         listener: APICommunicatorListener<Void?>?
     ) {
         Completable.fromAction {
-            appDataBase.cartDao().insert(cartProduct);
+            appDataBase.cartDao().insert(cartProduct)
         }
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())

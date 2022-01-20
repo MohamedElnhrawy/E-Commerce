@@ -1,3 +1,0 @@
-package com.gtera.ui.authorization.resetpasswordconfirmation
-
-interface ResetPasswordConfirmationNavigator

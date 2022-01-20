@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.gtera.ui.authorization.otp.OtpViewModel" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/pale_grey"
+            tools:context=".ui.authorization.login.SignInActivity">
+
+            <com.chaos.view.PinView
+                android:layout_marginTop="@dimen/_100sdp"
+                android:id="@+id/pinView"
+                style="@style/PinWidget.PinView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:cursorVisible="true"
+                android:hint="-"
+                android:inputType="text"
+                android:padding="@dimen/_20sdp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:cursorColor="@color/semi_black"
+                app:cursorWidth="2dp"
+                app:hideLineWhenFilled="false"
+                app:itemCount="6"
+                app:itemHeight="@dimen/_30sdp"
+                app:itemRadius="@dimen/_5sdp"
+                app:itemSpacing="@dimen/_12sdp"
+                app:itemWidth="@dimen/_30sdp"
+                app:lineColor="@color/tabsIndicatorColor"
+                app:lineWidth="2dp"
+                app:viewType="rectangle"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintStart_toStartOf="@id/start"
+                app:layout_constraintTop_toTopOf="parent"
+                app:PinTextChangedListener="@{viewModel.textChangeListener}"
+               />
+
+
+
+
+
+            <com.gtera.ui.base.buttons.LoadingButton
+                android:id="@+id/btn_signin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:focusable="false"
+                android:clickable="true"
+                app:clickListener="@{()->viewModel.checkOtp()}"
+                app:isLoading="@{viewModel.isLoading}"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintStart_toStartOf="@id/start"
+                app:layout_constraintTop_toBottomOf="@+id/pinView"
+                app:text="@string/confirm" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/start"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/_20sdp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/end"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/_20sdp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>

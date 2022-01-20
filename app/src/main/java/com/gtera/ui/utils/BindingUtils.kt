@@ -33,36 +33,24 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
 import androidx.viewpager.widget.ViewPager
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.chaos.view.PinView
+import com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarChangeListener
+import com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.gtera.R
 import com.gtera.ui.adapter.AutoCompleteAdapter
 import com.gtera.ui.adapter.BaseAdapter
+import com.gtera.ui.adapter.BasePagedListAdapter
 import com.gtera.ui.adapter.SpinnerAdapter
 import com.gtera.ui.base.*
-import com.gtera.ui.orders.BasePagedListAdapter
 import com.gtera.ui.slider.SliderView
 import com.gtera.ui.slider.SliderViewModel
 import com.gtera.utils.APPConstants
 import com.gtera.utils.Utilities
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.CenterCrop
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarChangeListener
-import com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
-import com.google.android.exoplayer2.ExoPlayerFactory
-import com.google.android.exoplayer2.SimpleExoPlayer
-import com.google.android.exoplayer2.source.ExtractorMediaSource
-import com.google.android.exoplayer2.source.MediaSource
-import com.google.android.exoplayer2.source.dash.DashMediaSource
-import com.google.android.exoplayer2.source.dash.DefaultDashChunkSource
-import com.google.android.exoplayer2.trackselection.DefaultTrackSelector
-import com.google.android.exoplayer2.ui.PlayerView
-import com.google.android.exoplayer2.upstream.DataSource
-import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter
-import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
-import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory
-import com.google.android.exoplayer2.util.Util
-import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.mikelau.views.shimmer.ShimmerRecyclerViewX
 import com.mikhaellopez.circularimageview.CircularImageView
 import com.synnapps.carouselview.CarouselView
@@ -211,70 +199,6 @@ object BindingUtils {
 
     }
 
-
-    @JvmStatic
-    @SuppressLint("CheckResult")
-    @BindingAdapter(value = ["videoUrl"])
-    fun setVideoUrl(
-        playerView: PlayerView,
-        url: String?
-    ) {
-
-        var playbackPosition: Long = 0
-        var currentWindow: Int = 0
-        var playWhenReady: Boolean = true;
-        var player: SimpleExoPlayer
-//        player = ExoPlayerFactory.newSimpleInstance(
-//            playerView.context,
-//            DefaultTrackSelector(),
-//            DefaultLoadControl()
-//        )
-//        playerView.player = player
-        player = ExoPlayerFactory.newSimpleInstance(playerView.context, DefaultTrackSelector())
-        playerView.setPlayer(player)
-        playerView.setPlayer(player)
-
-        val dataSourceFactory: DataSource.Factory =
-            DefaultDataSourceFactory(
-                playerView.context,
-                Util.getUserAgent(
-                    playerView.context,
-                    "Abaza Auto Trade"
-                )
-            )
-        val mediaSource = ExtractorMediaSource.Factory(dataSourceFactory)
-            .createMediaSource(Uri.parse("https://storage.googleapis.com/exoplayer-test-media-0/firebase-animation.mp4"))
-        player.prepare(mediaSource)
-
-
-    }
-
-
-    private fun buildMediaSource(uri: Uri): MediaSource? {
-        val BANDWIDTH_METER = DefaultBandwidthMeter()
-        val userAgent = "exoplayer-codelab"
-
-//        return if (uri?.path?.contains("mp3")!! || uri?.path?.contains("mp4")!!) {
-//            ExtractorMediaSource.Factory(DefaultHttpDataSourceFactory(userAgent))
-//                .createMediaSource(uri)
-//        } else if (uri?.path?.contains("m3u8")!!) {
-//            DashMediaSource.Factory(DefaultHttpDataSourceFactory(userAgent))
-//                .createMediaSource(uri)
-//        } else {
-//            val dashChunkSourceFactory: DashChunkSource.Factory = DefaultDashChunkSource.Factory(
-//                DefaultHttpDataSourceFactory("ua", BANDWIDTH_METER)
-//            )
-//            val manifestDataSourceFactory: DataSource.Factory =
-//                DefaultHttpDataSourceFactory(userAgent)
-//            DashMediaSource.Factory(dashChunkSourceFactory, manifestDataSourceFactory).createMediaSource(uri)
-//        }
-
-
-        val dataSourceFactory = DefaultHttpDataSourceFactory("ua", BANDWIDTH_METER)
-        val dashChunkSourceFactory = DefaultDashChunkSource.Factory(dataSourceFactory)
-        return DashMediaSource(uri, dataSourceFactory, dashChunkSourceFactory, null, null)
-
-    }
 
     @JvmStatic
     @BindingAdapter(value = ["list", "changePage", "isLarge"], requireAll = false)
@@ -605,7 +529,8 @@ object BindingUtils {
         spanCount: Int
     ) {
 
-        recyclerView.layoutManager = GridLayoutManager(recyclerView.context, spanCount, GridLayoutManager.HORIZONTAL, false)
+        recyclerView.layoutManager =
+            GridLayoutManager(recyclerView.context, spanCount, GridLayoutManager.HORIZONTAL, false)
 //        GravitySnapHelper(Gravity.START).attachToRecyclerView(recyclerView)
         recyclerView.adapter = adapter
         recyclerView.setHasFixedSize(true)
@@ -725,7 +650,10 @@ object BindingUtils {
 //    }
 
     @JvmStatic
-    @BindingAdapter(value = ["rangeSeekbarChangeListener","seekBarMinValue", "seekBarMaxValue"], requireAll = false)
+    @BindingAdapter(
+        value = ["rangeSeekbarChangeListener", "seekBarMinValue", "seekBarMaxValue"],
+        requireAll = false
+    )
     fun setRangeSeekbarMinMaxValues(
         rangeSeekbar: CrystalRangeSeekbar,
         listener: OnRangeSeekbarChangeListener?,
@@ -734,8 +662,8 @@ object BindingUtils {
     ) {
         rangeSeekbar.setMinValue(minValue!!)
         rangeSeekbar.setMaxValue(maxValue!!)
-        if(listener!= null)
-        rangeSeekbar.setOnRangeSeekbarChangeListener(listener)
+        if (listener != null)
+            rangeSeekbar.setOnRangeSeekbarChangeListener(listener)
 
 
     }
@@ -813,7 +741,7 @@ object BindingUtils {
     ) {
         if (list.size <= 3) tabLayout.tabMode = TabLayout.MODE_FIXED else tabLayout.tabMode =
             TabLayout.MODE_SCROLLABLE
-        if(tabLayout.tabCount<2) {
+        if (tabLayout.tabCount < 2) {
             tabLayout.removeAllTabs()
             for (item in list) tabLayout.addTab(tabLayout.newTab().setText(item))
         }
@@ -899,6 +827,28 @@ object BindingUtils {
         } else {
             view.setTypeface(null, Typeface.NORMAL)
         }
+    }
+
+    @JvmStatic
+    @BindingAdapter("PinTextChangedListener")
+    fun setPinChangeListener(view: PinView, textChangeListener: TextChangeListener) {
+
+        view.addTextChangedListener(
+            object :TextWatcher{
+                override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+                }
+
+                override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                }
+
+                override fun afterTextChanged(p0: Editable?) {
+                    textChangeListener.afterChange(p0.toString())
+                }
+
+            }
+        )
+
     }
 
 
